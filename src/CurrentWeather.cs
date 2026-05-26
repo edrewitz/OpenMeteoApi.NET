@@ -1,0 +1,167 @@
+﻿/*
+ * Eric J. Drewitz 2026
+ * 
+ * Written on 5/25/2026
+ */
+
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Text.Json;
+
+namespace OpenMeteoApiNet.CurrentWeather
+{
+    public class currentWeather
+    {
+        public string time { get; set; }
+        public double temperature_2m { get; set; }
+        public double relative_humidity_2m { get; set; }
+        public double apparent_temperature { get; set; }
+        public double precipitation { get; set; }
+        public double snowfall { get; set; }
+        public double cloud_cover { get; set; }
+        public double pressure_msl { get; set; }
+        public double surface_pressure { get; set; }
+        public double wind_speed_10m { get; set; }
+        public double wind_direction_10m { get; set; }
+        public double wind_gusts_10m { get; set; }
+        public DateTime localTime { get; set; }
+    }
+
+    public static class currentWeatherApi
+    {
+        public static async Task<currentWeather?> GetPointData(string latitude,
+                                                         string longitude,
+                                                         string temperatureUnit = "fahrenheit",
+                                                         string windSpeedUnit = "mph",
+                                                         string precipitationUnit = "inch",
+                                                         string[]? variables = null)
+        /*
+         * This function is the client that retrieves and returns the latest weather data.
+         * 
+         * Required Arguments:
+         * 
+         * 1) latitude (string) - The latitude [decimal degrees] in the form of a string. Use negative values for the southern hemisphere.
+         * 
+         * 2) longitude (string) - The longitude [decimal degrees] in the form of a string. Use negative values for the western hemisphere.
+         * 
+         * Optional Arguments:
+         * 
+         * 1) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
+         * 
+         *      Valid Units
+         *      -----------
+         *      
+         *      1) fahrenheit [Fahrenheit]
+         *      2) celsius [Celsius]
+         *      
+         * 2) windSpeedUnit (string) - Default="mph". The units for the wind speed data. 
+         * 
+         *      Valid Units
+         *      -----------
+         *      1) mph (Miles Per Hour)
+         *      2) ms (Meters Per Second)
+         *      3) kmh (Kilometers Per Hour)
+         *      4) kn (Knots)
+         *      
+         * 3) precipitationUnit (string) - Default="inch". The units for the precipitation data.
+         * 
+         *      Valid Units
+         *      -----------
+         *      1) inch [Inches]
+         *      2) mm [Millimeters]
+         *      
+         * 4) variables (string[]) - Optional list of current variables to request. Default is all variables.
+         * 
+         *      Variables
+         *      ---------
+         *      
+         *      "temperature_2m"
+                "relative_humidity_2m" 
+                "apparent_temperature"
+                "precipitation"
+                "snowfall"
+                "cloud_cover"
+                "pressure_msl"
+                "surface_pressure"
+                "wind_speed_10m"
+                "wind_direction_10m"
+                "wind_gusts_10m"
+         * 
+         * Returns
+         * -------
+         * 
+         * The current weather data in the form of a JSON object. 
+         */
+
+        {
+            // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
+            if (variables == null || variables.Length == 0)
+            {
+                variables = new[] { "temperature_2m", 
+                    "relative_humidity_2m" , 
+                    "apparent_temperature" ,
+                    "precipitation" ,
+                    "snowfall" ,
+                    "cloud_cover" ,
+                    "pressure_msl" ,
+                    "surface_pressure" ,
+                    "wind_speed_10m" ,
+                    "wind_direction_10m" ,
+                    "wind_gusts_10m" };
+            }
+            else
+            {
+
+            }
+
+            // Build the 'current' query parameter from the variables array.
+            var currentParam = string.Join(",", variables);
+
+            // Open-Meto API Call URL
+            string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&" +
+                $"current={currentParam}" +
+                $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
+
+            // Create our new HTTP Client
+            using var httpClient = new HttpClient();
+
+            // Ping the server for a response. 
+            var response = await httpClient.GetAsync(url);
+
+            // Ensure we get a successful response, otherwise throw an exception.
+            response.EnsureSuccessStatusCode();
+
+            // Read our response as a string, then parse it as JSON.
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            // Parse the JSON string and extract the "current" property, which contains the current weather data.
+            var root = JsonDocument.Parse(jsonString).RootElement;
+
+            // Check if the "current" property exists in the JSON response.
+            if (!root.TryGetProperty("current", out var currentWeatherElement))
+            {
+                Console.WriteLine("Response JSON does not contain a 'current' property.");
+                return null;
+            }
+
+            // Deserialize the "current" property into our currentWeather class. If deserialization fails, print an error message and return.
+            var data = JsonSerializer.Deserialize<currentWeather>(currentWeatherElement.GetRawText());
+            if (data == null)
+            {
+                Console.WriteLine("Unable to parse current weather data.");
+                return null;
+            }
+
+            // Extract the time attribute which is in the form of a string.
+            var time = data.time;
+
+            // Convert the time string to a DateTime object.
+            var dateTime = DateTime.Parse(time);
+
+            // Convert the DateTime object to local time.
+            data.localTime = dateTime.ToLocalTime();
+
+            return data;
+        }
+    }
+}
