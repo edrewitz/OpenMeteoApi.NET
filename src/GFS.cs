@@ -53,8 +53,8 @@ namespace OpenMeteoApiNet.GFS
         public double[]? soil_moisture_3_to_9cm { get; set; }
         public double[]? soil_moisture_9_to_27cm { get; set; }
         public double[]? soil_moisture_27_to_81cm { get; set; }
-        public List<DateTime> parsedDateTimes { get; set; }
-        public List<DateTime> parsedLocalTimes { get; set; }
+        public List<DateTime>? parsedDateTimes { get; set; }
+        public List<DateTime>? parsedLocalTimes { get; set; }
     }
     public static class gfsHourlyPointForecastApi
     {

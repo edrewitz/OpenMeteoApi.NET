@@ -23,8 +23,8 @@ namespace OpenMeteoApiNet.NBM
         public double[]? wind_speed_80m { get; set; }
         public double[]? wind_direction_10m { get; set; }
         public double[]? wind_direction_80m { get; set; }
-        public List<DateTime> parsedDateTimes { get; set; }
-        public List<DateTime> parsedLocalTimes { get; set; }
+        public List<DateTime>? parsedDateTimes { get; set; }
+        public List<DateTime>? parsedLocalTimes { get; set; }
     }
     public static class nbmHourlyPointForecastApi
     {
