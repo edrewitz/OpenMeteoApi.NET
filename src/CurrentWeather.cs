@@ -4,8 +4,7 @@
  * Written on 5/25/2026
  */
 
-using System.Net.Http;
-using System.Threading.Tasks;
+using System.Net;
 using System.Text.Json;
 
 namespace OpenMeteoApiNet.CurrentWeather
@@ -34,7 +33,8 @@ namespace OpenMeteoApiNet.CurrentWeather
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
-                                                         string[]? variables = null)
+                                                         string[]? variables = null,
+                                                         string? proxy = null)
         /*
          * This function is the client that retrieves and returns the latest weather data.
          * 
@@ -122,46 +122,71 @@ namespace OpenMeteoApiNet.CurrentWeather
                 $"current={currentParam}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
-            // Create our new HTTP Client
-            using var httpClient = new HttpClient();
+            // If a proxy is provided, set up the HttpClient to use the proxy.
+            HttpClient httpClient;
 
-            // Ping the server for a response. 
-            var response = await httpClient.GetAsync(url);
-
-            // Ensure we get a successful response, otherwise throw an exception.
-            response.EnsureSuccessStatusCode();
-
-            // Read our response as a string, then parse it as JSON.
-            var jsonString = await response.Content.ReadAsStringAsync();
-
-            // Parse the JSON string and extract the "current" property, which contains the current weather data.
-            var root = JsonDocument.Parse(jsonString).RootElement;
-
-            // Check if the "current" property exists in the JSON response.
-            if (!root.TryGetProperty("current", out var currentWeatherElement))
+            if (!string.IsNullOrEmpty(proxy))
             {
-                Console.WriteLine("Response JSON does not contain a 'current' property.");
-                return null;
+                var httpClientHandler = new HttpClientHandler
+                {
+                    Proxy = new WebProxy(proxy),
+                    UseProxy = true
+                };
+                httpClient = new HttpClient(httpClientHandler);
+            }
+            else
+            {
+                httpClient = new HttpClient();
             }
 
-            // Deserialize the "current" property into our currentWeather class. If deserialization fails, print an error message and return.
-            var data = JsonSerializer.Deserialize<currentWeather>(currentWeatherElement.GetRawText());
-            if (data == null)
+            // 3. Ensure proper disposal of the selected client
+            using (httpClient)
             {
-                Console.WriteLine("Unable to parse current weather data.");
-                return null;
+                // Ping the server for a response.
+                var response = await httpClient.GetAsync(url);
+                // Ensure we get a successful response, otherwise throw an exception.
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+                catch
+                {
+                    Console.WriteLine("An Error Occurred: Most likely due to a bad request. Check for typos and try again.");
+                }
+
+                // Read our response as a string, then parse it as JSON.
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                // Parse the JSON string and extract the "current" property, which contains the current weather data.
+                var root = JsonDocument.Parse(jsonString).RootElement;
+
+                // Check if the "current" property exists in the JSON response.
+                if (!root.TryGetProperty("current", out var currentWeatherElement))
+                {
+                    Console.WriteLine("Response JSON does not contain a 'current' property.");
+                    return null;
+                }
+
+                // Deserialize the "current" property into our currentWeather class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<currentWeather>(currentWeatherElement.GetRawText());
+                if (data == null)
+                {
+                    Console.WriteLine("Unable to parse current weather data.");
+                    return null;
+                }
+
+                // Extract the time attribute which is in the form of a string.
+                var time = data.time;
+
+                // Convert the time string to a DateTime object.
+                var dateTime = DateTime.Parse(time);
+
+                // Convert the DateTime object to local time.
+                data.localTime = dateTime.ToLocalTime();
+
+                return data;
             }
-
-            // Extract the time attribute which is in the form of a string.
-            var time = data.time;
-
-            // Convert the time string to a DateTime object.
-            var dateTime = DateTime.Parse(time);
-
-            // Convert the DateTime object to local time.
-            data.localTime = dateTime.ToLocalTime();
-
-            return data;
+            
         }
     }
 }
