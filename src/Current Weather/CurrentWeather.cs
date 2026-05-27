@@ -178,7 +178,6 @@ namespace OpenMeteoApiNet.CurrentWeather
                     {
                         Console.WriteLine($"HTTP Error: An error occurred while making the request. Status Code: {(int)statusCode} {statusCode}");
                     }
-                    Console.WriteLine("An Error Occurred: Most likely due to a bad request. Check for typos and try again.");
                 }
 
                 // Read our response as a string, then parse it as JSON.
