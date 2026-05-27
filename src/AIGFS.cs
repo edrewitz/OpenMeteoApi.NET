@@ -203,6 +203,97 @@ namespace OpenMeteoApiNet.AIGFS
                 "soil_moisture_3_to_9cm" 
                 "soil_moisture_9_to_27cm" 
                 "soil_moisture_27_to_81cm"
+                "temperature_1000hPa" 
+                "temperature_925hPa" 
+                "temperature_850hPa" 
+                "temperature_700hPa" 
+                "temperature_600hPa" 
+                "temperature_500hPa" 
+                "temperature_400hPa" 
+                "temperature_300hPa" 
+                "temperature_250hPa" 
+                "temperature_200hPa" 
+                "temperature_150hPa" 
+                "temperature_100hPa" 
+                "temperature_50hPa" 
+                "dew_point_1000hPa" 
+                "dew_point_925hPa" 
+                "dew_point_850hPa" 
+                "dew_point_700hPa" 
+                "dew_point_600hPa" 
+                "dew_point_500hPa" 
+                "dew_point_400hPa" 
+                "dew_point_300hPa" 
+                "dew_point_250hPa" 
+                "dew_point_200hPa" 
+                "dew_point_150hPa" 
+                "dew_point_100hPa" 
+                "dew_point_50hPa" 
+                "relative_humidity_1000hPa" 
+                "relative_humidity_925hPa" 
+                "relative_humidity_850hPa" 
+                "relative_humidity_700hPa" 
+                "relative_humidity_600hPa" 
+                "relative_humidity_500hPa" 
+                "relative_humidity_400hPa" 
+                "relative_humidity_300hPa" 
+                "relative_humidity_250hPa" 
+                "relative_humidity_200hPa" 
+                "relative_humidity_150hPa" 
+                "relative_humidity_100hPa" 
+                "relative_humidity_50hPa" 
+                "wind_speed_1000hPa" 
+                "wind_speed_925hPa" 
+                "wind_speed_850hPa" 
+                "wind_speed_700hPa" 
+                "wind_speed_600hPa" 
+                "wind_speed_500hPa" 
+                "wind_speed_400hPa" 
+                "wind_speed_300hPa" 
+                "wind_speed_250hPa" 
+                "wind_speed_200hPa" 
+                "wind_speed_150hPa" 
+                "wind_speed_100hPa" 
+                "wind_speed_50hPa" 
+                "wind_direction_1000hPa" 
+                "wind_direction_925hPa" 
+                "wind_direction_850hPa" 
+                "wind_direction_700hPa" 
+                "wind_direction_600hPa" 
+                "wind_direction_500hPa" 
+                "wind_direction_400hPa" 
+                "wind_direction_300hPa" 
+                "wind_direction_250hPa" 
+                "wind_direction_200hPa" 
+                "wind_direction_150hPa" 
+                "wind_direction_100hPa" 
+                "wind_direction_50hPa" 
+                "vertical_velocity_1000hPa" 
+                "vertical_velocity_925hPa" 
+                "vertical_velocity_850hPa" 
+                "vertical_velocity_700hPa" 
+                "vertical_velocity_600hPa" 
+                "vertical_velocity_500hPa" 
+                "vertical_velocity_400hPa" 
+                "vertical_velocity_300hPa" 
+                "vertical_velocity_250hPa" 
+                "vertical_velocity_200hPa" 
+                "vertical_velocity_150hPa" 
+                "vertical_velocity_100hPa" 
+                "vertical_velocity_50hPa" 
+                "geopotential_height_1000hPa" 
+                "geopotential_height_925hPa" 
+                "geopotential_height_850hPa" 
+                "geopotential_height_700hPa" 
+                "geopotential_height_600hPa" 
+                "geopotential_height_500hPa" 
+                "geopotential_height_400hPa" 
+                "geopotential_height_300hPa" 
+                "geopotential_height_250hPa" 
+                "geopotential_height_200hPa" 
+                "geopotential_height_150hPa" 
+                "geopotential_height_100hPa" 
+                "geopotential_height_50hPa" 
 
           5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          *      
@@ -254,7 +345,98 @@ namespace OpenMeteoApiNet.AIGFS
                                     "soil_moisture_1_to_3cm" ,
                                     "soil_moisture_3_to_9cm" ,
                                     "soil_moisture_9_to_27cm" ,
-                                    "soil_moisture_27_to_81cm" };
+                                    "soil_moisture_27_to_81cm" ,
+                                    "temperature_1000hPa" ,
+                                    "temperature_925hPa" ,
+                                    "temperature_850hPa" ,
+                                    "temperature_700hPa" ,
+                                    "temperature_600hPa" ,
+                                    "temperature_500hPa" ,
+                                    "temperature_400hPa" ,
+                                    "temperature_300hPa" ,
+                                    "temperature_250hPa" ,
+                                    "temperature_200hPa" ,
+                                    "temperature_150hPa" ,
+                                    "temperature_100hPa" ,
+                                    "temperature_50hPa" ,
+                                    "dew_point_1000hPa" ,
+                                    "dew_point_925hPa" ,
+                                    "dew_point_850hPa" ,
+                                    "dew_point_700hPa" ,
+                                    "dew_point_600hPa" ,
+                                    "dew_point_500hPa" ,
+                                    "dew_point_400hPa" ,
+                                    "dew_point_300hPa" ,
+                                    "dew_point_250hPa" ,
+                                    "dew_point_200hPa" ,
+                                    "dew_point_150hPa" ,
+                                    "dew_point_100hPa" ,
+                                    "dew_point_50hPa" ,
+                                    "relative_humidity_1000hPa" ,
+                                    "relative_humidity_925hPa" ,
+                                    "relative_humidity_850hPa" ,
+                                    "relative_humidity_700hPa" ,
+                                    "relative_humidity_600hPa" ,
+                                    "relative_humidity_500hPa" ,
+                                    "relative_humidity_400hPa" ,
+                                    "relative_humidity_300hPa" ,
+                                    "relative_humidity_250hPa" ,
+                                    "relative_humidity_200hPa" ,
+                                    "relative_humidity_150hPa" ,
+                                    "relative_humidity_100hPa" ,
+                                    "relative_humidity_50hPa" ,
+                                    "wind_speed_1000hPa" ,
+                                    "wind_speed_925hPa" ,
+                                    "wind_speed_850hPa" ,
+                                    "wind_speed_700hPa" ,
+                                    "wind_speed_600hPa" ,
+                                    "wind_speed_500hPa" ,
+                                    "wind_speed_400hPa" ,
+                                    "wind_speed_300hPa" ,
+                                    "wind_speed_250hPa" ,
+                                    "wind_speed_200hPa" ,
+                                    "wind_speed_150hPa" ,
+                                    "wind_speed_100hPa" ,
+                                    "wind_speed_50hPa" ,
+                                    "wind_direction_1000hPa" ,
+                                    "wind_direction_925hPa" ,
+                                    "wind_direction_850hPa" ,
+                                    "wind_direction_700hPa" ,
+                                    "wind_direction_600hPa" ,
+                                    "wind_direction_500hPa" ,
+                                    "wind_direction_400hPa" ,
+                                    "wind_direction_300hPa" ,
+                                    "wind_direction_250hPa" ,
+                                    "wind_direction_200hPa" ,
+                                    "wind_direction_150hPa" ,
+                                    "wind_direction_100hPa" ,
+                                    "wind_direction_50hPa" ,
+                                    "vertical_velocity_1000hPa" ,
+                                    "vertical_velocity_925hPa" ,
+                                    "vertical_velocity_850hPa" ,
+                                    "vertical_velocity_700hPa" ,
+                                    "vertical_velocity_600hPa" ,
+                                    "vertical_velocity_500hPa" ,
+                                    "vertical_velocity_400hPa" ,
+                                    "vertical_velocity_300hPa" ,
+                                    "vertical_velocity_250hPa" ,
+                                    "vertical_velocity_200hPa" ,
+                                    "vertical_velocity_150hPa" ,
+                                    "vertical_velocity_100hPa" ,
+                                    "vertical_velocity_50hPa" ,
+                                    "geopotential_height_1000hPa" ,
+                                    "geopotential_height_925hPa" ,
+                                    "geopotential_height_850hPa" ,
+                                    "geopotential_height_700hPa" ,
+                                    "geopotential_height_600hPa" ,
+                                    "geopotential_height_500hPa" ,
+                                    "geopotential_height_400hPa" ,
+                                    "geopotential_height_300hPa" ,
+                                    "geopotential_height_250hPa" ,
+                                    "geopotential_height_200hPa" ,
+                                    "geopotential_height_150hPa" ,
+                                    "geopotential_height_100hPa" ,
+                                    "geopotential_height_50hPa" };
             }
             else
             {
@@ -266,7 +448,7 @@ namespace OpenMeteoApiNet.AIGFS
 
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=gfs_seamless" +
+                $"&models=ncep_aigfs025" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client

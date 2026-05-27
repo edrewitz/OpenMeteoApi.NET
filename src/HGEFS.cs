@@ -1,58 +1,25 @@
 ﻿/*
  * Eric J. Drewitz 2026
  * 
- *
+ * 
  * Written on 5/25/2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.GFS
+namespace OpenMeteoApiNet.HGEFS
 {
     public class modelParams
     {
         public string[]? time { get; set; }
         public double[]? temperature_2m { get; set; }
-        public double[]? relative_humidity_2m { get; set; }
-        public double[]? apparent_temperature { get; set; }
-        public double[]? cape { get; set; }
-        public double[]? precipitation { get; set; }
-        public double[]? rain { get; set; }
-        public double[]? snow { get; set; }
-        public double[]? snowfall { get; set; }
-        public double[]? snow_depth { get; set; }
-        public double[]? pressure_msl { get; set; }
-        public double[]? surface_pressure { get; set; }
         public double[]? cloud_cover { get; set; }
         public double[]? cloud_cover_low { get; set; }
         public double[]? cloud_cover_mid { get; set; }
         public double[]? cloud_cover_high { get; set; }
-        public double[]? visibility { get; set; }
-        public double[]? evapotranspiration { get; set; }
-        public double[]? et0_fao_evapotranspiration { get; set; }
-        public double[]? vapour_pressure_deficit { get; set; }
-        public double[]? wind_speed_10m { get; set; }
-        public double[]? wind_speed_80m { get; set; }
-        public double[]? wind_speed_120m { get; set; }
-        public double[]? wind_speed_180m { get; set; }
-        public double[]? wind_direction_10m { get; set; }
-        public double[]? wind_direction_80m { get; set; }
-        public double[]? wind_direction_120m { get; set; }
-        public double[]? wind_direction_180m { get; set; }
-        public double[]? temperature_80m { get; set; }
-        public double[]? wind_gusts_10m { get; set; }
-        public double[]? temperature_120m { get; set; }
-        public double[]? temperature_180m { get; set; }
-        public double[]? soil_temperature_0cm { get; set; }
-        public double[]? soil_temperature_6cm { get; set; }
-        public double[]? soil_temperature_18cm { get; set; }
-        public double[]? soil_temperature_54cm { get; set; }
-        public double[]? soil_moisture_0_to_1cm { get; set; }
-        public double[]? soil_moisture_1_to_3cm { get; set; }
-        public double[]? soil_moisture_3_to_9cm { get; set; }
-        public double[]? soil_moisture_9_to_27cm { get; set; }
-        public double[]? soil_moisture_27_to_81cm { get; set; }
+        public double[]? precipitation { get; set; }
+        public double[]? pressure_msl { get; set; }
         public double[]? temperature_1000hPa { get; set; }
         public double[]? temperature_925hPa { get; set; }
         public double[]? temperature_850hPa { get; set; }
@@ -148,7 +115,7 @@ namespace OpenMeteoApiNet.GFS
         public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
-    public static class gfsHourlyPointForecastApi
+    public static class hgefsHourlyPointForecastApi
     {
         public static async Task<modelParams?> GetData(string latitude,
                                                          string longitude,
@@ -158,7 +125,7 @@ namespace OpenMeteoApiNet.GFS
                                                          string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a NOAA/NCEP/HGEFS ensemble mean point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -479,10 +446,9 @@ namespace OpenMeteoApiNet.GFS
             // Build the 'hourly' query parameter from the variables array.
             var modelParams = string.Join(",", variables);
 
-            // Open-Meto API Call URL
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=gfs_seamless" +
+                $"&models=ncep_hgefs025_ensemble_mean" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client
@@ -578,8 +544,6 @@ namespace OpenMeteoApiNet.GFS
                                                 .Select(dt => dt.ToLocalTime())
                                                 .ToList();
 
-                
-
                     return data;
                 }
 
@@ -588,9 +552,10 @@ namespace OpenMeteoApiNet.GFS
                     Console.WriteLine($"GFS Data Not Available At This Time");
                     return null;
                 }
-
             }
+
         }
     }
 }
+
 
