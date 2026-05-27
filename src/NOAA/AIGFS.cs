@@ -1,8 +1,5 @@
 ﻿/*
- * Eric J. Drewitz 2026
- * 
- * 
- * Written on 5/25/2026
+ * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;
