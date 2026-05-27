@@ -86,6 +86,8 @@ namespace OpenMeteoApiNet.CurrentWeather
                 "wind_speed_10m"
                 "wind_direction_10m"
                 "wind_gusts_10m"
+
+          5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          * 
          * Returns
          * -------
@@ -122,9 +124,10 @@ namespace OpenMeteoApiNet.CurrentWeather
                 $"current={currentParam}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
-            // If a proxy is provided, set up the HttpClient to use the proxy.
-            HttpClient httpClient;
+            // Create HTTP client
+            HttpClient httpClient;      
 
+            // If a proxy is provided, set up the HttpClient to use the proxy.
             if (!string.IsNullOrEmpty(proxy))
             {
                 var httpClientHandler = new HttpClientHandler
@@ -151,6 +154,32 @@ namespace OpenMeteoApiNet.CurrentWeather
                 }
                 catch
                 {
+                    HttpStatusCode statusCode = response.StatusCode;
+
+                    if (statusCode == HttpStatusCode.BadRequest)
+                    {
+                        Console.WriteLine($"Bad Request: The server could not understand the request. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.Unauthorized)
+                    {
+                        Console.WriteLine($"Unauthorized: Access is denied due to invalid credentials. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.Forbidden)
+                    {
+                        Console.WriteLine($"Forbidden: You do not have permission to access this resource. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.NotFound)
+                    {
+                        Console.WriteLine($"Not Found: The requested resource could not be found. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if ((int)statusCode >= 500 && (int)statusCode < 600)
+                    {
+                        Console.WriteLine($"Server Error: The server encountered an error. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"HTTP Error: An error occurred while making the request. Status Code: {(int)statusCode} {statusCode}");
+                    }
                     Console.WriteLine("An Error Occurred: Most likely due to a bad request. Check for typos and try again.");
                 }
 
@@ -174,17 +203,21 @@ namespace OpenMeteoApiNet.CurrentWeather
                     Console.WriteLine("Unable to parse current weather data.");
                     return null;
                 }
+                else
+                {
+                    // Extract the time attribute which is in the form of a string.
+                    var time = data.time;
 
-                // Extract the time attribute which is in the form of a string.
-                var time = data.time;
+                    // Convert the time string to a DateTime object.
+                    var dateTime = DateTime.Parse(time);
 
-                // Convert the time string to a DateTime object.
-                var dateTime = DateTime.Parse(time);
+                    // Convert the DateTime object to local time.
+                    data.localTime = dateTime.ToLocalTime();
 
-                // Convert the DateTime object to local time.
-                data.localTime = dateTime.ToLocalTime();
+                    return data;
 
-                return data;
+                }
+
             }
             
         }

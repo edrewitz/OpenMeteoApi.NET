@@ -1,11 +1,11 @@
 ﻿/*
  * Eric J. Drewitz 2026
  * 
+ * 
  * Written on 5/25/2026
  */
 
-using System;
-using System.Reflection;
+using System.Net;
 using System.Text.Json;
 
 namespace OpenMeteoApiNet.ICON
@@ -60,7 +60,8 @@ namespace OpenMeteoApiNet.ICON
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
-                                                         string[]? variables = null)
+                                                         string[]? variables = null,
+                                                         string? proxy = null)
         /*
          * This function is the client that retrieves and returns DWD ICON Forecast from the Open-Meteo API.
          * 
@@ -137,6 +138,8 @@ namespace OpenMeteoApiNet.ICON
                 "soil_moisture_3_to_9cm" 
                 "soil_moisture_9_to_27cm" 
                 "soil_moisture_27_to_81cm"
+
+          5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          *      
          * 
          * Returns
@@ -201,52 +204,113 @@ namespace OpenMeteoApiNet.ICON
                 $"&models=icon_seamless" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
-            // Create our new HTTP Client
-            using var httpClient = new HttpClient();
+            // Create HTTP client
+            HttpClient httpClient;
 
-            // Ping the server for a response. 
-            var response = await httpClient.GetAsync(url);
-
-            // Ensure we get a successful response, otherwise throw an exception.
-            response.EnsureSuccessStatusCode();
-
-            // Read our response as a string, then parse it as JSON.
-            var jsonString = await response.Content.ReadAsStringAsync();
-
-            // Parse the JSON string and extract the "hourly" property, which contains the hourly weather data.
-            var root = JsonDocument.Parse(jsonString).RootElement;
-
-            // Check if the "hourly" property exists in the JSON response.
-            if (!root.TryGetProperty("hourly", out var hourlyWeatherElement))
+            // If a proxy is provided, set up the HttpClient to use the proxy.
+            if (!string.IsNullOrEmpty(proxy))
             {
-                Console.WriteLine("Response JSON does not contain a 'hourly property.");
-                return null;
+                var httpClientHandler = new HttpClientHandler
+                {
+                    Proxy = new WebProxy(proxy),
+                    UseProxy = true
+                };
+                httpClient = new HttpClient(httpClientHandler);
+            }
+            else
+            {
+                httpClient = new HttpClient();
             }
 
-            // Deserialize the "hourly" property into our iconParams class. If deserialization fails, print an error message and return.
-            var data = JsonSerializer.Deserialize<iconParams>(hourlyWeatherElement.GetRawText());
-            if (data == null)
+            // 3. Ensure proper disposal of the selected client
+            using (httpClient)
             {
-                Console.WriteLine("Unable to parse hourly weather data.");
-                return null;
-            }
 
-            // Extract the time attribute which is in the form of a string.
-            var time = data.time;
+                // Ping the server for a response. 
+                var response = await httpClient.GetAsync(url);
 
-            // Convert the time string to a DateTime object.
-            var dateTimeList = new List<DateTime>();
+                // Ensure we get a successful response, otherwise throw an exception.
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+                catch
+                {
+                    HttpStatusCode statusCode = response.StatusCode;
 
-            // Convert the DateTime object to local time.
-            data.parsedDateTimes = data.time
-                                        .Select(t => DateTime.Parse(t))
-                                        .ToList();
+                    if (statusCode == HttpStatusCode.BadRequest)
+                    {
+                        Console.WriteLine($"Bad Request: The server could not understand the request. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.Unauthorized)
+                    {
+                        Console.WriteLine($"Unauthorized: Access is denied due to invalid credentials. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.Forbidden)
+                    {
+                        Console.WriteLine($"Forbidden: You do not have permission to access this resource. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if (statusCode == HttpStatusCode.NotFound)
+                    {
+                        Console.WriteLine($"Not Found: The requested resource could not be found. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else if ((int)statusCode >= 500 && (int)statusCode < 600)
+                    {
+                        Console.WriteLine($"Server Error: The server encountered an error. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"HTTP Error: An error occurred while making the request. Status Code: {(int)statusCode} {statusCode}");
+                    }
+                    Console.WriteLine("An Error Occurred: Most likely due to a bad request. Check for typos and try again.");
+                }
 
-            data.parsedLocalTimes = data.parsedDateTimes
-                                        .Select(dt => dt.ToLocalTime())
-                                        .ToList();
+                // Read our response as a string, then parse it as JSON.
+                var jsonString = await response.Content.ReadAsStringAsync();
 
-            return data;
+                // Parse the JSON string and extract the "hourly" property, which contains the hourly weather data.
+                var root = JsonDocument.Parse(jsonString).RootElement;
+
+                // Check if the "hourly" property exists in the JSON response.
+                if (!root.TryGetProperty("hourly", out var hourlyWeatherElement))
+                {
+                    Console.WriteLine("Response JSON does not contain a 'hourly property.");
+                    return null;
+                }
+
+                // Deserialize the "hourly" property into our iconParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<iconParams>(hourlyWeatherElement.GetRawText());
+                if (data == null)
+                {
+                    Console.WriteLine("Unable to parse hourly weather data.");
+                    return null;
+                }
+
+                // Extract the time attribute which is in the form of a string.
+                var time = data.time;
+
+                // Convert the time string to a DateTime object.
+                var dateTimeList = new List<DateTime>();
+
+                // Convert the DateTime object to local time.
+                if (data != null)
+                {
+                    data.parsedDateTimes = data.time
+                                                .Select(t => DateTime.Parse(t))
+                                                .ToList();
+
+                    data.parsedLocalTimes = data.parsedDateTimes
+                                                .Select(dt => dt.ToLocalTime())
+                                                .ToList();
+
+                    return data;
+                }
+                else
+                {
+                    Console.WriteLine($"ICON Data Not Available At This Time");
+                    return null;
+
+            }    }    
         }
     }
 }

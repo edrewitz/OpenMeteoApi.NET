@@ -1,14 +1,14 @@
 ﻿/*
  * Eric J. Drewitz 2026
  * 
- *
+ * 
  * Written on 5/25/2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.GFS
+namespace OpenMeteoApiNet.AIGFS
 {
     public class modelParams
     {
@@ -94,8 +94,9 @@ namespace OpenMeteoApiNet.GFS
         public double[]? relative_humidity_50hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
+
     }
-    public static class gfsHourlyPointForecastApi
+    public static class aigfsHourlyPointForecastApi
     {
         public static async Task<modelParams?> GetData(string latitude,
                                                          string longitude,
@@ -105,7 +106,7 @@ namespace OpenMeteoApiNet.GFS
                                                          string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a NOAA/NCEP/AIGFS point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -244,7 +245,6 @@ namespace OpenMeteoApiNet.GFS
             // Build the 'hourly' query parameter from the variables array.
             var modelParams = string.Join(",", variables);
 
-            // Open-Meto API Call URL
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
                 $"&models=gfs_seamless" +
@@ -351,9 +351,10 @@ namespace OpenMeteoApiNet.GFS
                     Console.WriteLine($"GFS Data Not Available At This Time");
                     return null;
                 }
-
             }
+
         }
     }
 }
+
 
