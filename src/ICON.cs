@@ -50,9 +50,124 @@ namespace OpenMeteoApiNet.ICON
         public double[]? soil_moisture_3_to_9cm { get; set; }
         public double[]? soil_moisture_9_to_27cm { get; set; }
         public double[]? soil_moisture_27_to_81cm { get; set; }
+        public double[]? temperature_1000hPa { get; set; }
+        public double[]? temperature_975hPa { get; set; }
+        public double[]? temperature_950hPa { get; set; }
+        public double[]? temperature_925hPa { get; set; }
+        public double[]? temperature_900hPa { get; set; }
+        public double[]? temperature_850hPa { get; set; }
+        public double[]? temperature_800hPa { get; set; }
+        public double[]? temperature_700hPa { get; set; }
+        public double[]? temperature_600hPa { get; set; }
+        public double[]? temperature_500hPa { get; set; }
+        public double[]? temperature_400hPa { get; set; }
+        public double[]? temperature_300hPa { get; set; }
+        public double[]? temperature_250hPa { get; set; }
+        public double[]? temperature_200hPa { get; set; }
+        public double[]? temperature_150hPa { get; set; }
+        public double[]? temperature_100hPa { get; set; }
+        public double[]? temperature_70hPa { get; set; }
+        public double[]? temperature_50hPa { get; set; }
+        public double[]? temperature_30hPa { get; set; }
+        public double[]? relative_humidity_1000hPa { get; set; }
+        public double[]? relative_humidity_975hPa { get; set; }
+        public double[]? relative_humidity_950hPa { get; set; }
+        public double[]? relative_humidity_925hPa { get; set; }
+        public double[]? relative_humidity_900hPa { get; set; }
+        public double[]? relative_humidity_850hPa { get; set; }
+        public double[]? relative_humidity_800hPa { get; set; }
+        public double[]? relative_humidity_700hPa { get; set; }
+        public double[]? relative_humidity_600hPa { get; set; }
+        public double[]? relative_humidity_500hPa { get; set; }
+        public double[]? relative_humidity_400hPa { get; set; }
+        public double[]? relative_humidity_300hPa { get; set; }
+        public double[]? relative_humidity_250hPa { get; set; }
+        public double[]? relative_humidity_200hPa { get; set; }
+        public double[]? relative_humidity_150hPa { get; set; }
+        public double[]? relative_humidity_100hPa { get; set; }
+        public double[]? relative_humidity_70hPa { get; set; }
+        public double[]? relative_humidity_50hPa { get; set; }
+        public double[]? relative_humidity_30hPa { get; set; }
+        public double[]? cloud_cover_1000hPa { get; set; }
+        public double[]? cloud_cover_975hPa { get; set; }
+        public double[]? cloud_cover_950hPa { get; set; }
+        public double[]? cloud_cover_925hPa { get; set; }
+        public double[]? cloud_cover_900hPa { get; set; }
+        public double[]? cloud_cover_850hPa { get; set; }
+        public double[]? cloud_cover_800hPa { get; set; }
+        public double[]? cloud_cover_700hPa { get; set; }
+        public double[]? cloud_cover_600hPa { get; set; }
+        public double[]? cloud_cover_500hPa { get; set; }
+        public double[]? cloud_cover_400hPa { get; set; }
+        public double[]? cloud_cover_300hPa { get; set; }
+        public double[]? cloud_cover_250hPa { get; set; }
+        public double[]? cloud_cover_200hPa { get; set; }
+        public double[]? cloud_cover_150hPa { get; set; }
+        public double[]? cloud_cover_100hPa { get; set; }
+        public double[]? cloud_cover_70hPa { get; set; }
+        public double[]? cloud_cover_50hPa { get; set; }
+        public double[]? cloud_cover_30hPa { get; set; }
+        public double[]? wind_speed_1000hPa { get; set; }
+        public double[]? wind_speed_975hPa { get; set; }
+        public double[]? wind_speed_950hPa { get; set; }
+        public double[]? wind_speed_925hPa { get; set; }
+        public double[]? wind_speed_900hPa { get; set; }
+        public double[]? wind_speed_850hPa { get; set; }
+        public double[]? wind_speed_800hPa { get; set; }
+        public double[]? wind_speed_700hPa { get; set; }
+        public double[]? wind_speed_600hPa { get; set; }
+        public double[]? wind_speed_500hPa { get; set; }
+        public double[]? wind_speed_400hPa { get; set; }
+        public double[]? wind_speed_300hPa { get; set; }
+        public double[]? wind_speed_250hPa { get; set; }
+        public double[]? wind_speed_200hPa { get; set; }
+        public double[]? wind_speed_150hPa { get; set; }
+        public double[]? wind_speed_100hPa { get; set; }
+        public double[]? wind_speed_70hPa { get; set; }
+        public double[]? wind_speed_50hPa { get; set; }
+        public double[]? wind_speed_30hPa { get; set; }
+        public double[]? wind_direction_1000hPa { get; set; }
+        public double[]? wind_direction_975hPa { get; set; }
+        public double[]? wind_direction_950hPa { get; set; }
+        public double[]? wind_direction_925hPa { get; set; }
+        public double[]? wind_direction_900hPa { get; set; }
+        public double[]? wind_direction_850hPa { get; set; }
+        public double[]? wind_direction_800hPa { get; set; }
+        public double[]? wind_direction_700hPa { get; set; }
+        public double[]? wind_direction_600hPa { get; set; }
+        public double[]? wind_direction_500hPa { get; set; }
+        public double[]? wind_direction_400hPa { get; set; }
+        public double[]? wind_direction_300hPa { get; set; }
+        public double[]? wind_direction_250hPa { get; set; }
+        public double[]? wind_direction_200hPa { get; set; }
+        public double[]? wind_direction_150hPa { get; set; }
+        public double[]? wind_direction_100hPa { get; set; }
+        public double[]? wind_direction_70hPa { get; set; }
+        public double[]? wind_direction_50hPa { get; set; }
+        public double[]? wind_directions_30hPa { get; set; }
+        public double[]? geopotential_height_1000hPa { get; set; }
+        public double[]? geopotential_height_975hPa { get; set; }
+        public double[]? geopotential_height_950hPa { get; set; }
+        public double[]? geopotential_height_925hPa { get; set; }
+        public double[]? geopotential_height_900hPa { get; set; }
+        public double[]? geopotential_height_850hPa { get; set; }
+        public double[]? geopotential_height_800hPa { get; set; }
+        public double[]? geopotential_height_700hPa { get; set; }
+        public double[]? geopotential_height_600hPa { get; set; }
+        public double[]? geopotential_height_500hPa { get; set; }
+        public double[]? geopotential_height_400hPa { get; set; }
+        public double[]? geopotential_height_300hPa { get; set; }
+        public double[]? geopotential_height_250hPa { get; set; }
+        public double[]? geopotential_height_200hPa { get; set; }
+        public double[]? geopotential_height_150hPa { get; set; }
+        public double[]? geopotential_height_100hPa { get; set; }
+        public double[]? geopotential_height_70hPa { get; set; }
+        public double[]? geopotential_height_50hPa { get; set; }
+        public double[]? geopotential_height_30hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
     }
+
     public static class iconHourlyPointForecastApi
     {
         public static async Task<iconParams?> GetData(string latitude,
@@ -138,6 +253,121 @@ namespace OpenMeteoApiNet.ICON
                 "soil_moisture_3_to_9cm" 
                 "soil_moisture_9_to_27cm" 
                 "soil_moisture_27_to_81cm"
+				"temperature_1000hPa"
+                "temperature_975hPa"
+                "temperature_950hPa"
+                "temperature_925hPa"
+                "temperature_900hPa"
+                "temperature_850hPa"
+                "temperature_800hPa"
+                "temperature_700hPa"
+                "temperature_600hPa"
+                "temperature_500hPa"
+                "temperature_400hPa"
+                "temperature_300hPa"
+                "temperature_250hPa"
+                "temperature_200hPa"
+                "temperature_150hPa"
+                "temperature_100hPa"
+                "temperature_70hPa"
+                "temperature_50hPa"
+                "temperature_30hPa"
+                "relative_humidity_1000hPa"
+                "relative_humidity_975hPa"
+                "relative_humidity_950hPa"
+                "relative_humidity_925hPa"
+                "relative_humidity_900hPa"
+                "relative_humidity_850hPa"
+                "relative_humidity_800hPa"
+                "relative_humidity_700hPa"
+                "relative_humidity_600hPa"
+                "relative_humidity_500hPa"
+                "relative_humidity_400hPa"
+                "relative_humidity_300hPa"
+                "relative_humidity_250hPa"
+                "relative_humidity_200hPa"
+                "relative_humidity_150hPa"
+                "relative_humidity_100hPa"
+                "relative_humidity_70hPa"
+                "relative_humidity_50hPa"
+                "relative_humidity_30hPa"
+                "cloud_cover_1000hPa"
+                "cloud_cover_975hPa"
+                "cloud_cover_950hPa"
+                "cloud_cover_925hPa"
+                "cloud_cover_900hPa"
+                "cloud_cover_850hPa"
+                "cloud_cover_800hPa"
+                "cloud_cover_700hPa"
+                "cloud_cover_600hPa"
+                "cloud_cover_500hPa"
+                "cloud_cover_400hPa"
+                "cloud_cover_300hPa"
+                "cloud_cover_250hPa"
+                "cloud_cover_200hPa"
+                "cloud_cover_150hPa"
+                "cloud_cover_100hPa"
+                "cloud_cover_70hPa"
+                "cloud_cover_50hPa"
+                "cloud_cover_30hPa"
+                "wind_speed_1000hPa"
+                "wind_speed_975hPa"
+                "wind_speed_950hPa"
+                "wind_speed_925hPa"
+                "wind_speed_900hPa"
+                "wind_speed_850hPa"
+                "wind_speed_800hPa"
+                "wind_speed_700hPa"
+                "wind_speed_600hPa"
+                "wind_speed_500hPa"
+                "wind_speed_400hPa"
+                "wind_speed_300hPa"
+                "wind_speed_250hPa"
+                "wind_speed_200hPa"
+                "wind_speed_150hPa"
+                "wind_speed_100hPa"
+                "wind_speed_70hPa"
+                "wind_speed_50hPa"
+                "wind_speed_30hPa"
+                "wind_direction_1000hPa"
+                "wind_direction_975hPa"
+                "wind_direction_950hPa"
+                "wind_direction_925hPa"
+                "wind_direction_900hPa"
+                "wind_direction_850hPa"
+                "wind_direction_800hPa"
+                "wind_direction_700hPa"
+                "wind_direction_600hPa"
+                "wind_direction_500hPa"
+                "wind_direction_400hPa"
+                "wind_direction_300hPa"
+                "wind_direction_250hPa"
+                "wind_direction_200hPa"
+                "wind_direction_150hPa"
+                "wind_direction_100hPa"
+                "wind_direction_70hPa"
+                "wind_direction_50hPa"
+                "wind_directions_30hPa"
+                "geopotential_height_1000hPa" 
+                "geopotential_height_975hPa" 
+                "geopotential_height_950hPa" 
+                "geopotential_height_925hPa" 
+                "geopotential_height_900hPa" 
+                "geopotential_height_850hPa" 
+                "geopotential_height_800hPa" 
+                "geopotential_height_700hPa" 
+                "geopotential_height_600hPa" 
+                "geopotential_height_500hPa" 
+                "geopotential_height_400hPa" 
+                "geopotential_height_300hPa" 
+                "geopotential_height_250hPa" 
+                "geopotential_height_200hPa" 
+                "geopotential_height_150hPa" 
+                "geopotential_height_100hPa" 
+                "geopotential_height_70hPa" 
+                "geopotential_height_50hPa" 
+                "geopotential_height_30hPa" 
+
 
           5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          *      
@@ -188,7 +418,121 @@ namespace OpenMeteoApiNet.ICON
                                     "soil_moisture_1_to_3cm" ,
                                     "soil_moisture_3_to_9cm" ,
                                     "soil_moisture_9_to_27cm" ,
-                                    "soil_moisture_27_to_81cm" };
+                                    "soil_moisture_27_to_81cm" ,
+                                    "temperature_1000hPa" ,
+                                    "temperature_975hPa" ,
+                                    "temperature_950hPa" ,
+                                    "temperature_925hPa" ,
+                                    "temperature_900hPa" ,
+                                    "temperature_850hPa" ,
+                                    "temperature_800hPa" ,
+                                    "temperature_700hPa" ,
+                                    "temperature_600hPa" ,
+                                    "temperature_500hPa" ,
+                                    "temperature_400hPa" ,
+                                    "temperature_300hPa" ,
+                                    "temperature_250hPa" ,
+                                    "temperature_200hPa" ,
+                                    "temperature_150hPa" ,
+                                    "temperature_100hPa" ,
+                                    "temperature_70hPa" ,
+                                    "temperature_50hPa" ,
+                                    "temperature_30hPa" ,
+                                    "relative_humidity_1000hPa" ,
+                                    "relative_humidity_975hPa" ,
+                                    "relative_humidity_950hPa" ,
+                                    "relative_humidity_925hPa" ,
+                                    "relative_humidity_900hPa" ,
+                                    "relative_humidity_850hPa" ,
+                                    "relative_humidity_800hPa" ,
+                                    "relative_humidity_700hPa" ,
+                                    "relative_humidity_600hPa" ,
+                                    "relative_humidity_500hPa" ,
+                                    "relative_humidity_400hPa" ,
+                                    "relative_humidity_300hPa" ,
+                                    "relative_humidity_250hPa" ,
+                                    "relative_humidity_200hPa" ,
+                                    "relative_humidity_150hPa" ,
+                                    "relative_humidity_100hPa" ,
+                                    "relative_humidity_70hPa" ,
+                                    "relative_humidity_50hPa" ,
+                                    "relative_humidity_30hPa" ,
+                                    "cloud_cover_1000hPa" ,
+                                    "cloud_cover_975hPa" ,
+                                    "cloud_cover_950hPa" ,
+                                    "cloud_cover_925hPa" ,
+                                    "cloud_cover_900hPa" ,
+                                    "cloud_cover_850hPa" ,
+                                    "cloud_cover_800hPa" ,
+                                    "cloud_cover_700hPa" ,
+                                    "cloud_cover_600hPa" ,
+                                    "cloud_cover_500hPa" ,
+                                    "cloud_cover_400hPa" ,
+                                    "cloud_cover_300hPa" ,
+                                    "cloud_cover_250hPa" ,
+                                    "cloud_cover_200hPa" ,
+                                    "cloud_cover_150hPa" ,
+                                    "cloud_cover_100hPa" ,
+                                    "cloud_cover_70hPa" ,
+                                    "cloud_cover_50hPa" ,
+                                    "cloud_cover_30hPa" ,
+                                    "wind_speed_1000hPa" ,
+                                    "wind_speed_975hPa" ,
+                                    "wind_speed_950hPa" ,
+                                    "wind_speed_925hPa" ,
+                                    "wind_speed_900hPa" ,
+                                    "wind_speed_850hPa" ,
+                                    "wind_speed_800hPa" ,
+                                    "wind_speed_700hPa" ,
+                                    "wind_speed_600hPa" ,
+                                    "wind_speed_500hPa" ,
+                                    "wind_speed_400hPa" ,
+                                    "wind_speed_300hPa" ,
+                                    "wind_speed_250hPa" ,
+                                    "wind_speed_200hPa" ,
+                                    "wind_speed_150hPa" ,
+                                    "wind_speed_100hPa" ,
+                                    "wind_speed_70hPa" ,
+                                    "wind_speed_50hPa" ,
+                                    "wind_speed_30hPa" ,
+                                    "wind_direction_1000hPa" ,
+                                    "wind_direction_975hPa" ,
+                                    "wind_direction_950hPa" ,
+                                    "wind_direction_925hPa" ,
+                                    "wind_direction_900hPa" ,
+                                    "wind_direction_850hPa" ,
+                                    "wind_direction_800hPa" ,
+                                    "wind_direction_700hPa" ,
+                                    "wind_direction_600hPa" ,
+                                    "wind_direction_500hPa" ,
+                                    "wind_direction_400hPa" ,
+                                    "wind_direction_300hPa" ,
+                                    "wind_direction_250hPa" ,
+                                    "wind_direction_200hPa" ,
+                                    "wind_direction_150hPa" ,
+                                    "wind_direction_100hPa" ,
+                                    "wind_direction_70hPa" ,
+                                    "wind_direction_50hPa" ,
+                                    "wind_directions_30hPa" ,
+                                    "geopotential_height_1000hPa" ,
+                                    "geopotential_height_975hPa" ,
+                                    "geopotential_height_950hPa" ,
+                                    "geopotential_height_925hPa" ,
+                                    "geopotential_height_900hPa" ,
+                                    "geopotential_height_850hPa" ,
+                                    "geopotential_height_800hPa" ,
+                                    "geopotential_height_700hPa" ,
+                                    "geopotential_height_600hPa" ,
+                                    "geopotential_height_500hPa" ,
+                                    "geopotential_height_400hPa" ,
+                                    "geopotential_height_300hPa" ,
+                                    "geopotential_height_250hPa" ,
+                                    "geopotential_height_200hPa" ,
+                                    "geopotential_height_150hPa" ,
+                                    "geopotential_height_100hPa" ,
+                                    "geopotential_height_70hPa" ,
+                                    "geopotential_height_50hPa" ,
+                                    "geopotential_height_30hPa" };
             }
             else
             {
