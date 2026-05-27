@@ -14,45 +14,12 @@ namespace OpenMeteoApiNet.AIGFS
     {
         public string[]? time { get; set; }
         public double[]? temperature_2m { get; set; }
-        public double[]? relative_humidity_2m { get; set; }
-        public double[]? apparent_temperature { get; set; }
-        public double[]? cape { get; set; }
-        public double[]? precipitation { get; set; }
-        public double[]? rain { get; set; }
-        public double[]? snow { get; set; }
-        public double[]? snowfall { get; set; }
-        public double[]? snow_depth { get; set; }
-        public double[]? pressure_msl { get; set; }
-        public double[]? surface_pressure { get; set; }
         public double[]? cloud_cover { get; set; }
         public double[]? cloud_cover_low { get; set; }
         public double[]? cloud_cover_mid { get; set; }
         public double[]? cloud_cover_high { get; set; }
-        public double[]? visibility { get; set; }
-        public double[]? evapotranspiration { get; set; }
-        public double[]? et0_fao_evapotranspiration { get; set; }
-        public double[]? vapour_pressure_deficit { get; set; }
-        public double[]? wind_speed_10m { get; set; }
-        public double[]? wind_speed_80m { get; set; }
-        public double[]? wind_speed_120m { get; set; }
-        public double[]? wind_speed_180m { get; set; }
-        public double[]? wind_direction_10m { get; set; }
-        public double[]? wind_direction_80m { get; set; }
-        public double[]? wind_direction_120m { get; set; }
-        public double[]? wind_direction_180m { get; set; }
-        public double[]? temperature_80m { get; set; }
-        public double[]? wind_gusts_10m { get; set; }
-        public double[]? temperature_120m { get; set; }
-        public double[]? temperature_180m { get; set; }
-        public double[]? soil_temperature_0cm { get; set; }
-        public double[]? soil_temperature_6cm { get; set; }
-        public double[]? soil_temperature_18cm { get; set; }
-        public double[]? soil_temperature_54cm { get; set; }
-        public double[]? soil_moisture_0_to_1cm { get; set; }
-        public double[]? soil_moisture_1_to_3cm { get; set; }
-        public double[]? soil_moisture_3_to_9cm { get; set; }
-        public double[]? soil_moisture_9_to_27cm { get; set; }
-        public double[]? soil_moisture_27_to_81cm { get; set; }
+        public double[]? precipitation { get; set; }
+        public double[]? pressure_msl { get; set; }
         public double[]? temperature_1000hPa { get; set; }
         public double[]? temperature_925hPa { get; set; }
         public double[]? temperature_850hPa { get; set; }
@@ -92,6 +59,58 @@ namespace OpenMeteoApiNet.AIGFS
         public double[]? relative_humidity_150hPa { get; set; }
         public double[]? relative_humidity_100hPa { get; set; }
         public double[]? relative_humidity_50hPa { get; set; }
+        public double[]? wind_speed_1000hPa { get; set; }
+        public double[]? wind_speed_925hPa { get; set; }
+        public double[]? wind_speed_850hPa { get; set; }
+        public double[]? wind_speed_700hPa { get; set; }
+        public double[]? wind_speed_600hPa { get; set; }
+        public double[]? wind_speed_500hPa { get; set; }
+        public double[]? wind_speed_400hPa { get; set; }
+        public double[]? wind_speed_300hPa { get; set; }
+        public double[]? wind_speed_250hPa { get; set; }
+        public double[]? wind_speed_200hPa { get; set; }
+        public double[]? wind_speed_150hPa { get; set; }
+        public double[]? wind_speed_100hPa { get; set; }
+        public double[]? wind_speed_50hPa { get; set; }
+        public double[]? wind_direction_1000hPa { get; set; }
+        public double[]? wind_direction_925hPa { get; set; }
+        public double[]? wind_direction_850hPa { get; set; }
+        public double[]? wind_direction_700hPa { get; set; }
+        public double[]? wind_direction_600hPa { get; set; }
+        public double[]? wind_direction_500hPa { get; set; }
+        public double[]? wind_direction_400hPa { get; set; }
+        public double[]? wind_direction_300hPa { get; set; }
+        public double[]? wind_direction_250hPa { get; set; }
+        public double[]? wind_direction_200hPa { get; set; }
+        public double[]? wind_direction_150hPa { get; set; }
+        public double[]? wind_direction_100hPa { get; set; }
+        public double[]? wind_direction_50hPa { get; set; }
+        public double[]? vertical_velocity_1000hPa { get; set; }
+        public double[]? vertical_velocity_925hPa { get; set; }
+        public double[]? vertical_velocity_850hPa { get; set; }
+        public double[]? vertical_velocity_700hPa { get; set; }
+        public double[]? vertical_velocity_600hPa { get; set; }
+        public double[]? vertical_velocity_500hPa { get; set; }
+        public double[]? vertical_velocity_400hPa { get; set; }
+        public double[]? vertical_velocity_300hPa { get; set; }
+        public double[]? vertical_velocity_250hPa { get; set; }
+        public double[]? vertical_velocity_200hPa { get; set; }
+        public double[]? vertical_velocity_150hPa { get; set; }
+        public double[]? vertical_velocity_100hPa { get; set; }
+        public double[]? vertical_velocity_50hPa { get; set; }
+        public double[]? geopotential_height_1000hPa { get; set; }
+        public double[]? geopotential_height_925hPa { get; set; }
+        public double[]? geopotential_height_850hPa { get; set; }
+        public double[]? geopotential_height_700hPa { get; set; }
+        public double[]? geopotential_height_600hPa { get; set; }
+        public double[]? geopotential_height_500hPa { get; set; }
+        public double[]? geopotential_height_400hPa { get; set; }
+        public double[]? geopotential_height_300hPa { get; set; }
+        public double[]? geopotential_height_250hPa { get; set; }
+        public double[]? geopotential_height_200hPa { get; set; }
+        public double[]? geopotential_height_150hPa { get; set; }
+        public double[]? geopotential_height_100hPa { get; set; }
+        public double[]? geopotential_height_50hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
 

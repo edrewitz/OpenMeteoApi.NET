@@ -92,8 +92,61 @@ namespace OpenMeteoApiNet.GFS
         public double[]? relative_humidity_150hPa { get; set; }
         public double[]? relative_humidity_100hPa { get; set; }
         public double[]? relative_humidity_50hPa { get; set; }
+        public double[]? wind_speed_1000hPa { get; set; }
+        public double[]? wind_speed_925hPa { get; set; }
+        public double[]? wind_speed_850hPa { get; set; }
+        public double[]? wind_speed_700hPa { get; set; }
+        public double[]? wind_speed_600hPa { get; set; }
+        public double[]? wind_speed_500hPa { get; set; }
+        public double[]? wind_speed_400hPa { get; set; }
+        public double[]? wind_speed_300hPa { get; set; }
+        public double[]? wind_speed_250hPa { get; set; }
+        public double[]? wind_speed_200hPa { get; set; }
+        public double[]? wind_speed_150hPa { get; set; }
+        public double[]? wind_speed_100hPa { get; set; }
+        public double[]? wind_speed_50hPa { get; set; }
+        public double[]? wind_direction_1000hPa { get; set; }
+        public double[]? wind_direction_925hPa { get; set; }
+        public double[]? wind_direction_850hPa { get; set; }
+        public double[]? wind_direction_700hPa { get; set; }
+        public double[]? wind_direction_600hPa { get; set; }
+        public double[]? wind_direction_500hPa { get; set; }
+        public double[]? wind_direction_400hPa { get; set; }
+        public double[]? wind_direction_300hPa { get; set; }
+        public double[]? wind_direction_250hPa { get; set; }
+        public double[]? wind_direction_200hPa { get; set; }
+        public double[]? wind_direction_150hPa { get; set; }
+        public double[]? wind_direction_100hPa { get; set; }
+        public double[]? wind_direction_50hPa { get; set; }
+        public double[]? vertical_velocity_1000hPa { get; set; }
+        public double[]? vertical_velocity_925hPa { get; set; }
+        public double[]? vertical_velocity_850hPa { get; set; }
+        public double[]? vertical_velocity_700hPa { get; set; }
+        public double[]? vertical_velocity_600hPa { get; set; }
+        public double[]? vertical_velocity_500hPa { get; set; }
+        public double[]? vertical_velocity_400hPa { get; set; }
+        public double[]? vertical_velocity_300hPa { get; set; }
+        public double[]? vertical_velocity_250hPa { get; set; }
+        public double[]? vertical_velocity_200hPa { get; set; }
+        public double[]? vertical_velocity_150hPa { get; set; }
+        public double[]? vertical_velocity_100hPa { get; set; }
+        public double[]? vertical_velocity_50hPa { get; set; }
+        public double[]? geopotential_height_1000hPa { get; set; }
+        public double[]? geopotential_height_925hPa { get; set; }
+        public double[]? geopotential_height_850hPa { get; set; }
+        public double[]? geopotential_height_700hPa { get; set; }
+        public double[]? geopotential_height_600hPa { get; set; }
+        public double[]? geopotential_height_500hPa { get; set; }
+        public double[]? geopotential_height_400hPa { get; set; }
+        public double[]? geopotential_height_300hPa { get; set; }
+        public double[]? geopotential_height_250hPa { get; set; }
+        public double[]? geopotential_height_200hPa { get; set; }
+        public double[]? geopotential_height_150hPa { get; set; }
+        public double[]? geopotential_height_100hPa { get; set; }
+        public double[]? geopotential_height_50hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
+
     }
     public static class gfsHourlyPointForecastApi
     {
@@ -342,6 +395,8 @@ namespace OpenMeteoApiNet.GFS
                     data.parsedLocalTimes = data.parsedDateTimes
                                                 .Select(dt => dt.ToLocalTime())
                                                 .ToList();
+
+                
 
                     return data;
                 }
