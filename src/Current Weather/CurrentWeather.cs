@@ -21,9 +21,11 @@ namespace OpenMeteoApiNet.CurrentWeather
         public double? wind_speed_10m { get; set; }
         public double? wind_direction_10m { get; set; }
         public double? wind_gusts_10m { get; set; }
+        public double? weather_code { get; set; }
+        public double? rain { get; set; }
+        public double? showers { get; set; }
         public DateTime? localTime { get; set; }
     }
-
     public static class currentWeatherApi
     {
         public static async Task<currentWeather?> GetPointData(string latitude,
@@ -84,6 +86,9 @@ namespace OpenMeteoApiNet.CurrentWeather
                 "wind_speed_10m"
                 "wind_direction_10m"
                 "wind_gusts_10m"
+                "weather_code"
+                "rain"
+                "showers"
 
           5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          * 
@@ -107,7 +112,10 @@ namespace OpenMeteoApiNet.CurrentWeather
                     "surface_pressure" ,
                     "wind_speed_10m" ,
                     "wind_direction_10m" ,
-                    "wind_gusts_10m" };
+                    "wind_gusts_10m" ,
+                    "weather_code"  ,
+                    "rain"  ,
+                    "showers"};
             }
             else
             {

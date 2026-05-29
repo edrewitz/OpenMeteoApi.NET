@@ -23,9 +23,9 @@ namespace OpenMeteoApiNet.NBM
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
     }
-    public static class nbmHourlyPointForecastApi
+    public static class nbmHourlyForecastApi
     {
-        public static async Task<modelParams?> GetData(string latitude,
+        public static async Task<modelParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",

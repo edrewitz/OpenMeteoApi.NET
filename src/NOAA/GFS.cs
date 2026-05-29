@@ -29,6 +29,8 @@ namespace OpenMeteoApiNet.GFS
         public double[]? evapotranspiration { get; set; }
         public double[]? et0_fao_evapotranspiration { get; set; }
         public double[]? vapour_pressure_deficit { get; set; }
+        public double? weather_code { get; set; }
+        public double? showers { get; set; }
         public double[]? wind_speed_10m { get; set; }
         public double[]? wind_speed_80m { get; set; }
         public double[]? wind_speed_120m { get; set; }
@@ -145,9 +147,9 @@ namespace OpenMeteoApiNet.GFS
         public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
-    public static class gfsHourlyPointForecastApi
+    public static class gfsHourlyForecastApi
     {
-        public static async Task<modelParams?> GetData(string latitude,
+        public static async Task<modelParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
@@ -200,6 +202,8 @@ namespace OpenMeteoApiNet.GFS
                 "precipitation" 
                 "rain"
                 "snow"  
+                "weather_code"
+                "showers"
                 "snowfall" 
                 "snow_depth" 
                 "pressure_msl" 
@@ -344,6 +348,8 @@ namespace OpenMeteoApiNet.GFS
                                     "apparent_temperature" ,
                                     "precipitation" ,
                                     "snowfall" ,
+                                    "weather_code" ,
+                                    "showers" ,
                                     "snow_depth" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
