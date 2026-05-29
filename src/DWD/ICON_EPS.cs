@@ -5,35 +5,63 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NBM
+namespace OpenMeteoApiNet.ICON_EPS
 {
-    public class modelParams
+    public class Temperature2m
     {
         public string[]? time { get; set; }
         public double[]? temperature_2m { get; set; }
-        public double[]? cape { get; set; }
-        public double[]? precipitation { get; set; }
-        public double[]? snowfall { get; set; }
-        public double[]? surface_pressure { get; set; }
-        public double[]? visibility { get; set; }
-        public double[]? wind_speed_10m { get; set; }
-        public double[]? wind_speed_80m { get; set; }
-        public double[]? wind_direction_10m { get; set; }
-        public double[]? wind_direction_80m { get; set; }
+        public double[]? temperature_2m_member01 { get; set; }
+        public double[]? temperature_2m_member02 { get; set; }
+        public double[]? temperature_2m_member03 { get; set; }
+        public double[]? temperature_2m_member04 { get; set; }
+        public double[]? temperature_2m_member05 { get; set; }
+        public double[]? temperature_2m_member06 { get; set; }
+        public double[]? temperature_2m_member07 { get; set; }
+        public double[]? temperature_2m_member08 { get; set; }
+        public double[]? temperature_2m_member09 { get; set; }
+        public double[]? temperature_2m_member10 { get; set; }
+        public double[]? temperature_2m_member11 { get; set; }
+        public double[]? temperature_2m_member12 { get; set; }
+        public double[]? temperature_2m_member13 { get; set; }
+        public double[]? temperature_2m_member14 { get; set; }
+        public double[]? temperature_2m_member15 { get; set; }
+        public double[]? temperature_2m_member16 { get; set; }
+        public double[]? temperature_2m_member17 { get; set; }
+        public double[]? temperature_2m_member18 { get; set; }
+        public double[]? temperature_2m_member19 { get; set; }
+        public double[]? temperature_2m_member20 { get; set; }
+        public double[]? temperature_2m_member21 { get; set; }
+        public double[]? temperature_2m_member22 { get; set; }
+        public double[]? temperature_2m_member23 { get; set; }
+        public double[]? temperature_2m_member24 { get; set; }
+        public double[]? temperature_2m_member25 { get; set; }
+        public double[]? temperature_2m_member26 { get; set; }
+        public double[]? temperature_2m_member27 { get; set; }
+        public double[]? temperature_2m_member28 { get; set; }
+        public double[]? temperature_2m_member29 { get; set; }
+        public double[]? temperature_2m_member30 { get; set; }
+        public double[]? temperature_2m_member31 { get; set; }
+        public double[]? temperature_2m_member32 { get; set; }
+        public double[]? temperature_2m_member33 { get; set; }
+        public double[]? temperature_2m_member34 { get; set; }
+        public double[]? temperature_2m_member35 { get; set; }
+        public double[]? temperature_2m_member36 { get; set; }
+        public double[]? temperature_2m_member37 { get; set; }
+        public double[]? temperature_2m_member38 { get; set; }
+        public double[]? temperature_2m_member39 { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
+
     }
-    public static class nbmHourlyForecastApi
+    public static class iconEPSTemperature2mApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<Temperature2m?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          string temperatureUnit = "fahrenheit",
-                                                         string windSpeedUnit = "mph",
-                                                         string precipitationUnit = "inch",
-                                                         string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns DWD ICON EPS 2-Meter Temperature Forecast (Ensemble Members) from the Open-Meteo API.
          * 
          * Required Arguments:
          * 
@@ -51,76 +79,22 @@ namespace OpenMeteoApiNet.NBM
          *      1) fahrenheit [Fahrenheit]
          *      2) celsius [Celsius]
          *      
-         * 2) windSpeedUnit (string) - Default="mph". The units for the wind speed data. 
-         * 
-         *      Valid Units
-         *      -----------
-         *      1) mph (Miles Per Hour)
-         *      2) ms (Meters Per Second)
-         *      3) kmh (Kilometers Per Hour)
-         *      4) kn (Knots)
-         *      
-         * 3) precipitationUnit (string) - Default="inch". The units for the precipitation data.
-         * 
-         *      Valid Units
-         *      -----------
-         *      1) inch [Inches]
-         *      2) mm [Millimeters]
-         *      
-         * 4) variables (string[]) - Optional list of current variables to request. Default is all variables.
-         * 
-         *      Variables
-         *      ---------
-         *      "temperature_2m" 
-                "cape" 
-                "precipitation" 
-                "snowfall" 
-                "surface_pressure" 
-                "visibility" 
-                "wind_speed_10m" 
-                "wind_speed_80m" 
-                "wind_direction_10m" 
-                "wind_direction_80m" 
-
-          5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
+          2) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          *      
          * 
          * Returns
          * -------
          * 
-         * The NBM Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The ICON EPS 2-Meter Temperature Forecast (Ensemble Members) for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
 
-            // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
-            if (variables == null || variables.Length == 0)
-            {
-                variables = new[] { "temperature_2m" ,
-                                    "cape" ,
-                                    "precipitation" ,
-                                    "snowfall" ,
-                                    "surface_pressure" ,
-                                    "visibility" ,
-                                    "wind_speed_10m" ,
-                                    "wind_speed_80m" ,
-                                    "wind_direction_10m" ,
-                                    "wind_direction_80m" };
-            }
-            else
-            {
-
-            }
-
-            // Build the 'hourly' query parameter from the variables array.
-            var modelParams = string.Join(",", variables);
-
             // Open-Meto API Call URL
-            string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
-                $"&hourly={modelParams}" +
-                $"&models=ncep_nbm_conus" +
-                $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
-
+            string url = $"https://ensemble-api.open-meteo.com/v1/ensemble?latitude={latitude}&longitude={longitude}" +
+                $"&hourly=temperature_2m" +
+                $"&models=icon_seamless_eps" +
+                $"&temperature_unit={temperatureUnit}";
             // Create HTTP client
             HttpClient httpClient;
 
@@ -194,13 +168,19 @@ namespace OpenMeteoApiNet.NBM
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our iconParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<Temperature2m>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");
                     return null;
                 }
+
+                // Extract the time attribute which is in the form of a string.
+                var time = data.time;
+
+                // Convert the time string to a DateTime object.
+                var dateTimeList = new List<DateTime>();
 
                 // Convert the DateTime object to local time.
                 if (data != null)
@@ -215,15 +195,13 @@ namespace OpenMeteoApiNet.NBM
 
                     return data;
                 }
-
                 else
                 {
-                    Console.WriteLine($"NBM Data Not Available At This Time");
+                    Console.WriteLine($"ICON Data Not Available At This Time");
                     return null;
-                }
 
+                }
             }
         }
     }
 }
-

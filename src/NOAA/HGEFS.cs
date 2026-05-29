@@ -298,7 +298,7 @@ namespace OpenMeteoApiNet.HGEFS
          * Returns
          * -------
          * 
-         * The current weather data in the form of a JSON object. 
+         * The HGEFS Ensemble Mean Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {

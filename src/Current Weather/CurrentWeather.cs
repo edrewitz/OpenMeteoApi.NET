@@ -222,9 +222,7 @@ namespace OpenMeteoApiNet.CurrentWeather
                     return data;
 
                 }
-
-            }
-            
+            }    
         }
     }
 }
