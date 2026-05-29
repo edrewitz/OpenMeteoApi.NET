@@ -802,7 +802,7 @@ namespace OpenMeteoApiNet.ARPEGE
 
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=arpege_world" +
+                $"&models=best_match" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client
