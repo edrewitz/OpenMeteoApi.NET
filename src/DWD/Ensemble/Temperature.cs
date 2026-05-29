@@ -5,10 +5,12 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.ICON_EPS
+namespace OpenMeteoApiNet.ICON_EPS_Temperature
 {
+
     public class Temperature2m
     {
+        // Make JSON-bound properties public so System.Text.Json can populate them
         public string[]? time { get; set; }
         public double[]? temperature_2m { get; set; }
         public double[]? temperature_2m_member01 { get; set; }
@@ -56,7 +58,7 @@ namespace OpenMeteoApiNet.ICON_EPS
     }
     public static class iconEPSTemperature2mApi
     {
-        public static async Task<Temperature2m?> GetPointForecast(string latitude,
+    public static async Task<Temperature2m?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          string temperatureUnit = "fahrenheit",
                                                          string? proxy = null)
