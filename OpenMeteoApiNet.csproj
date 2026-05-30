@@ -2,16 +2,35 @@
 
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
+		<Description>A C# Interface For The Open-Meteo API.</Description>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>OpenMeteoApiNet</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Eric J. Drewitz</Authors>
 		<Product>OpenMeteoApiNet</Product>
+		<RepositoryUrl>https://github.com/edrewitz/OpenMeteoApi.NET</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReleaseNotes>
+			This Initial Release of OpenMeteoApiNet includes the following datasets:
+			- Current Weather (Global Model Composite)
+			- Global Forecast System (GFS)
+			- Global Ensemble Forecast System (GEFS)
+			- AI Global Forecast System (AIGFS)
+			- Hybrid Global Ensemble Forecast System (HGEFS)
+			- CMC GEM
+			- ECMWF IFS
+			- ECMWF AIFS
+			- DWD ICON
+			- DWD ICON EPS
+			- Meteo France ARPEGE
+		</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="src\ECMWF\" />
+		<None Include="LICENSE.txt" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
