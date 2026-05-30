@@ -9,105 +9,105 @@ namespace OpenMeteoApiNet.HGEFS
 {
     public class modelParams
     {
-        public string[]? time { get; set; }
-        public double[]? temperature_2m { get; set; }
-        public double[]? cloud_cover { get; set; }
-        public double[]? cloud_cover_low { get; set; }
-        public double[]? cloud_cover_mid { get; set; }
-        public double[]? cloud_cover_high { get; set; }
-        public double[]? precipitation { get; set; }
-        public double[]? pressure_msl { get; set; }
-        public double[]? temperature_1000hPa { get; set; }
-        public double[]? temperature_925hPa { get; set; }
-        public double[]? temperature_850hPa { get; set; }
-        public double[]? temperature_700hPa { get; set; }
-        public double[]? temperature_600hPa { get; set; }
-        public double[]? temperature_500hPa { get; set; }
-        public double[]? temperature_400hPa { get; set; }
-        public double[]? temperature_300hPa { get; set; }
-        public double[]? temperature_250hPa { get; set; }
-        public double[]? temperature_200hPa { get; set; }
-        public double[]? temperature_150hPa { get; set; }
-        public double[]? temperature_100hPa { get; set; }
-        public double[]? temperature_50hPa { get; set; }
-        public double[]? dew_point_1000hPa { get; set; }
-        public double[]? dew_point_925hPa { get; set; }
-        public double[]? dew_point_850hPa { get; set; }
-        public double[]? dew_point_700hPa { get; set; }
-        public double[]? dew_point_600hPa { get; set; }
-        public double[]? dew_point_500hPa { get; set; }
-        public double[]? dew_point_400hPa { get; set; }
-        public double[]? dew_point_300hPa { get; set; }
-        public double[]? dew_point_250hPa { get; set; }
-        public double[]? dew_point_200hPa { get; set; }
-        public double[]? dew_point_150hPa { get; set; }
-        public double[]? dew_point_100hPa { get; set; }
-        public double[]? dew_point_50hPa { get; set; }
-        public double[]? relative_humidity_1000hPa { get; set; }
-        public double[]? relative_humidity_925hPa { get; set; }
-        public double[]? relative_humidity_850hPa { get; set; }
-        public double[]? relative_humidity_700hPa { get; set; }
-        public double[]? relative_humidity_600hPa { get; set; }
-        public double[]? relative_humidity_500hPa { get; set; }
-        public double[]? relative_humidity_400hPa { get; set; }
-        public double[]? relative_humidity_300hPa { get; set; }
-        public double[]? relative_humidity_250hPa { get; set; }
-        public double[]? relative_humidity_200hPa { get; set; }
-        public double[]? relative_humidity_150hPa { get; set; }
-        public double[]? relative_humidity_100hPa { get; set; }
-        public double[]? relative_humidity_50hPa { get; set; }
-        public double[]? wind_speed_1000hPa { get; set; }
-        public double[]? wind_speed_925hPa { get; set; }
-        public double[]? wind_speed_850hPa { get; set; }
-        public double[]? wind_speed_700hPa { get; set; }
-        public double[]? wind_speed_600hPa { get; set; }
-        public double[]? wind_speed_500hPa { get; set; }
-        public double[]? wind_speed_400hPa { get; set; }
-        public double[]? wind_speed_300hPa { get; set; }
-        public double[]? wind_speed_250hPa { get; set; }
-        public double[]? wind_speed_200hPa { get; set; }
-        public double[]? wind_speed_150hPa { get; set; }
-        public double[]? wind_speed_100hPa { get; set; }
-        public double[]? wind_speed_50hPa { get; set; }
-        public double[]? wind_direction_1000hPa { get; set; }
-        public double[]? wind_direction_925hPa { get; set; }
-        public double[]? wind_direction_850hPa { get; set; }
-        public double[]? wind_direction_700hPa { get; set; }
-        public double[]? wind_direction_600hPa { get; set; }
-        public double[]? wind_direction_500hPa { get; set; }
-        public double[]? wind_direction_400hPa { get; set; }
-        public double[]? wind_direction_300hPa { get; set; }
-        public double[]? wind_direction_250hPa { get; set; }
-        public double[]? wind_direction_200hPa { get; set; }
-        public double[]? wind_direction_150hPa { get; set; }
-        public double[]? wind_direction_100hPa { get; set; }
-        public double[]? wind_direction_50hPa { get; set; }
-        public double[]? vertical_velocity_1000hPa { get; set; }
-        public double[]? vertical_velocity_925hPa { get; set; }
-        public double[]? vertical_velocity_850hPa { get; set; }
-        public double[]? vertical_velocity_700hPa { get; set; }
-        public double[]? vertical_velocity_600hPa { get; set; }
-        public double[]? vertical_velocity_500hPa { get; set; }
-        public double[]? vertical_velocity_400hPa { get; set; }
-        public double[]? vertical_velocity_300hPa { get; set; }
-        public double[]? vertical_velocity_250hPa { get; set; }
-        public double[]? vertical_velocity_200hPa { get; set; }
-        public double[]? vertical_velocity_150hPa { get; set; }
-        public double[]? vertical_velocity_100hPa { get; set; }
-        public double[]? vertical_velocity_50hPa { get; set; }
-        public double[]? geopotential_height_1000hPa { get; set; }
-        public double[]? geopotential_height_925hPa { get; set; }
-        public double[]? geopotential_height_850hPa { get; set; }
-        public double[]? geopotential_height_700hPa { get; set; }
-        public double[]? geopotential_height_600hPa { get; set; }
-        public double[]? geopotential_height_500hPa { get; set; }
-        public double[]? geopotential_height_400hPa { get; set; }
-        public double[]? geopotential_height_300hPa { get; set; }
-        public double[]? geopotential_height_250hPa { get; set; }
-        public double[]? geopotential_height_200hPa { get; set; }
-        public double[]? geopotential_height_150hPa { get; set; }
-        public double[]? geopotential_height_100hPa { get; set; }
-        public double[]? geopotential_height_50hPa { get; set; }
+        public string?[]? time { get; set; }
+        public double?[]? temperature_2m { get; set; }
+        public double?[]? cloud_cover { get; set; }
+        public double?[]? cloud_cover_low { get; set; }
+        public double?[]? cloud_cover_mid { get; set; }
+        public double?[]? cloud_cover_high { get; set; }
+        public double?[]? precipitation { get; set; }
+        public double?[]? pressure_msl { get; set; }
+        public double?[]? temperature_1000hPa { get; set; }
+        public double?[]? temperature_925hPa { get; set; }
+        public double?[]? temperature_850hPa { get; set; }
+        public double?[]? temperature_700hPa { get; set; }
+        public double?[]? temperature_600hPa { get; set; }
+        public double?[]? temperature_500hPa { get; set; }
+        public double?[]? temperature_400hPa { get; set; }
+        public double?[]? temperature_300hPa { get; set; }
+        public double?[]? temperature_250hPa { get; set; }
+        public double?[]? temperature_200hPa { get; set; }
+        public double?[]? temperature_150hPa { get; set; }
+        public double?[]? temperature_100hPa { get; set; }
+        public double?[]? temperature_50hPa { get; set; }
+        public double?[]? dew_point_1000hPa { get; set; }
+        public double?[]? dew_point_925hPa { get; set; }
+        public double?[]? dew_point_850hPa { get; set; }
+        public double?[]? dew_point_700hPa { get; set; }
+        public double?[]? dew_point_600hPa { get; set; }
+        public double?[]? dew_point_500hPa { get; set; }
+        public double?[]? dew_point_400hPa { get; set; }
+        public double?[]? dew_point_300hPa { get; set; }
+        public double?[]? dew_point_250hPa { get; set; }
+        public double?[]? dew_point_200hPa { get; set; }
+        public double?[]? dew_point_150hPa { get; set; }
+        public double?[]? dew_point_100hPa { get; set; }
+        public double?[]? dew_point_50hPa { get; set; }
+        public double?[]? relative_humidity_1000hPa { get; set; }
+        public double?[]? relative_humidity_925hPa { get; set; }
+        public double?[]? relative_humidity_850hPa { get; set; }
+        public double?[]? relative_humidity_700hPa { get; set; }
+        public double?[]? relative_humidity_600hPa { get; set; }
+        public double?[]? relative_humidity_500hPa { get; set; }
+        public double?[]? relative_humidity_400hPa { get; set; }
+        public double?[]? relative_humidity_300hPa { get; set; }
+        public double?[]? relative_humidity_250hPa { get; set; }
+        public double?[]? relative_humidity_200hPa { get; set; }
+        public double?[]? relative_humidity_150hPa { get; set; }
+        public double?[]? relative_humidity_100hPa { get; set; }
+        public double?[]? relative_humidity_50hPa { get; set; }
+        public double?[]? wind_speed_1000hPa { get; set; }
+        public double?[]? wind_speed_925hPa { get; set; }
+        public double?[]? wind_speed_850hPa { get; set; }
+        public double?[]? wind_speed_700hPa { get; set; }
+        public double?[]? wind_speed_600hPa { get; set; }
+        public double?[]? wind_speed_500hPa { get; set; }
+        public double?[]? wind_speed_400hPa { get; set; }
+        public double?[]? wind_speed_300hPa { get; set; }
+        public double?[]? wind_speed_250hPa { get; set; }
+        public double?[]? wind_speed_200hPa { get; set; }
+        public double?[]? wind_speed_150hPa { get; set; }
+        public double?[]? wind_speed_100hPa { get; set; }
+        public double?[]? wind_speed_50hPa { get; set; }
+        public double?[]? wind_direction_1000hPa { get; set; }
+        public double?[]? wind_direction_925hPa { get; set; }
+        public double?[]? wind_direction_850hPa { get; set; }
+        public double?[]? wind_direction_700hPa { get; set; }
+        public double?[]? wind_direction_600hPa { get; set; }
+        public double?[]? wind_direction_500hPa { get; set; }
+        public double?[]? wind_direction_400hPa { get; set; }
+        public double?[]? wind_direction_300hPa { get; set; }
+        public double?[]? wind_direction_250hPa { get; set; }
+        public double?[]? wind_direction_200hPa { get; set; }
+        public double?[]? wind_direction_150hPa { get; set; }
+        public double?[]? wind_direction_100hPa { get; set; }
+        public double?[]? wind_direction_50hPa { get; set; }
+        public double?[]? vertical_velocity_1000hPa { get; set; }
+        public double?[]? vertical_velocity_925hPa { get; set; }
+        public double?[]? vertical_velocity_850hPa { get; set; }
+        public double?[]? vertical_velocity_700hPa { get; set; }
+        public double?[]? vertical_velocity_600hPa { get; set; }
+        public double?[]? vertical_velocity_500hPa { get; set; }
+        public double?[]? vertical_velocity_400hPa { get; set; }
+        public double?[]? vertical_velocity_300hPa { get; set; }
+        public double?[]? vertical_velocity_250hPa { get; set; }
+        public double?[]? vertical_velocity_200hPa { get; set; }
+        public double?[]? vertical_velocity_150hPa { get; set; }
+        public double?[]? vertical_velocity_100hPa { get; set; }
+        public double?[]? vertical_velocity_50hPa { get; set; }
+        public double?[]? geopotential_height_1000hPa { get; set; }
+        public double?[]? geopotential_height_925hPa { get; set; }
+        public double?[]? geopotential_height_850hPa { get; set; }
+        public double?[]? geopotential_height_700hPa { get; set; }
+        public double?[]? geopotential_height_600hPa { get; set; }
+        public double?[]? geopotential_height_500hPa { get; set; }
+        public double?[]? geopotential_height_400hPa { get; set; }
+        public double?[]? geopotential_height_300hPa { get; set; }
+        public double?[]? geopotential_height_250hPa { get; set; }
+        public double?[]? geopotential_height_200hPa { get; set; }
+        public double?[]? geopotential_height_150hPa { get; set; }
+        public double?[]? geopotential_height_100hPa { get; set; }
+        public double?[]? geopotential_height_50hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
 
@@ -116,6 +116,7 @@ namespace OpenMeteoApiNet.HGEFS
     {
         public static async Task<modelParams?> GetPointForecast(string latitude,
                                                          string longitude,
+                                                         int days = 7,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
@@ -132,7 +133,9 @@ namespace OpenMeteoApiNet.HGEFS
          * 
          * Optional Arguments:
          * 
-         * 1) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
+         * 1) days (int) - Default=7. The number of days to forecast, up to a maximum of 10 days.
+         * 
+         * 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
          * 
          *      Valid Units
          *      -----------
@@ -140,7 +143,7 @@ namespace OpenMeteoApiNet.HGEFS
          *      1) fahrenheit [Fahrenheit]
          *      2) celsius [Celsius]
          *      
-         * 2) windSpeedUnit (string) - Default="mph". The units for the wind speed data. 
+         * 3) windSpeedUnit (string) - Default="mph". The units for the wind speed data. 
          * 
          *      Valid Units
          *      -----------
@@ -149,14 +152,14 @@ namespace OpenMeteoApiNet.HGEFS
          *      3) kmh (Kilometers Per Hour)
          *      4) kn (Knots)
          *      
-         * 3) precipitationUnit (string) - Default="inch". The units for the precipitation data.
+         * 4) precipitationUnit (string) - Default="inch". The units for the precipitation data.
          * 
          *      Valid Units
          *      -----------
          *      1) inch [Inches]
          *      2) mm [Millimeters]
          *      
-         * 4) variables (string[]) - Optional list of current variables to request. Default is all variables.
+         * 5) variables (string[]) - Optional list of current variables to request. Default is all variables.
          * 
          *      Variables
          *      ---------
@@ -292,7 +295,7 @@ namespace OpenMeteoApiNet.HGEFS
                 "geopotential_height_100hPa" 
                 "geopotential_height_50hPa" 
 
-          5) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
+          6) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
          *      
          * 
          * Returns
@@ -440,12 +443,18 @@ namespace OpenMeteoApiNet.HGEFS
 
             }
 
+            if (days > 10)
+            {
+                Console.WriteLine("The 'days' parameter cannot exceed 10. Setting 'days' to 10.");
+                days = 10;
+            }
+
             // Build the 'hourly' query parameter from the variables array.
             var modelParams = string.Join(",", variables);
 
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=ncep_hgefs025_ensemble_mean" +
+                $"&models=ncep_hgefs025_ensemble_mean&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client
