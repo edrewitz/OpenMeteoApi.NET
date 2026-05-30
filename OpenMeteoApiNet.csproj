@@ -11,6 +11,7 @@
 		<Product>OpenMeteoApiNet</Product>
 		<RepositoryUrl>https://github.com/edrewitz/OpenMeteoApi.NET</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageReleaseNotes>
 			This Initial Release of OpenMeteoApiNet includes the following datasets:
