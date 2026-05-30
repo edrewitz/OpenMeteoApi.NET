@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.HGEFS
 {
-    public class modelParams
+    public class hgefsParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -114,7 +114,7 @@ namespace OpenMeteoApiNet.HGEFS
     }
     public static class hgefsHourlyForecastApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<hgefsParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
@@ -530,8 +530,8 @@ namespace OpenMeteoApiNet.HGEFS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our hgefsParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<hgefsParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");

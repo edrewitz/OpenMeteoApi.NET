@@ -985,7 +985,7 @@ namespace OpenMeteoApiNet.ICON_EPS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our iconParams class. If deserialization fails, print an error message and return.
+                // Deserialize the "hourly" property into our iconEPSParams class. If deserialization fails, print an error message and return.
                 var data = JsonSerializer.Deserialize<iconEPSParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {

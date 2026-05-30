@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.NBM
 {
-    public class modelParams
+    public class nbmParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -25,7 +25,7 @@ namespace OpenMeteoApiNet.NBM
     }
     public static class nbmHourlyForecastApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<nbmParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
@@ -203,8 +203,8 @@ namespace OpenMeteoApiNet.NBM
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our nbmParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<nbmParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");

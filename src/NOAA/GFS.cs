@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.GFS
 {
-    public class modelParams
+    public class gfsParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -187,7 +187,7 @@ namespace OpenMeteoApiNet.GFS
     }
     public static class gfsHourlyForecastApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<gfsParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7 ,
                                                          string temperatureUnit = "fahrenheit",
@@ -685,8 +685,8 @@ namespace OpenMeteoApiNet.GFS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our gfsParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<gfsParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");

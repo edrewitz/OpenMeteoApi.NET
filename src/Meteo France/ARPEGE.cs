@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.ARPEGE
 {
-    public class modelParams
+    public class arpegeParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -254,7 +254,7 @@ namespace OpenMeteoApiNet.ARPEGE
     }
     public static class arpegeHourlyForecastApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<arpegeParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 4 ,
                                                          string temperatureUnit = "fahrenheit",
@@ -886,8 +886,8 @@ namespace OpenMeteoApiNet.ARPEGE
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our arpegeParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<arpegeParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");

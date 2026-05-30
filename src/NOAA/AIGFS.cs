@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.AIGFS
 {
-    public class modelParams
+    public class aigfsParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -114,7 +114,7 @@ namespace OpenMeteoApiNet.AIGFS
     }
     public static class aigfsHourlyForecastApi
     {
-        public static async Task<modelParams?> GetPointForecast(string latitude,
+        public static async Task<aigfsParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
@@ -529,8 +529,8 @@ namespace OpenMeteoApiNet.AIGFS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our modelParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<modelParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our aigfsParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<aigfsParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");
