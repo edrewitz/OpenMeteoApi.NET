@@ -5,7 +5,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.ICON
+namespace OpenMeteoApiNet.src.DWD
 {
     public class iconParams
     {
