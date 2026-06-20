@@ -2,9 +2,7 @@
  * (C) Eric J. Drewitz 2026
  */
 
-using OpenMeteoApiNet.src.DWD;
 using System.Net;
-using System.Reflection;
 using System.Text.Json;
 
 namespace OpenMeteoApiNet.ECMWF_IFS
