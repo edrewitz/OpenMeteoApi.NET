@@ -165,7 +165,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS_HRES
          * 
          * Optional Arguments:
          * 
-         * 1) days (int) - Default=15. The number of days to retrieve forecast data for, starting from the current day. Maximum is 15 days.
+         * 1) days (int) - Default=14. The number of days to retrieve forecast data for, starting from the current day. Maximum is 14 days.
          * 
          * 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
          * 

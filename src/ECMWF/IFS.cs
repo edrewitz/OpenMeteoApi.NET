@@ -148,7 +148,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
     {
         public static async Task<ifsParams?> GetPointForecast(string latitude,
                                                          string longitude,
-                                                         int days = 10,
+                                                         int days = 14,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
@@ -165,7 +165,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
          * 
          * Optional Arguments:
          * 
-         * 1) days (int) - Default=10. The number of days to retrieve forecast data for, starting from the current day. Maximum is 10 days.
+         * 1) days (int) - Default=14. The number of days to retrieve forecast data for, starting from the current day. Maximum is 14 days.
          * 
          * 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
          * 
@@ -338,10 +338,10 @@ namespace OpenMeteoApiNet.ECMWF_IFS
          */
 
         {
-            if (days > 10)
+            if (days > 14)
             {
-                Console.WriteLine("The maximum number of days for the forecast is 10. Setting 'days' to 10.");
-                days = 10;
+                Console.WriteLine("The maximum number of days for the forecast is 14. Setting 'days' to 14.");
+                days = 14;
             }
 
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
