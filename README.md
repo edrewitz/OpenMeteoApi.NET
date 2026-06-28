@@ -5,7 +5,7 @@
 
 ## Code Example
 
-***OpenMeteoApi.NET Console Application Code***
+***Example OpenMeteoApi.NET Console Application Code***
 
 ```C#
 /*
@@ -116,6 +116,6 @@ namespace Program
 ```
 
 
-***OpenMeteoApi.NET Console Application Output***
+***Example OpenMeteoApi.NET Console Application Output***
 
 <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20Console%20App.png?raw=true" width="1000" alt="Alt text" />
