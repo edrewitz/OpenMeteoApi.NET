@@ -369,7 +369,7 @@ namespace OpenMeteoApiNet.ICON
                 "geopotential_height_30hPa" 
 
 
-          6) proxy (string) - Optional proxy server URL in the form of "https://proxyserver:port". Default is null (no proxy).
+          6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
          *      
          * 
          * Returns
