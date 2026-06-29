@@ -2,7 +2,13 @@
 
 ## `class currentWeatherApi`
 
-### `GetPointData()`
+***public static async Task<currentWeather?> GetPointData(string latitude,
+                                                 string longitude,
+                                                 string temperatureUnit = "fahrenheit",
+                                                 string windSpeedUnit = "mph",
+                                                 string precipitationUnit = "inch",
+                                                 string[]? variables = null,
+                                                 string? proxy = null)***
 
 This function is the client that retrieves and returns the latest weather data.
 
