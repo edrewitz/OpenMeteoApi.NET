@@ -1,5 +1,9 @@
 # Deutscher Wetterdienst
 
+[`class iconHourlyForecastApi`]()
+[`class iconEPSHourlyForecastApi`]()
+
+
 ## `class iconHourlyForecastApi`
 
 ***public static async Task<iconParams?> GetPointForecast(string latitude,
