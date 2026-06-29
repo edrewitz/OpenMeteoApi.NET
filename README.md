@@ -5,13 +5,13 @@
 
 ## Code Example
 
-***Example OpenMeteoApi.NET Console Application Code***
+***Example 1 OpenMeteoApi.NET Console Application Code***
 
 ```C#
 /*
  * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
  * 
- * 1) Retrieves the latest 2-meter temperature ECMWF IFS, GFS, GEM & ICON forecast for a given latitude and longitude.
+ * - Retrieves the latest 2-meter temperature ECMWF IFS, GFS, GEM & ICON forecast for a given latitude and longitude.
  *  
  */
 using OpenMeteoApiNet.ECMWF_IFS;
@@ -22,7 +22,7 @@ using OpenMeteoApiNet.GEM;
 
 // Our main program namespace
 namespace Program
-{ 
+{
     class Program
     {
         // Our main task in our application
@@ -43,16 +43,16 @@ namespace Program
 
 
                 // Retrieve the ECMWF IFS forecast for 1 day
-                var ecmwfData = await ifsHourlyForecastApi.GetPointForecast(latitude, 
+                var ecmwfData = await ifsHourlyForecastApi.GetPointForecast(latitude,
                     longitude,
                     variables: variables,
-                    days:1);
+                    days: 1);
 
                 // Retrieve the GFS forecast for 1 day
                 var gfsData = await gfsHourlyForecastApi.GetPointForecast(latitude,
                     longitude,
                     variables: variables,
-                    days:1);
+                    days: 1);
 
                 // Retrieve the GEM forecast for 1 day
                 var gemData = await gemHourlyForecastApi.GetPointForecast(latitude,
@@ -93,12 +93,8 @@ namespace Program
 
                 // Prints the various forecasts to the console
                 for (int i = 0; i < (ecmwfData.time?.Length ?? 0); i++)
-                { 
-                    var ecmwfTime = ecmwfData.time?[i] ?? "N/A";
-                    var ecmwfTemp2m = ecmwfData.temperature_2m?[i].ToString() ?? "N/A";
-                    var gfsTemp2m = gfsData.temperature_2m?[i].ToString() ?? "N/A";
-                    var gemTemp2m = gemData.temperature_2m?[i].ToString() ?? "N/A";
-                    var iconTemp2m = iconData.temperature_2m?[i].ToString() ?? "N/A";
+                {
+                    var forecastTime = ecmwfData.time?[i] ?? "N/A";
 
                     // Rounds to the nearest whole number and converts from double to integer.
                     int ecmwfTemp2mInt = (int)Math.Round(ecmwfData.temperature_2m?[i] ?? 0);
@@ -107,7 +103,7 @@ namespace Program
                     int iconTemp2mInt = (int)Math.Round(iconData.temperature_2m?[i] ?? 0);
 
                     // Rounds to the nearest whole number and converts from double to integer
-                    Console.WriteLine($"Time: {ecmwfTime} | ECMWF IFS: {ecmwfTemp2mInt}°F | GFS: {gfsTemp2mInt}°F | GEM: {gemTemp2mInt}°F | ICON: {iconTemp2mInt}°F");
+                    Console.WriteLine($"Time: {forecastTime} | ECMWF IFS: {ecmwfTemp2mInt}°F | GFS: {gfsTemp2mInt}°F | GEM: {gemTemp2mInt}°F | ICON: {iconTemp2mInt}°F");
                 }
             }
         }
@@ -116,6 +112,82 @@ namespace Program
 ```
 
 
-***Example OpenMeteoApi.NET Console Application Output***
+***Example 1 OpenMeteoApi.NET Console Application Output***
 
 <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20Console%20App.png?raw=true" width="1000" alt="Alt text" />
+
+***Example 2 OpenMeteoApi.NET ICON EPS Application Code***
+
+```C#
+/*
+ * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
+ * 
+ * - Retrieves the latest 2-meter relative humidity for the ICON Ensemble (mean + first 5 members)
+ *  
+ */
+using OpenMeteoApiNet.ICON_EPS;
+
+
+// Our main program namespace
+namespace Program
+{ 
+    class Program
+    {
+        // Our main task in our application
+        public static async Task Main(string[] args)
+        {
+            // Continuous loop until the user manually exits the command prompt. 
+            while (true)
+            {
+                // Prompt the user for latitude and longitude
+
+                Console.WriteLine($"Enter a latitude");
+                var latitude = Console.ReadLine();
+                Console.WriteLine($"Enter a longitude");
+                var longitude = Console.ReadLine();
+
+                // Selects the variable temperature_2m
+                string[] variables = new string[] { "relative_humidity_2m" };
+
+
+                // Retrieve the ICON forecast for 1 day
+                var iconEPSData = await iconEPSHourlyForecastApi.GetPointForecast(latitude,
+                    longitude,
+                    variables: variables,
+                    days: 1);
+
+                // Prints a no data message if the API returns null.
+                if (iconEPSData == null)
+                {
+                    Console.WriteLine("No ICON EPS data returned from the API.");
+                    continue;
+                }
+
+                Console.WriteLine($"ICON EPS Forecast\n");
+
+                // Prints the various forecasts to the console
+                for (int i = 0; i < (iconEPSData.time?.Length ?? 0); i++)
+                { 
+                    var forecastTime = iconEPSData.time?[i] ?? "N/A";
+
+                    // Rounds to the nearest whole number and converts from double to integer.
+                    int RHIntMean = (int)Math.Round(iconEPSData.relative_humidity_2m?[i] ?? 0);
+                    int RHIntMember01 = (int)Math.Round(iconEPSData.relative_humidity_2m_member01?[i] ?? 0);
+                    int RHIntMember02 = (int)Math.Round(iconEPSData.relative_humidity_2m_member02?[i] ?? 0);
+                    int RHIntMember03 = (int)Math.Round(iconEPSData.relative_humidity_2m_member03?[i] ?? 0);
+                    int RHIntMember04 = (int)Math.Round(iconEPSData.relative_humidity_2m_member04?[i] ?? 0);
+                    int RHIntMember05 = (int)Math.Round(iconEPSData.relative_humidity_2m_member05?[i] ?? 0);
+
+                    // Rounds to the nearest whole number and converts from double to integer
+                    Console.WriteLine($"Time: {forecastTime} | Mean: {RHIntMean}% | M1: {RHIntMember01}% | M2: {RHIntMember02}% | M3: {RHIntMember03}% | M4: {RHIntMember04}% | M5: {RHIntMember05}%");
+                }
+            }
+        }
+    }
+}
+
+```
+
+***Example 2 OpenMeteoApi.NET Console Application Output***
+
+<img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20ICON%20EPS%20Console.png?raw=true" width="1000" alt="Alt text" />
