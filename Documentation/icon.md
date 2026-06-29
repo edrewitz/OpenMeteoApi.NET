@@ -1,6 +1,6 @@
 # Deutscher Wetterdienst
 
-[`class iconHourlyForecastApi`]()
+[`class iconHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/icon.md#class-iconhourlyforecastapi)
 
 [`class iconEPSHourlyForecastApi`]()
 
