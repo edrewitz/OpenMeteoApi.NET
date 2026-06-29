@@ -169,7 +169,7 @@ namespace OpenMeteoApiNet.GEM
                                                          string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a CMC/GEM point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -360,7 +360,7 @@ namespace OpenMeteoApiNet.GEM
          * Returns
          * -------
          * 
-         * The GFS Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The GEM Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
