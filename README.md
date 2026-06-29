@@ -11,7 +11,7 @@
 /*
  * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
  * 
- * 1) Retrieves the latest 2-meter temperature ECMWF IFS, GFS, GEM & ICON forecast for a given latitude and longitude.
+ * - Retrieves the latest 2-meter temperature ECMWF IFS, GFS, GEM & ICON forecast for a given latitude and longitude.
  *  
  */
 using OpenMeteoApiNet.ECMWF_IFS;
