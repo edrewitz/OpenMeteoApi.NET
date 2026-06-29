@@ -2,7 +2,13 @@
 
 ## `class currentWeatherApi`
 
-### `GetPointData()`
+***public static async Task<currentWeather?> GetPointData(string latitude,
+                                                 string longitude,
+                                                 string temperatureUnit = "fahrenheit",
+                                                 string windSpeedUnit = "mph",
+                                                 string precipitationUnit = "inch",
+                                                 string[]? variables = null,
+                                                 string? proxy = null)***
 
 This function is the client that retrieves and returns the latest weather data.
 
@@ -59,7 +65,6 @@ Optional Arguments:
 
 5) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
  
- Returns
- -------
+ **Returns**
  
  The current weather data in the form of a JSON object. 
