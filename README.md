@@ -187,3 +187,7 @@ namespace Program
 }
 
 ```
+
+***Example 2 OpenMeteoApi.NET Console Application Output***
+
+<img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20ICON%20EPS%20Console.png?raw=true" width="1000" alt="Alt text" />
