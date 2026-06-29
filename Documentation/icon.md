@@ -2,7 +2,7 @@
 
 [`class iconHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/icon.md#class-iconhourlyforecastapi)
 
-[`class iconEPSHourlyForecastApi`]()
+[`class iconEPSHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/icon.md#class-iconepshourlyforecastapi)
 
 
 ## `class iconHourlyForecastApi`
