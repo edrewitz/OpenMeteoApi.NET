@@ -1,4 +1,4 @@
-# Deutscher Wetterdienst
+# Deutscher Wetterdienst (DWD)
 
 [`class iconHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/icon.md#class-iconhourlyforecastapi)
 
