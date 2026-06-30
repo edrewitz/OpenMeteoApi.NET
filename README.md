@@ -2,10 +2,39 @@
 
 <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/icons/opem%20meteo%20logo.jpg?raw=true" width="500" alt="Alt text" /> <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/icons/csharplogo.png?raw=true" width="329" alt="Alt text" />
 
+***(C) Eric J. Drewitz 2026***
 
-## Code Example
+**OpenMeteoApi.NET is a C# package that provides an interface with the Open-Meteo API to access various types of weather data.** 
 
-***Example 1 OpenMeteoApi.NET Console Application Code***
+## Table of Contents
+
+[***Documentation***]()
+
+[***Code Example 1***]()
+
+[***Code Example 2***]()
+
+## Documentation
+
+### Forecast Data
+
+[***NOAA/NCEP Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#national-oceanic-and-atmospheric-administration-noaa)
+
+[***ECMWF Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#european-centre-for-medium-range-weather-forecasts-ecmwf)
+
+[***CMC Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#canadian-meteorological-centre-cmc)
+
+[***DWD Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/dwd.md#deutscher-wetterdienst-dwd)
+
+[***Meteo France Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/meteo%20france.md#meteo-france)
+
+### Current Analysis
+
+[***Current Weather***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/currentWeather.md#current-weather)
+
+## Code Examples
+
+### ***Example 1 OpenMeteoApi.NET Console Application Code***
 
 ```C#
 /*
@@ -116,7 +145,7 @@ namespace Program
 
 <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20Console%20App.png?raw=true" width="1000" alt="Alt text" />
 
-***Example 2 OpenMeteoApi.NET ICON EPS Application Code***
+### ***Example 2 OpenMeteoApi.NET ICON EPS Application Code***
 
 ```C#
 /*
