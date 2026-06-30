@@ -8,11 +8,11 @@
 
 ## Table of Contents
 
-[***Documentation***]()
+[***Documentation***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/README.md#documentation)
 
-[***Code Example 1***]()
+[***Code Example 1***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/README.md#example-1-openmeteoapinet-console-application-code)
 
-[***Code Example 2***]()
+[***Code Example 2***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/README.md#example-2-openmeteoapinet-icon-eps-application-code)
 
 ## Documentation
 
