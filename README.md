@@ -122,7 +122,7 @@ namespace Program
 /*
  * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
  * 
- * - Retrieves the latest 2-meter relative humidity for the ICON Ensemble (mean + first 5 members)
+ * - Retrieves the latest 2-meter relative humidity for the ICON Ensemble (control + first 5 members)
  *  
  */
 using OpenMeteoApiNet.ICON_EPS;
@@ -130,7 +130,7 @@ using OpenMeteoApiNet.ICON_EPS;
 
 // Our main program namespace
 namespace Program
-{ 
+{
     class Program
     {
         // Our main task in our application
@@ -167,11 +167,11 @@ namespace Program
 
                 // Prints the various forecasts to the console
                 for (int i = 0; i < (iconEPSData.time?.Length ?? 0); i++)
-                { 
+                {
                     var forecastTime = iconEPSData.time?[i] ?? "N/A";
 
                     // Rounds to the nearest whole number and converts from double to integer.
-                    int RHIntMean = (int)Math.Round(iconEPSData.relative_humidity_2m?[i] ?? 0);
+                    int RHIntControl = (int)Math.Round(iconEPSData.relative_humidity_2m?[i] ?? 0);
                     int RHIntMember01 = (int)Math.Round(iconEPSData.relative_humidity_2m_member01?[i] ?? 0);
                     int RHIntMember02 = (int)Math.Round(iconEPSData.relative_humidity_2m_member02?[i] ?? 0);
                     int RHIntMember03 = (int)Math.Round(iconEPSData.relative_humidity_2m_member03?[i] ?? 0);
@@ -179,7 +179,7 @@ namespace Program
                     int RHIntMember05 = (int)Math.Round(iconEPSData.relative_humidity_2m_member05?[i] ?? 0);
 
                     // Rounds to the nearest whole number and converts from double to integer
-                    Console.WriteLine($"Time: {forecastTime} | Mean: {RHIntMean}% | M1: {RHIntMember01}% | M2: {RHIntMember02}% | M3: {RHIntMember03}% | M4: {RHIntMember04}% | M5: {RHIntMember05}%");
+                    Console.WriteLine($"Time: {forecastTime} | Control: {RHIntControl}% | M1: {RHIntMember01}% | M2: {RHIntMember02}% | M3: {RHIntMember03}% | M4: {RHIntMember04}% | M5: {RHIntMember05}%");
                 }
             }
         }
