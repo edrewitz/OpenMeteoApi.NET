@@ -334,7 +334,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
          * Returns
          * -------
          * 
-         * The ICON Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The ECMWF IFS Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
