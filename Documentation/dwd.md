@@ -299,9 +299,9 @@ This function is the client that retrieves and returns DWD ICON EPS 2-Meter Fore
  
  The ICON EPS point forecast for a given latitude and longitude. 
  
-          variable naming convention
-          ---------------------------
-          
-          Control Run (Example 2-Meter Temperature): data.temperature_2m
-          Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member39 (40 total members [39 members + 1 control])
+***variable naming convention***
+
+Control Run (Example 2-Meter Temperature): data.temperature_2m
+
+Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member39 (40 total members [39 members + 1 control])
 
