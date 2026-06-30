@@ -1,12 +1,12 @@
 # National Oceanic and Atmospheric Administration (NOAA)
 
-[***`class gfsHourlyForecastApi`***]()
+[***`class gfsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-gfshourlyforecastapi)
 
-[***`class aigfsHourlyForecastApi`***]()
+[***`class aigfsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-aigfshourlyforecastapi)
 
-[***`class hgefsHourlyForecastApi`***]()
+[***`class hgefsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-hgefshourlyforecastapi)
 
-[***`class nbmHourlyForecastApi`***]()
+[***`class nbmHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-nbmhourlyforecastapi)
 
 ## `class gfsHourlyForecastApi`
 
