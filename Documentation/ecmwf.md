@@ -1,5 +1,11 @@
 # European Centre for Medium-Range Weather Forecasts (ECMWF)
 
+[***`class ifsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-ifshourlyforecastapi)
+
+[***`class aifsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-aifshourlyforecastapi)
+
+[***`class ifsHRESHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-ifshreshourlyforecastapi)
+
 ## `class ifsHourlyForecastApi`
 
 ***public static async Task<ifsParams?> GetPointForecast(string latitude,
