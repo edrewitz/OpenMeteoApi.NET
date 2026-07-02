@@ -17,7 +17,6 @@ namespace OpenMeteoApiNet.GFS
         public double?[]? cape { get; set; }
         public double?[]? precipitation { get; set; }
         public double?[]? rain { get; set; }
-        public double?[]? snow { get; set; }
         public double?[]? snowfall { get; set; }
         public double?[]? snow_depth { get; set; }
         public double?[]? pressure_msl { get; set; }
@@ -243,7 +242,6 @@ namespace OpenMeteoApiNet.GFS
                 "cape"
                 "precipitation"
                 "rain"
-                "snow"
                 "snowfall"
                 "snow_depth"
                 "pressure_msl"
@@ -433,7 +431,6 @@ namespace OpenMeteoApiNet.GFS
                                     "cape" ,
                                     "precipitation" ,
                                     "rain" ,
-                                    "snow" ,
                                     "snowfall" ,
                                     "snow_depth" ,
                                     "pressure_msl" ,
