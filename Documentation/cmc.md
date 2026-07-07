@@ -57,7 +57,6 @@ This function is the client that retrieves and returns a CMC/GEM point forecast 
                 "apparent_temperature"
                 "precipitation"
                 "rain"
-                "snow"
                 "snowfall"
                 "pressure_msl"
                 "surface_pressure"
