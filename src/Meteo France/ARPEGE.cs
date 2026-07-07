@@ -213,12 +213,11 @@ namespace OpenMeteoApiNet.ARPEGE
         public double?[]? wind_direction_150hPa { get; set; }
         public double?[]? wind_direction_125hPa { get; set; }
         public double?[]? wind_direction_100hPa { get; set; }
-        public double?[]? wind_directions_100hPa { get; set; }
         public double?[]? wind_direction_70hPa { get; set; }
-        public double?[]? wind_directions_50hPa { get; set; }
-        public double?[]? wind_directions_30hPa { get; set; }
-        public double?[]? wind_directions_20hPa { get; set; }
-        public double?[]? wind_directions_10hPa { get; set; }
+        public double?[]? wind_direction_50hPa { get; set; }
+        public double?[]? wind_direction_30hPa { get; set; }
+        public double?[]? wind_direction_20hPa { get; set; }
+        public double?[]? wind_direction_10hPa { get; set; }
         public double?[]? geopotential_height_1000hPa { get; set; }
         public double?[]? geopotential_height_950hPa { get; set; }
         public double?[]? geopotential_height_925hPa { get; set; }
@@ -236,7 +235,7 @@ namespace OpenMeteoApiNet.ARPEGE
         public double?[]? geopotential_height_350hPa { get; set; }
         public double?[]? geopotential_height_300hPa { get; set; }
         public double?[]? geopotential_height_275hPa { get; set; }
-        public double?[]? geopotential_width_250hPa { get; set; }
+        public double?[]? geopotential_height_250hPa { get; set; }
         public double?[]? geopotential_height_225hPa { get; set; }
         public double?[]? geopotential_height_200hPa { get; set; }
         public double?[]? geopotential_height_175hPa { get; set; }
@@ -506,12 +505,11 @@ namespace OpenMeteoApiNet.ARPEGE
                 "wind_direction_150hPa"
                 "wind_direction_125hPa"
                 "wind_direction_100hPa"
-                "wind_directions_100hPa"
                 "wind_direction_70hPa"
-                "wind_directions_50hPa"
-                "wind_directions_30hPa"
-                "wind_directions_20hPa"
-                "wind_directions_10hPa"
+                "wind_direction_50hPa"
+                "wind_direction_30hPa"
+                "wind_direction_20hPa"
+                "wind_direction_10hPa"
                 "geopotential_height_1000hPa"
                 "geopotential_height_950hPa"
                 "geopotential_height_925hPa"
@@ -529,7 +527,7 @@ namespace OpenMeteoApiNet.ARPEGE
                 "geopotential_height_350hPa"
                 "geopotential_height_300hPa"
                 "geopotential_height_275hPa"
-                "geopotential_width_250hPa"
+                "geopotential_height_250hPa"
                 "geopotential_height_225hPa"
                 "geopotential_height_200hPa"
                 "geopotential_height_175hPa"
@@ -764,12 +762,11 @@ namespace OpenMeteoApiNet.ARPEGE
                                     "wind_direction_150hPa" ,
                                     "wind_direction_125hPa" ,
                                     "wind_direction_100hPa" ,
-                                    "wind_directions_100hPa" ,
                                     "wind_direction_70hPa" ,
-                                    "wind_directions_50hPa" ,
-                                    "wind_directions_30hPa" ,
-                                    "wind_directions_20hPa" ,
-                                    "wind_directions_10hPa" ,
+                                    "wind_direction_50hPa" ,
+                                    "wind_direction_30hPa" ,
+                                    "wind_direction_20hPa" ,
+                                    "wind_direction_10hPa" ,
                                     "geopotential_height_1000hPa" ,
                                     "geopotential_height_950hPa" ,
                                     "geopotential_height_925hPa" ,
@@ -787,7 +784,7 @@ namespace OpenMeteoApiNet.ARPEGE
                                     "geopotential_height_350hPa" ,
                                     "geopotential_height_300hPa" ,
                                     "geopotential_height_275hPa" ,
-                                    "geopotential_width_250hPa" ,
+                                    "geopotential_height_250hPa" ,
                                     "geopotential_height_225hPa" ,
                                     "geopotential_height_200hPa" ,
                                     "geopotential_height_175hPa" ,

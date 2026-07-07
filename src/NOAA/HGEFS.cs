@@ -554,7 +554,7 @@ namespace OpenMeteoApiNet.HGEFS
 
                 else
                 {
-                    Console.WriteLine($"GFS Data Not Available At This Time");
+                    Console.WriteLine($"HGEFS Data Not Available At This Time");
                     return null;
                 }
             }

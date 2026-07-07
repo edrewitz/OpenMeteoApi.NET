@@ -553,7 +553,7 @@ namespace OpenMeteoApiNet.AIGFS
 
                 else
                 {
-                    Console.WriteLine($"GFS Data Not Available At This Time");
+                    Console.WriteLine($"AI GFS Data Not Available At This Time");
                     return null;
                 }
             }

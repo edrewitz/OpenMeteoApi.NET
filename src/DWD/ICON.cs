@@ -141,7 +141,7 @@ namespace OpenMeteoApiNet.ICON
         public double?[]? wind_direction_100hPa { get; set; }
         public double?[]? wind_direction_70hPa { get; set; }
         public double?[]? wind_direction_50hPa { get; set; }
-        public double?[]? wind_directions_30hPa { get; set; }
+        public double?[]? wind_direction_30hPa { get; set; }
         public double?[]? geopotential_height_1000hPa { get; set; }
         public double?[]? geopotential_height_975hPa { get; set; }
         public double?[]? geopotential_height_950hPa { get; set; }
@@ -347,7 +347,7 @@ namespace OpenMeteoApiNet.ICON
                 "wind_direction_100hPa"
                 "wind_direction_70hPa"
                 "wind_direction_50hPa"
-                "wind_directions_30hPa"
+                "wind_direction_30hPa"
                 "geopotential_height_1000hPa" 
                 "geopotential_height_975hPa" 
                 "geopotential_height_950hPa" 
@@ -518,7 +518,7 @@ namespace OpenMeteoApiNet.ICON
                                     "wind_direction_100hPa" ,
                                     "wind_direction_70hPa" ,
                                     "wind_direction_50hPa" ,
-                                    "wind_directions_30hPa" ,
+                                    "wind_direction_30hPa" ,
                                     "geopotential_height_1000hPa" ,
                                     "geopotential_height_975hPa" ,
                                     "geopotential_height_950hPa" ,
