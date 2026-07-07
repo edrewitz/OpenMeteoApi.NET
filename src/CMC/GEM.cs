@@ -16,7 +16,6 @@ namespace OpenMeteoApiNet.GEM
         public double?[]? apparent_temperature { get; set; }
         public double?[]? precipitation { get; set; }
         public double?[]? rain { get; set; }
-        public double?[]? snow { get; set; }
         public double?[]? snowfall { get; set; }
         public double?[]? pressure_msl { get; set; }
         public double?[]? surface_pressure { get; set; }
@@ -215,7 +214,6 @@ namespace OpenMeteoApiNet.GEM
                 "apparent_temperature"
                 "precipitation"
                 "rain"
-                "snow"
                 "snowfall"
                 "pressure_msl"
                 "surface_pressure"
@@ -379,7 +377,6 @@ namespace OpenMeteoApiNet.GEM
                                     "apparent_temperature" ,
                                     "precipitation" ,
                                     "rain" ,
-                                    "snow" ,
                                     "snowfall" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
