@@ -129,7 +129,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
         public double?[]? vertical_velocity_100hPa { get; set; }
         public double?[]? vertical_velocity_50hPa { get; set; }
         public double?[]? geopotential_height_1000hPa { get; set; }
-        public double?[]? geopotential_heighty_925hPa { get; set; }
+        public double?[]? geopotential_height_925hPa { get; set; }
         public double?[]? geopotential_height_850hPa { get; set; }
         public double?[]? geopotential_height_700hPa { get; set; }
         public double?[]? geopotential_height_600hPa { get; set; }
@@ -314,7 +314,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
                 "vertical_velocity_100hPa"
                 "vertical_velocity_50hPa"
                 "geopotential_height_1000hPa"
-                "geopotential_heighty_925hPa"
+                "geopotential_height_925hPa"
                 "geopotential_height_850hPa"
                 "geopotential_height_700hPa"
                 "geopotential_height_600hPa"
@@ -466,7 +466,7 @@ namespace OpenMeteoApiNet.ECMWF_IFS
                                     "vertical_velocity_100hPa" ,
                                     "vertical_velocity_50hPa" ,
                                     "geopotential_height_1000hPa" ,
-                                    "geopotential_heighty_925hPa" ,
+                                    "geopotential_height_925hPa" ,
                                     "geopotential_height_850hPa" ,
                                     "geopotential_height_700hPa" ,
                                     "geopotential_height_600hPa" ,
