@@ -14,18 +14,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageReleaseNotes>
-			This Initial Release of OpenMeteoApiNet includes the following datasets:
-			- Current Weather (Global Model Composite)
-			- Global Forecast System (GFS)
-			- Global Ensemble Forecast System (GEFS)
-			- AI Global Forecast System (AIGFS)
-			- Hybrid Global Ensemble Forecast System (HGEFS)
-			- CMC GEM
-			- ECMWF IFS
-			- ECMWF AIFS
-			- DWD ICON
-			- DWD ICON EPS
-			- Meteo France ARPEGE
+			Fixed bugs related to invalid variable names. 
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
