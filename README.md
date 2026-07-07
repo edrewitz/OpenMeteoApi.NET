@@ -6,6 +6,10 @@
 
 **OpenMeteoApi.NET is a C# package that provides an interface with the Open-Meteo API to access various types of weather data.** 
 
+Current Version:
+
+![NuGet Version](https://img.shields.io/nuget/v/OpenMeteoApiNet)
+
 NuGet Downloads:
 
 ![NuGet Downloads](https://img.shields.io/nuget/dt/OpenMeteoApiNet)
