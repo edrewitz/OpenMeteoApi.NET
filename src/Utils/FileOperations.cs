@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.Data.Analysis;
+using System;
+using System.IO;
 
 namespace OpenMeteoApiNet.Utils.BuildDirectory
 {
@@ -12,6 +14,15 @@ namespace OpenMeteoApiNet.Utils.BuildDirectory
                 Directory.CreateDirectory(directoryPath);
             }
         }
+
+    }
+    public static class DirectoryHelper
+    {
+        public static string GetCurrentDirectory()
+        {
+            return Directory.GetCurrentDirectory();
+        }
+
     }
 }
 
@@ -26,3 +37,6 @@ namespace OpenMeteoApiNet.Utils.DataArchive
         }
     }
 }
+
+
+

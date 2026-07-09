@@ -1282,8 +1282,130 @@ namespace OpenMeteoApiNet.DWD.ICON_EPS
             if (data.apparent_temperature_member39 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member39", data.apparent_temperature_member39));
 
+            if (data.precipitation != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation", data.precipitation));
+
+            if (data.precipitation_member01 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member01", data.precipitation_member01));
+
+            if (data.precipitation_member02 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member02", data.precipitation_member02));
+
+            if (data.precipitation_member03 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member03", data.precipitation_member03));
+
+            if (data.precipitation_member04 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member04", data.precipitation_member04));
+
+            if (data.precipitation_member05 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member05", data.precipitation_member05));
+
+            if (data.precipitation_member06 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member06", data.precipitation_member06));
+
+            if (data.precipitation_member07 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member07", data.precipitation_member07));
+
+            if (data.precipitation_member08 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member08", data.precipitation_member08));
+
+            if (data.precipitation_member09 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member09", data.precipitation_member09));
+
+            if (data.precipitation_member10 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member10", data.precipitation_member10));
+
+            if (data.precipitation_member11 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member11", data.precipitation_member11));
+
+            if (data.precipitation_member12 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member12", data.precipitation_member12));
+
+            if (data.precipitation_member13 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member13", data.precipitation_member13));
+
+            if (data.precipitation_member14 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member14", data.precipitation_member14));
+
+            if (data.precipitation_member15 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member15", data.precipitation_member15));
+
+            if (data.precipitation_member16 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member16", data.precipitation_member16));
+
+            if (data.precipitation_member17 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member17", data.precipitation_member17));
+
+            if (data.precipitation_member18 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member18", data.precipitation_member18));
+
+            if (data.precipitation_member19 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member19", data.precipitation_member19));
+
+            if (data.precipitation_member20 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member20", data.precipitation_member20));
+
+            if (data.precipitation_member21 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member21", data.precipitation_member21));
+
+            if (data.precipitation_member22 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member22", data.precipitation_member22));
+
+            if (data.precipitation_member23 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member23", data.precipitation_member23));
+
+            if (data.precipitation_member24 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member24", data.precipitation_member24));
+
+            if (data.precipitation_member25 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member25", data.precipitation_member25));
+
+            if (data.precipitation_member26 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member26", data.precipitation_member26));
+
+            if (data.precipitation_member27 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member27", data.precipitation_member27));
+
+            if (data.precipitation_member28 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member28", data.precipitation_member28));
+
+            if (data.precipitation_member29 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member29", data.precipitation_member29));
+
+            if (data.precipitation_member30 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member30", data.precipitation_member30));
+
+            if (data.precipitation_member31 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member31", data.precipitation_member31));
+
+            if (data.precipitation_member32 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member32", data.precipitation_member32));
+
+            if (data.precipitation_member33 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member33", data.precipitation_member33));
+
+            if (data.precipitation_member34 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member34", data.precipitation_member34));
+
+            if (data.precipitation_member35 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member35", data.precipitation_member35));
+
+            if (data.precipitation_member36 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member36", data.precipitation_member36));
+
+            if (data.precipitation_member37 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member37", data.precipitation_member37));
+
+            if (data.precipitation_member38 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member38", data.precipitation_member38));
+
+            if (data.precipitation_member39 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation_member39", data.precipitation_member39));
+
             return df;
         }
+
+        private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
         public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
@@ -1293,8 +1415,8 @@ namespace OpenMeteoApiNet.DWD.ICON_EPS
                                                          string[]? variables = null,
                                                          string? proxy = null,
                                                          bool toCsv = false,
-                                                         string filePath = "Open Meteo Data",
-                                                         string fileName = "ICON_EPS.csv")
+                                                         string? filePath = null,
+                                                         string? fileName = null)
         /*
          * This function is the client that retrieves and returns DWD ICON EPS 2-Meter Forecast from the Open-Meteo API.
          * 
@@ -1468,7 +1590,26 @@ namespace OpenMeteoApiNet.DWD.ICON_EPS
 
                 if (toCsv == true)
                 {
+                    if (filePath == null)
+                    {
+                        filePath = Path.Combine(currentDirectory, "Open Meteo Data");
+                    }
+                    else
+                    {
+                        filePath = filePath;
+                    }
                     DirectoryBuilder.BuildDirectory(filePath);
+
+                    if (fileName == null)
+                    {
+                        string latString = (string)latitude.Replace('.', '_');
+                        string lonString = (string)longitude.Replace('.', '_');
+                        fileName = $"ICON_EPS_PointForecast_{latString}_{lonString}.csv";
+                    }
+                    else
+                    {
+                        fileName = fileName;
+                    }
 
                     ArchiveData.SaveDataToCsv(filePath, fileName, df);
                 }
