@@ -963,7 +963,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                     {
                         string latString = (string)latitude.Replace('.', '_');
                         string lonString = (string)longitude.Replace('.', '_');
-                        fileName = $"ICON_PointForecast_{latString}_{lonString}.csv";
+                        fileName = $"GEM_PointForecast_{latString}_{lonString}.csv";
                     }
                     else
                     {
