@@ -2846,6 +2846,7 @@ namespace OpenMeteoApiNet.DWD.ICON_EPS
         }
 
         private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
+
         public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
