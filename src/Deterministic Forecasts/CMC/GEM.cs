@@ -5,7 +5,6 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.DeterministicForecasts.DWD.ICON;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
