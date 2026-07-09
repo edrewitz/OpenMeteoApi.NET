@@ -1,11 +1,13 @@
 ﻿/*
  * (C) Eric J. Drewitz 2026
  */
-
-using System.Text.Json;
+using Microsoft.Data.Analysis;
+using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
+using OpenMeteoApiNet.Utils.DataArchive;
+using System.Text.Json;
 
-namespace OpenMeteoApiNet.ICON_EPS
+namespace OpenMeteoApiNet.DWD.ICON_EPS
 {
     public class iconEPSParams
     {
@@ -775,16 +777,524 @@ namespace OpenMeteoApiNet.ICON_EPS
 
 
     }
+
     public static class iconEPSHourlyForecastApi
     {
-        public static async Task<iconEPSParams?> GetPointForecast(string latitude,
+
+        private static DataFrame ToDataFrame(iconEPSParams data)
+        {
+            /*
+             * Converts the data object of type iconEPSParams to a DataFrame object.
+             * 
+             * Returns
+             * -------
+             * 
+             * Microsoft.Data.Analysis.DataFrame object containing the data from the iconEPSParams object.
+             * 
+             */
+
+            var df = new DataFrame();
+
+            // 1. Add the time column (Strings)
+            if (data.time != null)
+            {
+                df.Columns.Add(new StringDataFrameColumn("time", data.time));
+            }
+
+            // 2. Add the nullable double columns (maps cleanly to PrimitiveDataFrameColumn)
+            if (data.temperature_2m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m", data.temperature_2m));
+
+            if (data.temperature_2m_member01 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member01", data.temperature_2m_member01));
+
+            if (data.temperature_2m_member02 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member02", data.temperature_2m_member02));
+
+            if (data.temperature_2m_member03 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member03", data.temperature_2m_member03));
+
+            if (data.temperature_2m_member04 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member04", data.temperature_2m_member04));
+
+            if (data.temperature_2m_member05 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member05", data.temperature_2m_member05));
+
+            if (data.temperature_2m_member06 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member06", data.temperature_2m_member06));
+
+            if (data.temperature_2m_member07 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member07", data.temperature_2m_member07));
+
+            if (data.temperature_2m_member08 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member08", data.temperature_2m_member08));
+
+            if (data.temperature_2m_member09 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member09", data.temperature_2m_member09));
+
+            if (data.temperature_2m_member10 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member10", data.temperature_2m_member10));
+
+            if (data.temperature_2m_member11 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member11", data.temperature_2m_member11));
+
+            if (data.temperature_2m_member12 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member12", data.temperature_2m_member12));
+
+            if (data.temperature_2m_member13 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member13", data.temperature_2m_member13));
+
+            if (data.temperature_2m_member14 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member14", data.temperature_2m_member14));
+
+            if (data.temperature_2m_member15 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member15", data.temperature_2m_member15));
+
+            if (data.temperature_2m_member16 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member16", data.temperature_2m_member16));
+
+            if (data.temperature_2m_member17 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member17", data.temperature_2m_member17));
+
+            if (data.temperature_2m_member18 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member18", data.temperature_2m_member18));
+
+            if (data.temperature_2m_member19 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member19", data.temperature_2m_member19));
+
+            if (data.temperature_2m_member20 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member20", data.temperature_2m_member20));
+
+            if (data.temperature_2m_member21 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member21", data.temperature_2m_member21));
+
+            if (data.temperature_2m_member22 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member22", data.temperature_2m_member22));
+
+            if (data.temperature_2m_member23 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member23", data.temperature_2m_member23));
+
+            if (data.temperature_2m_member24 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member24", data.temperature_2m_member24));
+
+            if (data.temperature_2m_member25 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member25", data.temperature_2m_member25));
+
+            if (data.temperature_2m_member26 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member26", data.temperature_2m_member26));
+
+            if (data.temperature_2m_member27 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member27", data.temperature_2m_member27));
+
+            if (data.temperature_2m_member28 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member28", data.temperature_2m_member28));
+
+            if (data.temperature_2m_member29 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member29", data.temperature_2m_member29));
+
+            if (data.temperature_2m_member30 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member30", data.temperature_2m_member30));
+
+            if (data.temperature_2m_member31 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member31", data.temperature_2m_member31));
+
+            if (data.temperature_2m_member32 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member32", data.temperature_2m_member32));
+
+            if (data.temperature_2m_member33 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member33", data.temperature_2m_member33));
+
+            if (data.temperature_2m_member34 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member34", data.temperature_2m_member34));
+
+            if (data.temperature_2m_member35 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member35", data.temperature_2m_member35));
+
+            if (data.temperature_2m_member36 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member36", data.temperature_2m_member36));
+
+            if (data.temperature_2m_member37 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member37", data.temperature_2m_member37));
+
+            if (data.temperature_2m_member38 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member38", data.temperature_2m_member38));
+
+            if (data.temperature_2m_member39 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member39", data.temperature_2m_member39));
+
+            if (data.relative_humidity_2m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m", data.relative_humidity_2m));
+
+            if (data.relative_humidity_2m_member01 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member01", data.relative_humidity_2m_member01));
+
+            if (data.relative_humidity_2m_member02 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member02", data.relative_humidity_2m_member02));
+
+            if (data.relative_humidity_2m_member03 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member03", data.relative_humidity_2m_member03));
+
+            if (data.relative_humidity_2m_member04 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member04", data.relative_humidity_2m_member04));
+
+            if (data.relative_humidity_2m_member05 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member05", data.relative_humidity_2m_member05));
+
+            if (data.relative_humidity_2m_member06 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member06", data.relative_humidity_2m_member06));
+
+            if (data.relative_humidity_2m_member07 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member07", data.relative_humidity_2m_member07));
+
+            if (data.relative_humidity_2m_member08 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member08", data.relative_humidity_2m_member08));
+
+            if (data.relative_humidity_2m_member09 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member09", data.relative_humidity_2m_member09));
+
+            if (data.relative_humidity_2m_member10 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member10", data.relative_humidity_2m_member10));
+
+            if (data.relative_humidity_2m_member11 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member11", data.relative_humidity_2m_member11));
+
+            if (data.relative_humidity_2m_member12 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member12", data.relative_humidity_2m_member12));
+
+            if (data.relative_humidity_2m_member13 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member13", data.relative_humidity_2m_member13));
+
+            if (data.relative_humidity_2m_member14 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member14", data.relative_humidity_2m_member14));
+
+            if (data.relative_humidity_2m_member15 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member15", data.relative_humidity_2m_member15));
+
+            if (data.relative_humidity_2m_member16 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member16", data.relative_humidity_2m_member16));
+
+            if (data.relative_humidity_2m_member17 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member17", data.relative_humidity_2m_member17));
+
+            if (data.relative_humidity_2m_member18 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member18", data.relative_humidity_2m_member18));
+
+            if (data.relative_humidity_2m_member19 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member19", data.relative_humidity_2m_member19));
+
+            if (data.relative_humidity_2m_member20 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member20", data.relative_humidity_2m_member20));
+
+            if (data.relative_humidity_2m_member21 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member21", data.relative_humidity_2m_member21));
+
+            if (data.relative_humidity_2m_member22 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member22", data.relative_humidity_2m_member22));
+
+            if (data.relative_humidity_2m_member23 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member23", data.relative_humidity_2m_member23));
+
+            if (data.relative_humidity_2m_member24 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member24", data.relative_humidity_2m_member24));
+
+            if (data.relative_humidity_2m_member25 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member25", data.relative_humidity_2m_member25));
+
+            if (data.relative_humidity_2m_member26 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member26", data.relative_humidity_2m_member26));
+
+            if (data.relative_humidity_2m_member27 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member27", data.relative_humidity_2m_member27));
+
+            if (data.relative_humidity_2m_member28 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member28", data.relative_humidity_2m_member28));
+
+            if (data.relative_humidity_2m_member29 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member29", data.relative_humidity_2m_member29));
+
+            if (data.relative_humidity_2m_member30 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member30", data.relative_humidity_2m_member30));
+
+            if (data.relative_humidity_2m_member31 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member31", data.relative_humidity_2m_member31));
+
+            if (data.relative_humidity_2m_member32 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member32", data.relative_humidity_2m_member32));
+
+            if (data.relative_humidity_2m_member33 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member33", data.relative_humidity_2m_member33));
+
+            if (data.relative_humidity_2m_member34 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member34", data.relative_humidity_2m_member34));
+
+            if (data.relative_humidity_2m_member35 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member35", data.relative_humidity_2m_member35));
+
+            if (data.relative_humidity_2m_member36 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member36", data.relative_humidity_2m_member36));
+
+            if (data.relative_humidity_2m_member37 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member37", data.relative_humidity_2m_member37));
+
+            if (data.relative_humidity_2m_member38 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member38", data.relative_humidity_2m_member38));
+
+            if (data.relative_humidity_2m_member39 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member39", data.relative_humidity_2m_member39));
+
+            if (data.dew_point_2m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m", data.dew_point_2m));
+
+            if (data.dew_point_2m_member01 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member01", data.dew_point_2m_member01));
+
+            if (data.dew_point_2m_member02 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member02", data.dew_point_2m_member02));
+
+            if (data.dew_point_2m_member03 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member03", data.dew_point_2m_member03));
+
+            if (data.dew_point_2m_member04 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member04", data.dew_point_2m_member04));
+
+            if (data.dew_point_2m_member05 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member05", data.dew_point_2m_member05));
+
+            if (data.dew_point_2m_member06 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member06", data.dew_point_2m_member06));
+
+            if (data.dew_point_2m_member07 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member07", data.dew_point_2m_member07));
+
+            if (data.dew_point_2m_member08 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member08", data.dew_point_2m_member08));
+
+            if (data.dew_point_2m_member09 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member09", data.dew_point_2m_member09));
+
+            if (data.dew_point_2m_member10 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member10", data.dew_point_2m_member10));
+
+            if (data.dew_point_2m_member11 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member11", data.dew_point_2m_member11));
+
+            if (data.dew_point_2m_member12 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member12", data.dew_point_2m_member12));
+
+            if (data.dew_point_2m_member13 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member13", data.dew_point_2m_member13));
+
+            if (data.dew_point_2m_member14 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member14", data.dew_point_2m_member14));
+
+            if (data.dew_point_2m_member15 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member15", data.dew_point_2m_member15));
+
+            if (data.dew_point_2m_member16 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member16", data.dew_point_2m_member16));
+
+            if (data.dew_point_2m_member17 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member17", data.dew_point_2m_member17));
+
+            if (data.dew_point_2m_member18 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member18", data.dew_point_2m_member18));
+
+            if (data.dew_point_2m_member19 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member19", data.dew_point_2m_member19));
+
+            if (data.dew_point_2m_member20 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member20", data.dew_point_2m_member20));
+
+            if (data.dew_point_2m_member21 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member21", data.dew_point_2m_member21));
+
+            if (data.dew_point_2m_member22 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member22", data.dew_point_2m_member22));
+
+            if (data.dew_point_2m_member23 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member23", data.dew_point_2m_member23));
+
+            if (data.dew_point_2m_member24 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member24", data.dew_point_2m_member24));
+
+            if (data.dew_point_2m_member25 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member25", data.dew_point_2m_member25));
+
+            if (data.dew_point_2m_member26 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member26", data.dew_point_2m_member26));
+
+            if (data.dew_point_2m_member27 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member27", data.dew_point_2m_member27));
+
+            if (data.dew_point_2m_member28 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member28", data.dew_point_2m_member28));
+
+            if (data.dew_point_2m_member29 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member29", data.dew_point_2m_member29));
+
+            if (data.dew_point_2m_member30 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member30", data.dew_point_2m_member30));
+
+            if (data.dew_point_2m_member31 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member31", data.dew_point_2m_member31));
+
+            if (data.dew_point_2m_member32 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member32", data.dew_point_2m_member32));
+
+            if (data.dew_point_2m_member33 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member33", data.dew_point_2m_member33));
+
+            if (data.dew_point_2m_member34 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member34", data.dew_point_2m_member34));
+
+            if (data.dew_point_2m_member35 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member35", data.dew_point_2m_member35));
+
+            if (data.dew_point_2m_member36 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member36", data.dew_point_2m_member36));
+
+            if (data.dew_point_2m_member37 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member37", data.dew_point_2m_member37));
+
+            if (data.dew_point_2m_member38 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member38", data.dew_point_2m_member38));
+
+            if (data.dew_point_2m_member39 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member39", data.dew_point_2m_member39));
+
+            if (data.apparent_temperature != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature", data.apparent_temperature));
+
+            if (data.apparent_temperature_member01 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member01", data.apparent_temperature_member01));
+
+            if (data.apparent_temperature_member02 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member02", data.apparent_temperature_member02));
+
+            if (data.apparent_temperature_member03 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member03", data.apparent_temperature_member03));
+
+            if (data.apparent_temperature_member04 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member04", data.apparent_temperature_member04));
+
+            if (data.apparent_temperature_member05 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member05", data.apparent_temperature_member05));
+
+            if (data.apparent_temperature_member06 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member06", data.apparent_temperature_member06));
+
+            if (data.apparent_temperature_member07 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member07", data.apparent_temperature_member07));
+
+            if (data.apparent_temperature_member08 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member08", data.apparent_temperature_member08));
+
+            if (data.apparent_temperature_member09 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member09", data.apparent_temperature_member09));
+
+            if (data.apparent_temperature_member10 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member10", data.apparent_temperature_member10));
+
+            if (data.apparent_temperature_member11 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member11", data.apparent_temperature_member11));
+
+            if (data.apparent_temperature_member12 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member12", data.apparent_temperature_member12));
+
+            if (data.apparent_temperature_member13 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member13", data.apparent_temperature_member13));
+
+            if (data.apparent_temperature_member14 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member14", data.apparent_temperature_member14));
+
+            if (data.apparent_temperature_member15 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member15", data.apparent_temperature_member15));
+
+            if (data.apparent_temperature_member16 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member16", data.apparent_temperature_member16));
+
+            if (data.apparent_temperature_member17 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member17", data.apparent_temperature_member17));
+
+            if (data.apparent_temperature_member18 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member18", data.apparent_temperature_member18));
+
+            if (data.apparent_temperature_member19 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member19", data.apparent_temperature_member19));
+
+            if (data.apparent_temperature_member20 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member20", data.apparent_temperature_member20));
+
+            if (data.apparent_temperature_member21 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member21", data.apparent_temperature_member21));
+
+            if (data.apparent_temperature_member22 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member22", data.apparent_temperature_member22));
+
+            if (data.apparent_temperature_member23 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member23", data.apparent_temperature_member23));
+
+            if (data.apparent_temperature_member24 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member24", data.apparent_temperature_member24));
+
+            if (data.apparent_temperature_member25 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member25", data.apparent_temperature_member25));
+
+            if (data.apparent_temperature_member26 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member26", data.apparent_temperature_member26));
+
+            if (data.apparent_temperature_member27 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member27", data.apparent_temperature_member27));
+
+            if (data.apparent_temperature_member28 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member28", data.apparent_temperature_member28));
+
+            if (data.apparent_temperature_member29 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member29", data.apparent_temperature_member29));
+
+            if (data.apparent_temperature_member30 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member30", data.apparent_temperature_member30));
+
+            if (data.apparent_temperature_member31 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member31", data.apparent_temperature_member31));
+
+            if (data.apparent_temperature_member32 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member32", data.apparent_temperature_member32));
+
+            if (data.apparent_temperature_member33 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member33", data.apparent_temperature_member33));
+
+            if (data.apparent_temperature_member34 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member34", data.apparent_temperature_member34));
+
+            if (data.apparent_temperature_member35 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member35", data.apparent_temperature_member35));
+
+            if (data.apparent_temperature_member36 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member36", data.apparent_temperature_member36));
+
+            if (data.apparent_temperature_member37 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member37", data.apparent_temperature_member37));
+
+            if (data.apparent_temperature_member38 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member38", data.apparent_temperature_member38));
+
+            if (data.apparent_temperature_member39 != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member39", data.apparent_temperature_member39));
+
+            return df;
+        }
+        public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
                                                          string[]? variables = null,
-                                                         string? proxy = null)
+                                                         string? proxy = null,
+                                                         bool toCsv = false,
+                                                         string filePath = "Open Meteo Data",
+                                                         string fileName = "ICON_EPS.csv")
         /*
          * This function is the client that retrieves and returns DWD ICON EPS 2-Meter Forecast from the Open-Meteo API.
          * 
@@ -953,11 +1463,21 @@ namespace OpenMeteoApiNet.ICON_EPS
                                             .Select(dt => dt.ToLocalTime())
                                             .ToList();
 
-                return data;
+
+                var df = ToDataFrame(data);
+
+                if (toCsv == true)
+                {
+                    DirectoryBuilder.BuildDirectory(filePath);
+
+                    ArchiveData.SaveDataToCsv(filePath, fileName, df);
+                }
+
+                return df;
             }
             else
             {
-                Console.WriteLine($"ICON Data Not Available At This Time");
+                Console.WriteLine($"ICON EPS Data Not Available At This Time");
                 return null;
 
             }

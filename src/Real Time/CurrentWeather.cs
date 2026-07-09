@@ -5,7 +5,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.CurrentWeather
+namespace OpenMeteoApiNet.RealTime.CurrentWeather
 {
     public class currentWeather
     {

@@ -5,7 +5,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NBM
+namespace OpenMeteoApiNet.NOAA.NBM
 {
     public class nbmParams
     {

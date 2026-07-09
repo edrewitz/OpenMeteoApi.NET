@@ -5,9 +5,9 @@
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.ECMWF_AIFS
+namespace OpenMeteoApiNet.ECMWF.ECMWF_IFS_HRES
 {
-    public class aifsParams
+    public class ifsHRESParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -144,9 +144,9 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
     }
-    public static class aifsHourlyForecastApi
+    public static class ifsHRESHourlyForecastApi
     {
-        public static async Task<aifsParams?> GetPointForecast(string latitude,
+        public static async Task<ifsHRESParams?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 14,
                                                          string temperatureUnit = "fahrenheit",
@@ -155,7 +155,7 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
                                                          string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns ECMWF AIFS Forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns ECMWF IFS Medium-range Control forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 
@@ -334,7 +334,7 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
          * Returns
          * -------
          * 
-         * The ECMWF AIFS Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The ECMWF IFS HRES Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
@@ -490,7 +490,7 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
             // Open-Meto API Call URL
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=ecmwf_aifs025_single&forecast_days={days}" +
+                $"&models=ecmwf_ifs&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client
@@ -566,8 +566,8 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our aifsParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<aifsParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our ifsHRESParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<ifsHRESParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");
@@ -595,7 +595,7 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
                 }
                 else
                 {
-                    Console.WriteLine($"ECMWF AIFS Data Not Available At This Time");
+                    Console.WriteLine($"ECMWF IFS HRES Data Not Available At This Time");
                     return null;
 
                 }
@@ -603,7 +603,6 @@ namespace OpenMeteoApiNet.ECMWF_AIFS
         }
     }
 }
-
 
 
 
