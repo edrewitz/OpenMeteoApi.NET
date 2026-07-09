@@ -1,7 +1,7 @@
 /*
- * This file contains the function that returns an HTTP status code and corresponding message.
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
  * 
- * (C) Eric J. Drewitz 2026 
+ * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;

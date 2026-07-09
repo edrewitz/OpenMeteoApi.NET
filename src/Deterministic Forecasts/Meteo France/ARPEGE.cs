@@ -1,11 +1,13 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.MeteoFrance.ARPEGE
+namespace OpenMeteoApiNet.DeterministicForecasts.MeteoFrance.ARPEGE
 {
     public class arpegeParams
     {

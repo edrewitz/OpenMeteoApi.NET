@@ -1,7 +1,11 @@
 ﻿
+/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
+ * (C) Eric J. Drewitz 2026
+ */
+
 using Microsoft.Data.Analysis;
-using System;
-using System.IO;
 
 namespace OpenMeteoApiNet.Utils.BuildDirectory
 {

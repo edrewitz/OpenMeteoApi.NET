@@ -1,57 +1,48 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NOAA.NOAA.GFS
+namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
 {
-    public class gfsParams
+    public class gemParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
         public double?[]? relative_humidity_2m { get; set; }
         public double?[]? dew_point_2m { get; set; }
         public double?[]? apparent_temperature { get; set; }
-        public double?[]? cape { get; set; }
         public double?[]? precipitation { get; set; }
         public double?[]? rain { get; set; }
         public double?[]? snowfall { get; set; }
-        public double?[]? snow_depth { get; set; }
         public double?[]? pressure_msl { get; set; }
         public double?[]? surface_pressure { get; set; }
         public double?[]? cloud_cover { get; set; }
         public double?[]? cloud_cover_low { get; set; }
         public double?[]? cloud_cover_mid { get; set; }
         public double?[]? cloud_cover_high { get; set; }
-        public double?[]? visibility { get; set; }
-        public double?[]? evapotranspiration { get; set; }
         public double?[]? et0_fao_evapotranspiration { get; set; }
         public double?[]? vapour_pressure_deficit { get; set; }
         public double?[]? weather_code { get; set; }
         public double?[]? showers { get; set; }
         public double?[]? wind_speed_10m { get; set; }
+        public double?[]? wind_speed_40m { get; set; }
         public double?[]? wind_speed_80m { get; set; }
         public double?[]? wind_speed_120m { get; set; }
-        public double?[]? wind_speed_180m { get; set; }
         public double?[]? wind_direction_10m { get; set; }
+        public double?[]? wind_direction_40m { get; set; }
         public double?[]? wind_direction_80m { get; set; }
         public double?[]? wind_direction_120m { get; set; }
-        public double?[]? wind_direction_180m { get; set; }
+        public double?[]? temperature_40m { get; set; }
         public double?[]? temperature_80m { get; set; }
-        public double?[]? wind_gusts_10m { get; set; }
         public double?[]? temperature_120m { get; set; }
-        public double?[]? temperature_180m { get; set; }
-        public double?[]? soil_temperature_0cm { get; set; }
-        public double?[]? soil_temperature_6cm { get; set; }
-        public double?[]? soil_temperature_18cm { get; set; }
-        public double?[]? soil_temperature_54cm { get; set; }
-        public double?[]? soil_moisture_0_to_1cm { get; set; }
-        public double?[]? soil_moisture_1_to_3cm { get; set; }
-        public double?[]? soil_moisture_3_to_9cm { get; set; }
-        public double?[]? soil_moisture_9_to_27cm { get; set; }
-        public double?[]? soil_moisture_27_to_81cm { get; set; }
+        public double?[]? wind_gusts_10m { get; set; }
+        public double?[]? soil_temperature_0_to_10cm { get; set; }
+        public double?[]? soil_moisture_0_to_10cm { get; set; }
         public double?[]? temperature_1000hPa { get; set; }
         public double?[]? temperature_925hPa { get; set; }
         public double?[]? temperature_850hPa { get; set; }
@@ -164,38 +155,22 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
         public double?[]? cloud_cover_30hPa { get; set; }
         public double?[]? cloud_cover_20hPa { get; set; }
         public double?[]? cloud_cover_10hPa { get; set; }
-        public double?[]? vertical_velocity_1000hPa { get; set; }
-        public double?[]? vertical_velocity_925hPa { get; set; }
-        public double?[]? vertical_velocity_850hPa { get; set; }
-        public double?[]? vertical_velocity_700hPa { get; set; }
-        public double?[]? vertical_velocity_600hPa { get; set; }
-        public double?[]? vertical_velocity_500hPa { get; set; }
-        public double?[]? vertical_velocity_400hPa { get; set; }
-        public double?[]? vertical_velocity_300hPa { get; set; }
-        public double?[]? vertical_velocity_250hPa { get; set; }
-        public double?[]? vertical_velocity_200hPa { get; set; }
-        public double?[]? vertical_velocity_150hPa { get; set; }
-        public double?[]? vertical_velocity_100hPa { get; set; }
-        public double?[]? vertical_velocity_50hPa { get; set; }
-        public double?[]? vertical_velocity_30hPa { get; set; }
-        public double?[]? vertical_velocity_20hPa { get; set; }
-        public double?[]? vertical_velocity_10hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
-    public static class gfsHourlyForecastApi
+    public static class gemHourlyForecastApi
     {
-        public static async Task<gfsParams?> GetPointForecast(string latitude,
+        public static async Task<gemParams?> GetPointForecast(string latitude,
                                                          string longitude,
-                                                         int days = 7 ,
+                                                         int days = 7,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
                                                          string[]? variables = null,
                                                          string? proxy = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a CMC/GEM point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -239,44 +214,33 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
                 "relative_humidity_2m"
                 "dew_point_2m"
                 "apparent_temperature"
-                "cape"
                 "precipitation"
                 "rain"
                 "snowfall"
-                "snow_depth"
                 "pressure_msl"
                 "surface_pressure"
                 "cloud_cover"
                 "cloud_cover_low"
                 "cloud_cover_mid"
                 "cloud_cover_high"
-                "visibility"
-                "evapotranspiration"
                 "et0_fao_evapotranspiration"
                 "vapour_pressure_deficit"
                 "weather_code"
                 "showers"
                 "wind_speed_10m"
+                "wind_speed_40m"
                 "wind_speed_80m"
                 "wind_speed_120m"
-                "wind_speed_180m"
                 "wind_direction_10m"
+                "wind_direction_40m"
                 "wind_direction_80m"
                 "wind_direction_120m"
-                "wind_direction_180m"
+                "temperature_40m"
                 "temperature_80m"
-                "wind_gusts_10m"
                 "temperature_120m"
-                "temperature_180m"
-                "soil_temperature_0cm"
-                "soil_temperature_6cm"
-                "soil_temperature_18cm"
-                "soil_temperature_54cm"
-                "soil_moisture_0_to_1cm"
-                "soil_moisture_1_to_3cm"
-                "soil_moisture_3_to_9cm"
-                "soil_moisture_9_to_27cm"
-                "soil_moisture_27_to_81cm"
+                "wind_gusts_10m"
+                "soil_temperature_0_to_10cm"
+                "soil_moisture_0_to_10cm"
                 "temperature_1000hPa"
                 "temperature_925hPa"
                 "temperature_850hPa"
@@ -388,23 +352,7 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
                 "cloud_cover_50hPa"
                 "cloud_cover_30hPa"
                 "cloud_cover_20hPa"
-                "cloud_cover_10hPa"
-                "vertical_velocity_1000hPa"
-                "vertical_velocity_925hPa"
-                "vertical_velocity_850hPa"
-                "vertical_velocity_700hPa"
-                "vertical_velocity_600hPa"
-                "vertical_velocity_500hPa"
-                "vertical_velocity_400hPa"
-                "vertical_velocity_300hPa"
-                "vertical_velocity_250hPa"
-                "vertical_velocity_200hPa"
-                "vertical_velocity_150hPa"
-                "vertical_velocity_100hPa"
-                "vertical_velocity_50hPa"
-                "vertical_velocity_30hPa"
-                "vertical_velocity_20hPa"
-                "vertical_velocity_10hPa" 
+                "cloud_cover_10hPa" 
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
          *      
@@ -412,60 +360,50 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
          * Returns
          * -------
          * 
-         * The GFS Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The GEM Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
-            if (days > 16) {
-                Console.WriteLine("The maximum number of days that can be retrieved is 16. Setting 'days' to 16.");
-                days = 16;
+            if (days > 10)
+            {
+                Console.WriteLine("The maximum number of days that can be retrieved is 10. Setting 'days' to 10.");
+                days = 10;
             }
 
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
             if (variables == null || variables.Length == 0)
             {
-                variables = new[] { "temperature_2m" ,
+                variables = new[] {"temperature_2m" ,
                                     "relative_humidity_2m" ,
                                     "dew_point_2m" ,
                                     "apparent_temperature" ,
-                                    "cape" ,
                                     "precipitation" ,
                                     "rain" ,
                                     "snowfall" ,
-                                    "snow_depth" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
                                     "cloud_cover" ,
                                     "cloud_cover_low" ,
                                     "cloud_cover_mid" ,
                                     "cloud_cover_high" ,
-                                    "visibility" ,
-                                    "evapotranspiration" ,
                                     "et0_fao_evapotranspiration" ,
                                     "vapour_pressure_deficit" ,
                                     "weather_code" ,
                                     "showers" ,
                                     "wind_speed_10m" ,
+                                    "wind_speed_40m" ,
                                     "wind_speed_80m" ,
                                     "wind_speed_120m" ,
-                                    "wind_speed_180m" ,
                                     "wind_direction_10m" ,
+                                    "wind_direction_40m" ,
                                     "wind_direction_80m" ,
                                     "wind_direction_120m" ,
-                                    "wind_direction_180m" ,
+                                    "temperature_40m" ,
                                     "temperature_80m" ,
-                                    "wind_gusts_10m" ,
                                     "temperature_120m" ,
-                                    "temperature_180m" ,
-                                    "soil_temperature_0cm" ,
-                                    "soil_temperature_6cm" ,
-                                    "soil_temperature_18cm" ,
-                                    "soil_temperature_54cm" ,
-                                    "soil_moisture_0_to_1cm" ,
-                                    "soil_moisture_1_to_3cm" ,
-                                    "soil_moisture_3_to_9cm" ,
-                                    "soil_moisture_9_to_27cm" ,
-                                    "soil_moisture_27_to_81cm" ,
+                                    "wind_gusts_10m" ,
+                                    "soil_temperature_0_to_10cm" ,
+                                    "soil_moisture_0_to_10cm" ,
                                     "temperature_1000hPa" ,
                                     "temperature_925hPa" ,
                                     "temperature_850hPa" ,
@@ -577,23 +515,7 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
                                     "cloud_cover_50hPa" ,
                                     "cloud_cover_30hPa" ,
                                     "cloud_cover_20hPa" ,
-                                    "cloud_cover_10hPa" ,
-                                    "vertical_velocity_1000hPa" ,
-                                    "vertical_velocity_925hPa" ,
-                                    "vertical_velocity_850hPa" ,
-                                    "vertical_velocity_700hPa" ,
-                                    "vertical_velocity_600hPa" ,
-                                    "vertical_velocity_500hPa" ,
-                                    "vertical_velocity_400hPa" ,
-                                    "vertical_velocity_300hPa" ,
-                                    "vertical_velocity_250hPa" ,
-                                    "vertical_velocity_200hPa" ,
-                                    "vertical_velocity_150hPa" ,
-                                    "vertical_velocity_100hPa" ,
-                                    "vertical_velocity_50hPa" ,
-                                    "vertical_velocity_30hPa" ,
-                                    "vertical_velocity_20hPa" ,
-                                    "vertical_velocity_10hPa" };
+                                    "cloud_cover_10hPa"  };
             }
             else
             {
@@ -606,7 +528,7 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
             // Open-Meto API Call URL
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=gfs_seamless&forecast_days={days}" +
+                $"&models=gem_seamless&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             // Create HTTP client
@@ -682,8 +604,8 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
                     return null;
                 }
 
-                // Deserialize the "hourly" property into our gfsParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<gfsParams>(hourlyWeatherElement.GetRawText());
+                // Deserialize the "hourly" property into our gemParams class. If deserialization fails, print an error message and return.
+                var data = JsonSerializer.Deserialize<gemParams>(hourlyWeatherElement.GetRawText());
                 if (data == null)
                 {
                     Console.WriteLine("Unable to parse hourly weather data.");
@@ -701,14 +623,14 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
                                                 .Select(dt => dt.ToLocalTime())
                                                 .ToList();
 
-                
+
 
                     return data;
                 }
 
                 else
                 {
-                    Console.WriteLine($"GFS Data Not Available At This Time");
+                    Console.WriteLine($"GEM Data Not Available At This Time");
                     return null;
                 }
 
@@ -716,4 +638,5 @@ namespace OpenMeteoApiNet.NOAA.NOAA.GFS
         }
     }
 }
+
 

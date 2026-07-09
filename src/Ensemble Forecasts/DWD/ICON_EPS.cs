@@ -1,13 +1,16 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
+
 using Microsoft.Data.Analysis;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.DWD.ICON_EPS
+namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
 {
     public class iconEPSParams
     {

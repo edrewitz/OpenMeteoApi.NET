@@ -1,11 +1,13 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NOAA.AIGFS
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.AIGFS
 {
     public class aigfsParams
     {

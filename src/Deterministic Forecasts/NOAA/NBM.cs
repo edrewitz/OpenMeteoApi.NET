@@ -1,11 +1,13 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
 
 using System.Net;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NOAA.NBM
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
 {
     public class nbmParams
     {
