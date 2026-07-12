@@ -2924,6 +2924,12 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
 
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
+
+          7) toCsv (bool) - Optional boolean flag to indicate whether to save the forecast data to a CSV file. Default is false.
+
+          8) filePath (string) - Optional file path to save the CSV file. Default is null (current directory).
+
+          9) fileName (string) - Optional file name for the CSV file. Default is null (auto-generated name based on latitude, longitude, and timestamp).
          *      
          * 
          * Returns
