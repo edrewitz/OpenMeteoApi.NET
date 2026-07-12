@@ -1,11 +1,16 @@
 ﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
  * (C) Eric J. Drewitz 2026
  */
 
-using System.Net;
+using Microsoft.Data.Analysis;
+using OpenMeteoApiNet.Utils.BuildDirectory;
+using OpenMeteoApiNet.Utils.DataAccess;
+using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.NBM
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
 {
     public class nbmParams
     {
@@ -25,14 +30,76 @@ namespace OpenMeteoApiNet.NBM
     }
     public static class nbmHourlyForecastApi
     {
-        public static async Task<nbmParams?> GetPointForecast(string latitude,
+
+        private static DataFrame ToDataFrame(nbmParams data)
+        {
+            /*
+             * Converts the data object of type iconParams to a DataFrame object.
+             * 
+             * Returns
+             * -------
+             * 
+             * Microsoft.Data.Analysis.DataFrame object containing the data from the nbmParams object.
+             * 
+             */
+
+            var df = new DataFrame();
+
+            // 1. Add the time column (Strings)
+            if (data.time != null)
+            {
+                df.Columns.Add(new StringDataFrameColumn("time", data.time));
+            }
+
+            // 2. Add the nullable double columns (maps cleanly to PrimitiveDataFrameColumn)
+            if (data.temperature_2m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m", data.temperature_2m));
+
+            if (data.cape != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("cape", data.cape));
+
+            if (data.precipitation != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation", data.precipitation));
+
+            if (data.snowfall != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snowfall", data.snowfall));
+
+            if (data.surface_pressure != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_pressure", data.surface_pressure));
+
+            if (data.visibility != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility", data.visibility));
+
+            if (data.wind_speed_10m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_10m", data.wind_speed_10m));
+
+            if (data.wind_speed_80m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m", data.wind_speed_80m));
+
+            if (data.wind_direction_10m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_10m", data.wind_direction_10m));
+
+            if (data.wind_direction_80m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m", data.wind_direction_80m));
+
+
+            return df;
+
+        }
+
+        private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
+
+        public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
                                                          string[]? variables = null,
-                                                         string? proxy = null)
+                                                         string? proxy = null,
+                                                         bool toCsv = false,
+                                                         string? filePath = null,
+                                                         string? fileName = null)
         /*
          * This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
          * 
@@ -86,6 +153,12 @@ namespace OpenMeteoApiNet.NBM
                 "wind_direction_80m" 
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
+
+          7) toCsv (bool) - Optional boolean flag to indicate whether to save the forecast data to a CSV file. Default is false.
+
+          8) filePath (string) - Optional file path to save the CSV file. Default is null (current directory).
+
+          9) fileName (string) - Optional file name for the CSV file. Default is null (auto-generated name based on latitude, longitude, and timestamp).
          *      
          * 
          * Returns
@@ -130,67 +203,12 @@ namespace OpenMeteoApiNet.NBM
                 $"&models=ncep_nbm_conus&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
-            // Create HTTP client
-            HttpClient httpClient;
+            var response = await RetrieveData.GetDataAsync(url,
+                                              proxy);
 
-            // If a proxy is provided, set up the HttpClient to use the proxy.
-            if (!string.IsNullOrEmpty(proxy))
+            // Read our response as a string, then parse it as JSON.
+            if (response?.Content != null)
             {
-                var httpClientHandler = new HttpClientHandler
-                {
-                    Proxy = new WebProxy(proxy),
-                    UseProxy = true
-                };
-                httpClient = new HttpClient(httpClientHandler);
-            }
-            else
-            {
-                httpClient = new HttpClient();
-            }
-
-            // 3. Ensure proper disposal of the selected client
-            using (httpClient)
-            {
-
-                // Ping the server for a response. 
-                var response = await httpClient.GetAsync(url);
-
-                // Ensure we get a successful response, otherwise throw an exception.
-                try
-                {
-                    response.EnsureSuccessStatusCode();
-                }
-                catch
-                {
-                    HttpStatusCode statusCode = response.StatusCode;
-
-                    if (statusCode == HttpStatusCode.BadRequest)
-                    {
-                        Console.WriteLine($"Bad Request: The server could not understand the request. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.Unauthorized)
-                    {
-                        Console.WriteLine($"Unauthorized: Access is denied due to invalid credentials. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.Forbidden)
-                    {
-                        Console.WriteLine($"Forbidden: You do not have permission to access this resource. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.NotFound)
-                    {
-                        Console.WriteLine($"Not Found: The requested resource could not be found. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if ((int)statusCode >= 500 && (int)statusCode < 600)
-                    {
-                        Console.WriteLine($"Server Error: The server encountered an error. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"HTTP Error: An error occurred while making the request. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                }
-
-                // Read our response as a string, then parse it as JSON.
                 var jsonString = await response.Content.ReadAsStringAsync();
 
                 // Parse the JSON string and extract the "hourly" property, which contains the hourly weather data.
@@ -222,7 +240,35 @@ namespace OpenMeteoApiNet.NBM
                                                 .Select(dt => dt.ToLocalTime())
                                                 .ToList();
 
-                    return data;
+                    var df = ToDataFrame(data);
+
+                    if (toCsv == true)
+                    {
+                        if (filePath == null)
+                        {
+                            filePath = Path.Combine(currentDirectory, "Open Meteo Data");
+                        }
+                        else
+                        {
+                            filePath = filePath;
+                        }
+                        DirectoryBuilder.BuildDirectory(filePath);
+
+                        if (fileName == null)
+                        {
+                            string latString = (string)latitude.Replace('.', '_');
+                            string lonString = (string)longitude.Replace('.', '_');
+                            fileName = $"NBM_PointForecast_{latString}_{lonString}.csv";
+                        }
+                        else
+                        {
+                            fileName = fileName;
+                        }
+
+                        ArchiveData.SaveDataToCsv(filePath, fileName, df);
+                    }
+
+                    return df;
                 }
 
                 else
@@ -230,8 +276,14 @@ namespace OpenMeteoApiNet.NBM
                     Console.WriteLine($"NBM Data Not Available At This Time");
                     return null;
                 }
-
             }
+            else
+            {
+                // Handle the case where the request failed or no content was returned
+                Console.WriteLine("API request failed or returned empty content.");
+                return null;
+
+            } 
         }
     }
 }
