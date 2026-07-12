@@ -4,7 +4,10 @@
  * (C) Eric J. Drewitz 2026
  */
 
-using System.Net;
+using Microsoft.Data.Analysis;
+using OpenMeteoApiNet.Utils.BuildDirectory;
+using OpenMeteoApiNet.Utils.DataAccess;
+using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
 namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
@@ -27,14 +30,76 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
     }
     public static class nbmHourlyForecastApi
     {
-        public static async Task<nbmParams?> GetPointForecast(string latitude,
+
+        private static DataFrame ToDataFrame(nbmParams data)
+        {
+            /*
+             * Converts the data object of type iconParams to a DataFrame object.
+             * 
+             * Returns
+             * -------
+             * 
+             * Microsoft.Data.Analysis.DataFrame object containing the data from the iconParams object.
+             * 
+             */
+
+            var df = new DataFrame();
+
+            // 1. Add the time column (Strings)
+            if (data.time != null)
+            {
+                df.Columns.Add(new StringDataFrameColumn("time", data.time));
+            }
+
+            // 2. Add the nullable double columns (maps cleanly to PrimitiveDataFrameColumn)
+            if (data.temperature_2m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m", data.temperature_2m));
+
+            if (data.cape != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("cape", data.cape));
+
+            if (data.precipitation != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation", data.precipitation));
+
+            if (data.snowfall != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snowfall", data.snowfall));
+
+            if (data.surface_pressure != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_pressure", data.surface_pressure));
+
+            if (data.visibility != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility", data.visibility));
+
+            if (data.wind_speed_10m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_10m", data.wind_speed_10m));
+
+            if (data.wind_speed_80m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m", data.wind_speed_80m));
+
+            if (data.wind_direction_10m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_10m", data.wind_direction_10m));
+
+            if (data.wind_direction_80m != null)
+                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m", data.wind_direction_80m));
+
+
+            return df;
+
+        }
+
+        private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
+
+        public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                          string longitude,
                                                          int days = 7,
                                                          string temperatureUnit = "fahrenheit",
                                                          string windSpeedUnit = "mph",
                                                          string precipitationUnit = "inch",
                                                          string[]? variables = null,
-                                                         string? proxy = null)
+                                                         string? proxy = null,
+                                                         bool toCsv = false,
+                                                         string? filePath = null,
+                                                         string? fileName = null)
         /*
          * This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
          * 
@@ -132,107 +197,76 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
                 $"&models=ncep_nbm_conus&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
-            // Create HTTP client
-            HttpClient httpClient;
+            var response = await RetrieveData.GetDataAsync(url,
+                                              proxy);
 
-            // If a proxy is provided, set up the HttpClient to use the proxy.
-            if (!string.IsNullOrEmpty(proxy))
+            // Read our response as a string, then parse it as JSON.
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            // Parse the JSON string and extract the "hourly" property, which contains the hourly weather data.
+            var root = JsonDocument.Parse(jsonString).RootElement;
+
+            // Check if the "hourly" property exists in the JSON response.
+            if (!root.TryGetProperty("hourly", out var hourlyWeatherElement))
             {
-                var httpClientHandler = new HttpClientHandler
-                {
-                    Proxy = new WebProxy(proxy),
-                    UseProxy = true
-                };
-                httpClient = new HttpClient(httpClientHandler);
-            }
-            else
-            {
-                httpClient = new HttpClient();
+                Console.WriteLine("Response JSON does not contain a 'hourly property.");
+                return null;
             }
 
-            // 3. Ensure proper disposal of the selected client
-            using (httpClient)
+            // Deserialize the "hourly" property into our nbmParams class. If deserialization fails, print an error message and return.
+            var data = JsonSerializer.Deserialize<nbmParams>(hourlyWeatherElement.GetRawText());
+            if (data == null)
             {
+                Console.WriteLine("Unable to parse hourly weather data.");
+                return null;
+            }
 
-                // Ping the server for a response. 
-                var response = await httpClient.GetAsync(url);
+            // Convert the DateTime object to local time.
+            if (data != null)
+            {
+                data.parsedDateTimes = data.time
+                                            .Select(t => DateTime.Parse(t))
+                                            .ToList();
 
-                // Ensure we get a successful response, otherwise throw an exception.
-                try
+                data.parsedLocalTimes = data.parsedDateTimes
+                                            .Select(dt => dt.ToLocalTime())
+                                            .ToList();
+
+                var df = ToDataFrame(data);
+
+                if (toCsv == true)
                 {
-                    response.EnsureSuccessStatusCode();
-                }
-                catch
-                {
-                    HttpStatusCode statusCode = response.StatusCode;
-
-                    if (statusCode == HttpStatusCode.BadRequest)
+                    if (filePath == null)
                     {
-                        Console.WriteLine($"Bad Request: The server could not understand the request. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.Unauthorized)
-                    {
-                        Console.WriteLine($"Unauthorized: Access is denied due to invalid credentials. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.Forbidden)
-                    {
-                        Console.WriteLine($"Forbidden: You do not have permission to access this resource. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if (statusCode == HttpStatusCode.NotFound)
-                    {
-                        Console.WriteLine($"Not Found: The requested resource could not be found. Status Code: {(int)statusCode} {statusCode}");
-                    }
-                    else if ((int)statusCode >= 500 && (int)statusCode < 600)
-                    {
-                        Console.WriteLine($"Server Error: The server encountered an error. Status Code: {(int)statusCode} {statusCode}");
+                        filePath = Path.Combine(currentDirectory, "Open Meteo Data");
                     }
                     else
                     {
-                        Console.WriteLine($"HTTP Error: An error occurred while making the request. Status Code: {(int)statusCode} {statusCode}");
+                        filePath = filePath;
                     }
+                    DirectoryBuilder.BuildDirectory(filePath);
+
+                    if (fileName == null)
+                    {
+                        string latString = (string)latitude.Replace('.', '_');
+                        string lonString = (string)longitude.Replace('.', '_');
+                        fileName = $"NBM_PointForecast_{latString}_{lonString}.csv";
+                    }
+                    else
+                    {
+                        fileName = fileName;
+                    }
+
+                    ArchiveData.SaveDataToCsv(filePath, fileName, df);
                 }
 
-                // Read our response as a string, then parse it as JSON.
-                var jsonString = await response.Content.ReadAsStringAsync();
+                return df;
+            }
 
-                // Parse the JSON string and extract the "hourly" property, which contains the hourly weather data.
-                var root = JsonDocument.Parse(jsonString).RootElement;
-
-                // Check if the "hourly" property exists in the JSON response.
-                if (!root.TryGetProperty("hourly", out var hourlyWeatherElement))
-                {
-                    Console.WriteLine("Response JSON does not contain a 'hourly property.");
-                    return null;
-                }
-
-                // Deserialize the "hourly" property into our nbmParams class. If deserialization fails, print an error message and return.
-                var data = JsonSerializer.Deserialize<nbmParams>(hourlyWeatherElement.GetRawText());
-                if (data == null)
-                {
-                    Console.WriteLine("Unable to parse hourly weather data.");
-                    return null;
-                }
-
-                // Convert the DateTime object to local time.
-                if (data != null)
-                {
-                    data.parsedDateTimes = data.time
-                                                .Select(t => DateTime.Parse(t))
-                                                .ToList();
-
-                    data.parsedLocalTimes = data.parsedDateTimes
-                                                .Select(dt => dt.ToLocalTime())
-                                                .ToList();
-
-                    return data;
-                }
-
-                else
-                {
-                    Console.WriteLine($"NBM Data Not Available At This Time");
-                    return null;
-                }
-
+            else
+            {
+                Console.WriteLine($"NBM Data Not Available At This Time");
+                return null;
             }
         }
     }
