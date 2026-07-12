@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>OpenMeteoApiNet</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.1</Version>
 		<Authors>Eric J. Drewitz</Authors>
 		<Product>OpenMeteoApiNet</Product>
 		<RepositoryUrl>https://github.com/edrewitz/OpenMeteoApi.NET</RepositoryUrl>
