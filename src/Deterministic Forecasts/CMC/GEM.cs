@@ -167,7 +167,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
         private static DataFrame ToDataFrame(gemParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type gemParams to a DataFrame object.
              * 
              * Returns
              * -------

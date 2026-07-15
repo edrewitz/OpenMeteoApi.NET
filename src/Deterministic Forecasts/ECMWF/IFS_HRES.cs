@@ -155,7 +155,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.ECMWF.ECMWF_IFS_HRES
         private static DataFrame ToDataFrame(ifsHRESParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type ifsHRESParams to a DataFrame object.
              * 
              * Returns
              * -------

@@ -195,7 +195,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NOAA.GFS
         private static DataFrame ToDataFrame(gfsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type gfsParams to a DataFrame object.
              * 
              * Returns
              * -------

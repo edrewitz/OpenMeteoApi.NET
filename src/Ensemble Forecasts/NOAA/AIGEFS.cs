@@ -10,9 +10,9 @@ using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
+namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.AIGEFS
 {
-    public class gefsParams
+    public class aigefsParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
@@ -46,99 +46,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public double?[]? temperature_2m_member28 { get; set; }
         public double?[]? temperature_2m_member29 { get; set; }
         public double?[]? temperature_2m_member30 { get; set; }
-        public double?[]? relative_humidity_2m { get; set; }
-        public double?[]? relative_humidity_2m_member01 { get; set; }
-        public double?[]? relative_humidity_2m_member02 { get; set; }
-        public double?[]? relative_humidity_2m_member03 { get; set; }
-        public double?[]? relative_humidity_2m_member04 { get; set; }
-        public double?[]? relative_humidity_2m_member05 { get; set; }
-        public double?[]? relative_humidity_2m_member06 { get; set; }
-        public double?[]? relative_humidity_2m_member07 { get; set; }
-        public double?[]? relative_humidity_2m_member08 { get; set; }
-        public double?[]? relative_humidity_2m_member09 { get; set; }
-        public double?[]? relative_humidity_2m_member10 { get; set; }
-        public double?[]? relative_humidity_2m_member11 { get; set; }
-        public double?[]? relative_humidity_2m_member12 { get; set; }
-        public double?[]? relative_humidity_2m_member13 { get; set; }
-        public double?[]? relative_humidity_2m_member14 { get; set; }
-        public double?[]? relative_humidity_2m_member15 { get; set; }
-        public double?[]? relative_humidity_2m_member16 { get; set; }
-        public double?[]? relative_humidity_2m_member17 { get; set; }
-        public double?[]? relative_humidity_2m_member18 { get; set; }
-        public double?[]? relative_humidity_2m_member19 { get; set; }
-        public double?[]? relative_humidity_2m_member20 { get; set; }
-        public double?[]? relative_humidity_2m_member21 { get; set; }
-        public double?[]? relative_humidity_2m_member22 { get; set; }
-        public double?[]? relative_humidity_2m_member23 { get; set; }
-        public double?[]? relative_humidity_2m_member24 { get; set; }
-        public double?[]? relative_humidity_2m_member25 { get; set; }
-        public double?[]? relative_humidity_2m_member26 { get; set; }
-        public double?[]? relative_humidity_2m_member27 { get; set; }
-        public double?[]? relative_humidity_2m_member28 { get; set; }
-        public double?[]? relative_humidity_2m_member29 { get; set; }
-        public double?[]? relative_humidity_2m_member30 { get; set; }
-        public double?[]? dew_point_2m { get; set; }
-        public double?[]? dew_point_2m_member01 { get; set; }
-        public double?[]? dew_point_2m_member02 { get; set; }
-        public double?[]? dew_point_2m_member03 { get; set; }
-        public double?[]? dew_point_2m_member04 { get; set; }
-        public double?[]? dew_point_2m_member05 { get; set; }
-        public double?[]? dew_point_2m_member06 { get; set; }
-        public double?[]? dew_point_2m_member07 { get; set; }
-        public double?[]? dew_point_2m_member08 { get; set; }
-        public double?[]? dew_point_2m_member09 { get; set; }
-        public double?[]? dew_point_2m_member10 { get; set; }
-        public double?[]? dew_point_2m_member11 { get; set; }
-        public double?[]? dew_point_2m_member12 { get; set; }
-        public double?[]? dew_point_2m_member13 { get; set; }
-        public double?[]? dew_point_2m_member14 { get; set; }
-        public double?[]? dew_point_2m_member15 { get; set; }
-        public double?[]? dew_point_2m_member16 { get; set; }
-        public double?[]? dew_point_2m_member17 { get; set; }
-        public double?[]? dew_point_2m_member18 { get; set; }
-        public double?[]? dew_point_2m_member19 { get; set; }
-        public double?[]? dew_point_2m_member20 { get; set; }
-        public double?[]? dew_point_2m_member21 { get; set; }
-        public double?[]? dew_point_2m_member22 { get; set; }
-        public double?[]? dew_point_2m_member23 { get; set; }
-        public double?[]? dew_point_2m_member24 { get; set; }
-        public double?[]? dew_point_2m_member25 { get; set; }
-        public double?[]? dew_point_2m_member26 { get; set; }
-        public double?[]? dew_point_2m_member27 { get; set; }
-        public double?[]? dew_point_2m_member28 { get; set; }
-        public double?[]? dew_point_2m_member29 { get; set; }
-        public double?[]? dew_point_2m_member30 { get; set; }
-        public double?[]? apparent_temperature { get; set; }
-        public double?[]? apparent_temperature_member01 { get; set; }
-        public double?[]? apparent_temperature_member02 { get; set; }
-        public double?[]? apparent_temperature_member03 { get; set; }
-        public double?[]? apparent_temperature_member04 { get; set; }
-        public double?[]? apparent_temperature_member05 { get; set; }
-        public double?[]? apparent_temperature_member06 { get; set; }
-        public double?[]? apparent_temperature_member07 { get; set; }
-        public double?[]? apparent_temperature_member08 { get; set; }
-        public double?[]? apparent_temperature_member09 { get; set; }
-        public double?[]? apparent_temperature_member10 { get; set; }
-        public double?[]? apparent_temperature_member11 { get; set; }
-        public double?[]? apparent_temperature_member12 { get; set; }
-        public double?[]? apparent_temperature_member13 { get; set; }
-        public double?[]? apparent_temperature_member14 { get; set; }
-        public double?[]? apparent_temperature_member15 { get; set; }
-        public double?[]? apparent_temperature_member16 { get; set; }
-        public double?[]? apparent_temperature_member17 { get; set; }
-        public double?[]? apparent_temperature_member18 { get; set; }
-        public double?[]? apparent_temperature_member19 { get; set; }
-        public double?[]? apparent_temperature_member20 { get; set; }
-        public double?[]? apparent_temperature_member21 { get; set; }
-        public double?[]? apparent_temperature_member22 { get; set; }
-        public double?[]? apparent_temperature_member23 { get; set; }
-        public double?[]? apparent_temperature_member24 { get; set; }
-        public double?[]? apparent_temperature_member25 { get; set; }
-        public double?[]? apparent_temperature_member26 { get; set; }
-        public double?[]? apparent_temperature_member27 { get; set; }
-        public double?[]? apparent_temperature_member28 { get; set; }
-        public double?[]? apparent_temperature_member29 { get; set; }
-        public double?[]? apparent_temperature_member30 { get; set; }
         public double?[]? precipitation { get; set; }
         public double?[]? precipitation_member01 { get; set; }
         public double?[]? precipitation_member02 { get; set; }
@@ -201,37 +108,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public double?[]? rain_member28 { get; set; }
         public double?[]? rain_member29 { get; set; }
         public double?[]? rain_member30 { get; set; }
-        public double?[]? snow_depth { get; set; }
-        public double?[]? snow_depth_member01 { get; set; }
-        public double?[]? snow_depth_member02 { get; set; }
-        public double?[]? snow_depth_member03 { get; set; }
-        public double?[]? snow_depth_member04 { get; set; }
-        public double?[]? snow_depth_member05 { get; set; }
-        public double?[]? snow_depth_member06 { get; set; }
-        public double?[]? snow_depth_member07 { get; set; }
-        public double?[]? snow_depth_member08 { get; set; }
-        public double?[]? snow_depth_member09 { get; set; }
-        public double?[]? snow_depth_member10 { get; set; }
-        public double?[]? snow_depth_member11 { get; set; }
-        public double?[]? snow_depth_member12 { get; set; }
-        public double?[]? snow_depth_member13 { get; set; }
-        public double?[]? snow_depth_member14 { get; set; }
-        public double?[]? snow_depth_member15 { get; set; }
-        public double?[]? snow_depth_member16 { get; set; }
-        public double?[]? snow_depth_member17 { get; set; }
-        public double?[]? snow_depth_member18 { get; set; }
-        public double?[]? snow_depth_member19 { get; set; }
-        public double?[]? snow_depth_member20 { get; set; }
-        public double?[]? snow_depth_member21 { get; set; }
-        public double?[]? snow_depth_member22 { get; set; }
-        public double?[]? snow_depth_member23 { get; set; }
-        public double?[]? snow_depth_member24 { get; set; }
-        public double?[]? snow_depth_member25 { get; set; }
-        public double?[]? snow_depth_member26 { get; set; }
-        public double?[]? snow_depth_member27 { get; set; }
-        public double?[]? snow_depth_member28 { get; set; }
-        public double?[]? snow_depth_member29 { get; set; }
-        public double?[]? snow_depth_member30 { get; set; }
         public double?[]? snowfall { get; set; }
         public double?[]? snowfall_member01 { get; set; }
         public double?[]? snowfall_member02 { get; set; }
@@ -387,99 +263,99 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public double?[]? cloud_cover_member28 { get; set; }
         public double?[]? cloud_cover_member29 { get; set; }
         public double?[]? cloud_cover_member30 { get; set; }
-        public double?[]? visibility { get; set; }
-        public double?[]? visibility_member01 { get; set; }
-        public double?[]? visibility_member02 { get; set; }
-        public double?[]? visibility_member03 { get; set; }
-        public double?[]? visibility_member04 { get; set; }
-        public double?[]? visibility_member05 { get; set; }
-        public double?[]? visibility_member06 { get; set; }
-        public double?[]? visibility_member07 { get; set; }
-        public double?[]? visibility_member08 { get; set; }
-        public double?[]? visibility_member09 { get; set; }
-        public double?[]? visibility_member10 { get; set; }
-        public double?[]? visibility_member11 { get; set; }
-        public double?[]? visibility_member12 { get; set; }
-        public double?[]? visibility_member13 { get; set; }
-        public double?[]? visibility_member14 { get; set; }
-        public double?[]? visibility_member15 { get; set; }
-        public double?[]? visibility_member16 { get; set; }
-        public double?[]? visibility_member17 { get; set; }
-        public double?[]? visibility_member18 { get; set; }
-        public double?[]? visibility_member19 { get; set; }
-        public double?[]? visibility_member20 { get; set; }
-        public double?[]? visibility_member21 { get; set; }
-        public double?[]? visibility_member22 { get; set; }
-        public double?[]? visibility_member23 { get; set; }
-        public double?[]? visibility_member24 { get; set; }
-        public double?[]? visibility_member25 { get; set; }
-        public double?[]? visibility_member26 { get; set; }
-        public double?[]? visibility_member27 { get; set; }
-        public double?[]? visibility_member28 { get; set; }
-        public double?[]? visibility_member29 { get; set; }
-        public double?[]? visibility_member30 { get; set; }
-        public double?[]? et0_fao_evapotranspiration { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member01 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member02 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member03 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member04 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member05 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member06 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member07 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member08 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member09 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member10 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member11 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member12 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member13 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member14 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member15 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member16 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member17 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member18 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member19 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member20 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member21 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member22 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member23 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member24 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member25 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member26 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member27 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member28 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member29 { get; set; }
-        public double?[]? et0_fao_evapotranspiration_member30 { get; set; }
-        public double?[]? vapour_pressure_deficit { get; set; }
-        public double?[]? vapour_pressure_deficit_member01 { get; set; }
-        public double?[]? vapour_pressure_deficit_member02 { get; set; }
-        public double?[]? vapour_pressure_deficit_member03 { get; set; }
-        public double?[]? vapour_pressure_deficit_member04 { get; set; }
-        public double?[]? vapour_pressure_deficit_member05 { get; set; }
-        public double?[]? vapour_pressure_deficit_member06 { get; set; }
-        public double?[]? vapour_pressure_deficit_member07 { get; set; }
-        public double?[]? vapour_pressure_deficit_member08 { get; set; }
-        public double?[]? vapour_pressure_deficit_member09 { get; set; }
-        public double?[]? vapour_pressure_deficit_member10 { get; set; }
-        public double?[]? vapour_pressure_deficit_member11 { get; set; }
-        public double?[]? vapour_pressure_deficit_member12 { get; set; }
-        public double?[]? vapour_pressure_deficit_member13 { get; set; }
-        public double?[]? vapour_pressure_deficit_member14 { get; set; }
-        public double?[]? vapour_pressure_deficit_member15 { get; set; }
-        public double?[]? vapour_pressure_deficit_member16 { get; set; }
-        public double?[]? vapour_pressure_deficit_member17 { get; set; }
-        public double?[]? vapour_pressure_deficit_member18 { get; set; }
-        public double?[]? vapour_pressure_deficit_member19 { get; set; }
-        public double?[]? vapour_pressure_deficit_member20 { get; set; }
-        public double?[]? vapour_pressure_deficit_member21 { get; set; }
-        public double?[]? vapour_pressure_deficit_member22 { get; set; }
-        public double?[]? vapour_pressure_deficit_member23 { get; set; }
-        public double?[]? vapour_pressure_deficit_member24 { get; set; }
-        public double?[]? vapour_pressure_deficit_member25 { get; set; }
-        public double?[]? vapour_pressure_deficit_member26 { get; set; }
-        public double?[]? vapour_pressure_deficit_member27 { get; set; }
-        public double?[]? vapour_pressure_deficit_member28 { get; set; }
-        public double?[]? vapour_pressure_deficit_member29 { get; set; }
-        public double?[]? vapour_pressure_deficit_member30 { get; set; }
+        public double?[]? cloud_cover_low { get; set; }
+        public double?[]? cloud_cover_low_member01 { get; set; }
+        public double?[]? cloud_cover_low_member02 { get; set; }
+        public double?[]? cloud_cover_low_member03 { get; set; }
+        public double?[]? cloud_cover_low_member04 { get; set; }
+        public double?[]? cloud_cover_low_member05 { get; set; }
+        public double?[]? cloud_cover_low_member06 { get; set; }
+        public double?[]? cloud_cover_low_member07 { get; set; }
+        public double?[]? cloud_cover_low_member08 { get; set; }
+        public double?[]? cloud_cover_low_member09 { get; set; }
+        public double?[]? cloud_cover_low_member10 { get; set; }
+        public double?[]? cloud_cover_low_member11 { get; set; }
+        public double?[]? cloud_cover_low_member12 { get; set; }
+        public double?[]? cloud_cover_low_member13 { get; set; }
+        public double?[]? cloud_cover_low_member14 { get; set; }
+        public double?[]? cloud_cover_low_member15 { get; set; }
+        public double?[]? cloud_cover_low_member16 { get; set; }
+        public double?[]? cloud_cover_low_member17 { get; set; }
+        public double?[]? cloud_cover_low_member18 { get; set; }
+        public double?[]? cloud_cover_low_member19 { get; set; }
+        public double?[]? cloud_cover_low_member20 { get; set; }
+        public double?[]? cloud_cover_low_member21 { get; set; }
+        public double?[]? cloud_cover_low_member22 { get; set; }
+        public double?[]? cloud_cover_low_member23 { get; set; }
+        public double?[]? cloud_cover_low_member24 { get; set; }
+        public double?[]? cloud_cover_low_member25 { get; set; }
+        public double?[]? cloud_cover_low_member26 { get; set; }
+        public double?[]? cloud_cover_low_member27 { get; set; }
+        public double?[]? cloud_cover_low_member28 { get; set; }
+        public double?[]? cloud_cover_low_member29 { get; set; }
+        public double?[]? cloud_cover_low_member30 { get; set; }
+        public double?[]? cloud_cover_mid { get; set; }
+        public double?[]? cloud_cover_mid_member01 { get; set; }
+        public double?[]? cloud_cover_mid_member02 { get; set; }
+        public double?[]? cloud_cover_mid_member03 { get; set; }
+        public double?[]? cloud_cover_mid_member04 { get; set; }
+        public double?[]? cloud_cover_mid_member05 { get; set; }
+        public double?[]? cloud_cover_mid_member06 { get; set; }
+        public double?[]? cloud_cover_mid_member07 { get; set; }
+        public double?[]? cloud_cover_mid_member08 { get; set; }
+        public double?[]? cloud_cover_mid_member09 { get; set; }
+        public double?[]? cloud_cover_mid_member10 { get; set; }
+        public double?[]? cloud_cover_mid_member11 { get; set; }
+        public double?[]? cloud_cover_mid_member12 { get; set; }
+        public double?[]? cloud_cover_mid_member13 { get; set; }
+        public double?[]? cloud_cover_mid_member14 { get; set; }
+        public double?[]? cloud_cover_mid_member15 { get; set; }
+        public double?[]? cloud_cover_mid_member16 { get; set; }
+        public double?[]? cloud_cover_mid_member17 { get; set; }
+        public double?[]? cloud_cover_mid_member18 { get; set; }
+        public double?[]? cloud_cover_mid_member19 { get; set; }
+        public double?[]? cloud_cover_mid_member20 { get; set; }
+        public double?[]? cloud_cover_mid_member21 { get; set; }
+        public double?[]? cloud_cover_mid_member22 { get; set; }
+        public double?[]? cloud_cover_mid_member23 { get; set; }
+        public double?[]? cloud_cover_mid_member24 { get; set; }
+        public double?[]? cloud_cover_mid_member25 { get; set; }
+        public double?[]? cloud_cover_mid_member26 { get; set; }
+        public double?[]? cloud_cover_mid_member27 { get; set; }
+        public double?[]? cloud_cover_mid_member28 { get; set; }
+        public double?[]? cloud_cover_mid_member29 { get; set; }
+        public double?[]? cloud_cover_mid_member30 { get; set; }
+        public double?[]? cloud_cover_high { get; set; }
+        public double?[]? cloud_cover_high_member01 { get; set; }
+        public double?[]? cloud_cover_high_member02 { get; set; }
+        public double?[]? cloud_cover_high_member03 { get; set; }
+        public double?[]? cloud_cover_high_member04 { get; set; }
+        public double?[]? cloud_cover_high_member05 { get; set; }
+        public double?[]? cloud_cover_high_member06 { get; set; }
+        public double?[]? cloud_cover_high_member07 { get; set; }
+        public double?[]? cloud_cover_high_member08 { get; set; }
+        public double?[]? cloud_cover_high_member09 { get; set; }
+        public double?[]? cloud_cover_high_member10 { get; set; }
+        public double?[]? cloud_cover_high_member11 { get; set; }
+        public double?[]? cloud_cover_high_member12 { get; set; }
+        public double?[]? cloud_cover_high_member13 { get; set; }
+        public double?[]? cloud_cover_high_member14 { get; set; }
+        public double?[]? cloud_cover_high_member15 { get; set; }
+        public double?[]? cloud_cover_high_member16 { get; set; }
+        public double?[]? cloud_cover_high_member17 { get; set; }
+        public double?[]? cloud_cover_high_member18 { get; set; }
+        public double?[]? cloud_cover_high_member19 { get; set; }
+        public double?[]? cloud_cover_high_member20 { get; set; }
+        public double?[]? cloud_cover_high_member21 { get; set; }
+        public double?[]? cloud_cover_high_member22 { get; set; }
+        public double?[]? cloud_cover_high_member23 { get; set; }
+        public double?[]? cloud_cover_high_member24 { get; set; }
+        public double?[]? cloud_cover_high_member25 { get; set; }
+        public double?[]? cloud_cover_high_member26 { get; set; }
+        public double?[]? cloud_cover_high_member27 { get; set; }
+        public double?[]? cloud_cover_high_member28 { get; set; }
+        public double?[]? cloud_cover_high_member29 { get; set; }
+        public double?[]? cloud_cover_high_member30 { get; set; }
         public double?[]? wind_speed_10m { get; set; }
         public double?[]? wind_speed_10m_member01 { get; set; }
         public double?[]? wind_speed_10m_member02 { get; set; }
@@ -511,99 +387,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public double?[]? wind_speed_10m_member28 { get; set; }
         public double?[]? wind_speed_10m_member29 { get; set; }
         public double?[]? wind_speed_10m_member30 { get; set; }
-        public double?[]? wind_speed_80m { get; set; }
-        public double?[]? wind_speed_80m_member01 { get; set; }
-        public double?[]? wind_speed_80m_member02 { get; set; }
-        public double?[]? wind_speed_80m_member03 { get; set; }
-        public double?[]? wind_speed_80m_member04 { get; set; }
-        public double?[]? wind_speed_80m_member05 { get; set; }
-        public double?[]? wind_speed_80m_member06 { get; set; }
-        public double?[]? wind_speed_80m_member07 { get; set; }
-        public double?[]? wind_speed_80m_member08 { get; set; }
-        public double?[]? wind_speed_80m_member09 { get; set; }
-        public double?[]? wind_speed_80m_member10 { get; set; }
-        public double?[]? wind_speed_80m_member11 { get; set; }
-        public double?[]? wind_speed_80m_member12 { get; set; }
-        public double?[]? wind_speed_80m_member13 { get; set; }
-        public double?[]? wind_speed_80m_member14 { get; set; }
-        public double?[]? wind_speed_80m_member15 { get; set; }
-        public double?[]? wind_speed_80m_member16 { get; set; }
-        public double?[]? wind_speed_80m_member17 { get; set; }
-        public double?[]? wind_speed_80m_member18 { get; set; }
-        public double?[]? wind_speed_80m_member19 { get; set; }
-        public double?[]? wind_speed_80m_member20 { get; set; }
-        public double?[]? wind_speed_80m_member21 { get; set; }
-        public double?[]? wind_speed_80m_member22 { get; set; }
-        public double?[]? wind_speed_80m_member23 { get; set; }
-        public double?[]? wind_speed_80m_member24 { get; set; }
-        public double?[]? wind_speed_80m_member25 { get; set; }
-        public double?[]? wind_speed_80m_member26 { get; set; }
-        public double?[]? wind_speed_80m_member27 { get; set; }
-        public double?[]? wind_speed_80m_member28 { get; set; }
-        public double?[]? wind_speed_80m_member29 { get; set; }
-        public double?[]? wind_speed_80m_member30 { get; set; }
-        public double?[]? wind_speed_100m { get; set; }
-        public double?[]? wind_speed_100m_member01 { get; set; }
-        public double?[]? wind_speed_100m_member02 { get; set; }
-        public double?[]? wind_speed_100m_member03 { get; set; }
-        public double?[]? wind_speed_100m_member04 { get; set; }
-        public double?[]? wind_speed_100m_member05 { get; set; }
-        public double?[]? wind_speed_100m_member06 { get; set; }
-        public double?[]? wind_speed_100m_member07 { get; set; }
-        public double?[]? wind_speed_100m_member08 { get; set; }
-        public double?[]? wind_speed_100m_member09 { get; set; }
-        public double?[]? wind_speed_100m_member10 { get; set; }
-        public double?[]? wind_speed_100m_member11 { get; set; }
-        public double?[]? wind_speed_100m_member12 { get; set; }
-        public double?[]? wind_speed_100m_member13 { get; set; }
-        public double?[]? wind_speed_100m_member14 { get; set; }
-        public double?[]? wind_speed_100m_member15 { get; set; }
-        public double?[]? wind_speed_100m_member16 { get; set; }
-        public double?[]? wind_speed_100m_member17 { get; set; }
-        public double?[]? wind_speed_100m_member18 { get; set; }
-        public double?[]? wind_speed_100m_member19 { get; set; }
-        public double?[]? wind_speed_100m_member20 { get; set; }
-        public double?[]? wind_speed_100m_member21 { get; set; }
-        public double?[]? wind_speed_100m_member22 { get; set; }
-        public double?[]? wind_speed_100m_member23 { get; set; }
-        public double?[]? wind_speed_100m_member24 { get; set; }
-        public double?[]? wind_speed_100m_member25 { get; set; }
-        public double?[]? wind_speed_100m_member26 { get; set; }
-        public double?[]? wind_speed_100m_member27 { get; set; }
-        public double?[]? wind_speed_100m_member28 { get; set; }
-        public double?[]? wind_speed_100m_member29 { get; set; }
-        public double?[]? wind_speed_100m_member30 { get; set; }
-        public double?[]? wind_speed_120m { get; set; }
-        public double?[]? wind_speed_120m_member01 { get; set; }
-        public double?[]? wind_speed_120m_member02 { get; set; }
-        public double?[]? wind_speed_120m_member03 { get; set; }
-        public double?[]? wind_speed_120m_member04 { get; set; }
-        public double?[]? wind_speed_120m_member05 { get; set; }
-        public double?[]? wind_speed_120m_member06 { get; set; }
-        public double?[]? wind_speed_120m_member07 { get; set; }
-        public double?[]? wind_speed_120m_member08 { get; set; }
-        public double?[]? wind_speed_120m_member09 { get; set; }
-        public double?[]? wind_speed_120m_member10 { get; set; }
-        public double?[]? wind_speed_120m_member11 { get; set; }
-        public double?[]? wind_speed_120m_member12 { get; set; }
-        public double?[]? wind_speed_120m_member13 { get; set; }
-        public double?[]? wind_speed_120m_member14 { get; set; }
-        public double?[]? wind_speed_120m_member15 { get; set; }
-        public double?[]? wind_speed_120m_member16 { get; set; }
-        public double?[]? wind_speed_120m_member17 { get; set; }
-        public double?[]? wind_speed_120m_member18 { get; set; }
-        public double?[]? wind_speed_120m_member19 { get; set; }
-        public double?[]? wind_speed_120m_member20 { get; set; }
-        public double?[]? wind_speed_120m_member21 { get; set; }
-        public double?[]? wind_speed_120m_member22 { get; set; }
-        public double?[]? wind_speed_120m_member23 { get; set; }
-        public double?[]? wind_speed_120m_member24 { get; set; }
-        public double?[]? wind_speed_120m_member25 { get; set; }
-        public double?[]? wind_speed_120m_member26 { get; set; }
-        public double?[]? wind_speed_120m_member27 { get; set; }
-        public double?[]? wind_speed_120m_member28 { get; set; }
-        public double?[]? wind_speed_120m_member29 { get; set; }
-        public double?[]? wind_speed_120m_member30 { get; set; }
         public double?[]? wind_direction_10m { get; set; }
         public double?[]? wind_direction_10m_member01 { get; set; }
         public double?[]? wind_direction_10m_member02 { get; set; }
@@ -635,471 +418,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public double?[]? wind_direction_10m_member28 { get; set; }
         public double?[]? wind_direction_10m_member29 { get; set; }
         public double?[]? wind_direction_10m_member30 { get; set; }
-        public double?[]? wind_direction_80m { get; set; }
-        public double?[]? wind_direction_80m_member01 { get; set; }
-        public double?[]? wind_direction_80m_member02 { get; set; }
-        public double?[]? wind_direction_80m_member03 { get; set; }
-        public double?[]? wind_direction_80m_member04 { get; set; }
-        public double?[]? wind_direction_80m_member05 { get; set; }
-        public double?[]? wind_direction_80m_member06 { get; set; }
-        public double?[]? wind_direction_80m_member07 { get; set; }
-        public double?[]? wind_direction_80m_member08 { get; set; }
-        public double?[]? wind_direction_80m_member09 { get; set; }
-        public double?[]? wind_direction_80m_member10 { get; set; }
-        public double?[]? wind_direction_80m_member11 { get; set; }
-        public double?[]? wind_direction_80m_member12 { get; set; }
-        public double?[]? wind_direction_80m_member13 { get; set; }
-        public double?[]? wind_direction_80m_member14 { get; set; }
-        public double?[]? wind_direction_80m_member15 { get; set; }
-        public double?[]? wind_direction_80m_member16 { get; set; }
-        public double?[]? wind_direction_80m_member17 { get; set; }
-        public double?[]? wind_direction_80m_member18 { get; set; }
-        public double?[]? wind_direction_80m_member19 { get; set; }
-        public double?[]? wind_direction_80m_member20 { get; set; }
-        public double?[]? wind_direction_80m_member21 { get; set; }
-        public double?[]? wind_direction_80m_member22 { get; set; }
-        public double?[]? wind_direction_80m_member23 { get; set; }
-        public double?[]? wind_direction_80m_member24 { get; set; }
-        public double?[]? wind_direction_80m_member25 { get; set; }
-        public double?[]? wind_direction_80m_member26 { get; set; }
-        public double?[]? wind_direction_80m_member27 { get; set; }
-        public double?[]? wind_direction_80m_member28 { get; set; }
-        public double?[]? wind_direction_80m_member29 { get; set; }
-        public double?[]? wind_direction_80m_member30 { get; set; }
-        public double?[]? wind_direction_100m { get; set; }
-        public double?[]? wind_direction_100m_member01 { get; set; }
-        public double?[]? wind_direction_100m_member02 { get; set; }
-        public double?[]? wind_direction_100m_member03 { get; set; }
-        public double?[]? wind_direction_100m_member04 { get; set; }
-        public double?[]? wind_direction_100m_member05 { get; set; }
-        public double?[]? wind_direction_100m_member06 { get; set; }
-        public double?[]? wind_direction_100m_member07 { get; set; }
-        public double?[]? wind_direction_100m_member08 { get; set; }
-        public double?[]? wind_direction_100m_member09 { get; set; }
-        public double?[]? wind_direction_100m_member10 { get; set; }
-        public double?[]? wind_direction_100m_member11 { get; set; }
-        public double?[]? wind_direction_100m_member12 { get; set; }
-        public double?[]? wind_direction_100m_member13 { get; set; }
-        public double?[]? wind_direction_100m_member14 { get; set; }
-        public double?[]? wind_direction_100m_member15 { get; set; }
-        public double?[]? wind_direction_100m_member16 { get; set; }
-        public double?[]? wind_direction_100m_member17 { get; set; }
-        public double?[]? wind_direction_100m_member18 { get; set; }
-        public double?[]? wind_direction_100m_member19 { get; set; }
-        public double?[]? wind_direction_100m_member20 { get; set; }
-        public double?[]? wind_direction_100m_member21 { get; set; }
-        public double?[]? wind_direction_100m_member22 { get; set; }
-        public double?[]? wind_direction_100m_member23 { get; set; }
-        public double?[]? wind_direction_100m_member24 { get; set; }
-        public double?[]? wind_direction_100m_member25 { get; set; }
-        public double?[]? wind_direction_100m_member26 { get; set; }
-        public double?[]? wind_direction_100m_member27 { get; set; }
-        public double?[]? wind_direction_100m_member28 { get; set; }
-        public double?[]? wind_direction_100m_member29 { get; set; }
-        public double?[]? wind_direction_100m_member30 { get; set; }
-        public double?[]? wind_direction_120m { get; set; }
-        public double?[]? wind_direction_120m_member01 { get; set; }
-        public double?[]? wind_direction_120m_member02 { get; set; }
-        public double?[]? wind_direction_120m_member03 { get; set; }
-        public double?[]? wind_direction_120m_member04 { get; set; }
-        public double?[]? wind_direction_120m_member05 { get; set; }
-        public double?[]? wind_direction_120m_member06 { get; set; }
-        public double?[]? wind_direction_120m_member07 { get; set; }
-        public double?[]? wind_direction_120m_member08 { get; set; }
-        public double?[]? wind_direction_120m_member09 { get; set; }
-        public double?[]? wind_direction_120m_member10 { get; set; }
-        public double?[]? wind_direction_120m_member11 { get; set; }
-        public double?[]? wind_direction_120m_member12 { get; set; }
-        public double?[]? wind_direction_120m_member13 { get; set; }
-        public double?[]? wind_direction_120m_member14 { get; set; }
-        public double?[]? wind_direction_120m_member15 { get; set; }
-        public double?[]? wind_direction_120m_member16 { get; set; }
-        public double?[]? wind_direction_120m_member17 { get; set; }
-        public double?[]? wind_direction_120m_member18 { get; set; }
-        public double?[]? wind_direction_120m_member19 { get; set; }
-        public double?[]? wind_direction_120m_member20 { get; set; }
-        public double?[]? wind_direction_120m_member21 { get; set; }
-        public double?[]? wind_direction_120m_member22 { get; set; }
-        public double?[]? wind_direction_120m_member23 { get; set; }
-        public double?[]? wind_direction_120m_member24 { get; set; }
-        public double?[]? wind_direction_120m_member25 { get; set; }
-        public double?[]? wind_direction_120m_member26 { get; set; }
-        public double?[]? wind_direction_120m_member27 { get; set; }
-        public double?[]? wind_direction_120m_member28 { get; set; }
-        public double?[]? wind_direction_120m_member29 { get; set; }
-        public double?[]? wind_direction_120m_member30 { get; set; }
-        public double?[]? wind_gusts_10m { get; set; }
-        public double?[]? wind_gusts_10m_member01 { get; set; }
-        public double?[]? wind_gusts_10m_member02 { get; set; }
-        public double?[]? wind_gusts_10m_member03 { get; set; }
-        public double?[]? wind_gusts_10m_member04 { get; set; }
-        public double?[]? wind_gusts_10m_member05 { get; set; }
-        public double?[]? wind_gusts_10m_member06 { get; set; }
-        public double?[]? wind_gusts_10m_member07 { get; set; }
-        public double?[]? wind_gusts_10m_member08 { get; set; }
-        public double?[]? wind_gusts_10m_member09 { get; set; }
-        public double?[]? wind_gusts_10m_member10 { get; set; }
-        public double?[]? wind_gusts_10m_member11 { get; set; }
-        public double?[]? wind_gusts_10m_member12 { get; set; }
-        public double?[]? wind_gusts_10m_member13 { get; set; }
-        public double?[]? wind_gusts_10m_member14 { get; set; }
-        public double?[]? wind_gusts_10m_member15 { get; set; }
-        public double?[]? wind_gusts_10m_member16 { get; set; }
-        public double?[]? wind_gusts_10m_member17 { get; set; }
-        public double?[]? wind_gusts_10m_member18 { get; set; }
-        public double?[]? wind_gusts_10m_member19 { get; set; }
-        public double?[]? wind_gusts_10m_member20 { get; set; }
-        public double?[]? wind_gusts_10m_member21 { get; set; }
-        public double?[]? wind_gusts_10m_member22 { get; set; }
-        public double?[]? wind_gusts_10m_member23 { get; set; }
-        public double?[]? wind_gusts_10m_member24 { get; set; }
-        public double?[]? wind_gusts_10m_member25 { get; set; }
-        public double?[]? wind_gusts_10m_member26 { get; set; }
-        public double?[]? wind_gusts_10m_member27 { get; set; }
-        public double?[]? wind_gusts_10m_member28 { get; set; }
-        public double?[]? wind_gusts_10m_member29 { get; set; }
-        public double?[]? wind_gusts_10m_member30 { get; set; }
-        public double?[]? temperature_80m { get; set; }
-        public double?[]? temperature_80m_member01 { get; set; }
-        public double?[]? temperature_80m_member02 { get; set; }
-        public double?[]? temperature_80m_member03 { get; set; }
-        public double?[]? temperature_80m_member04 { get; set; }
-        public double?[]? temperature_80m_member05 { get; set; }
-        public double?[]? temperature_80m_member06 { get; set; }
-        public double?[]? temperature_80m_member07 { get; set; }
-        public double?[]? temperature_80m_member08 { get; set; }
-        public double?[]? temperature_80m_member09 { get; set; }
-        public double?[]? temperature_80m_member10 { get; set; }
-        public double?[]? temperature_80m_member11 { get; set; }
-        public double?[]? temperature_80m_member12 { get; set; }
-        public double?[]? temperature_80m_member13 { get; set; }
-        public double?[]? temperature_80m_member14 { get; set; }
-        public double?[]? temperature_80m_member15 { get; set; }
-        public double?[]? temperature_80m_member16 { get; set; }
-        public double?[]? temperature_80m_member17 { get; set; }
-        public double?[]? temperature_80m_member18 { get; set; }
-        public double?[]? temperature_80m_member19 { get; set; }
-        public double?[]? temperature_80m_member20 { get; set; }
-        public double?[]? temperature_80m_member21 { get; set; }
-        public double?[]? temperature_80m_member22 { get; set; }
-        public double?[]? temperature_80m_member23 { get; set; }
-        public double?[]? temperature_80m_member24 { get; set; }
-        public double?[]? temperature_80m_member25 { get; set; }
-        public double?[]? temperature_80m_member26 { get; set; }
-        public double?[]? temperature_80m_member27 { get; set; }
-        public double?[]? temperature_80m_member28 { get; set; }
-        public double?[]? temperature_80m_member29 { get; set; }
-        public double?[]? temperature_80m_member30 { get; set; }
-        public double?[]? temperature_120m { get; set; }
-        public double?[]? temperature_120m_member01 { get; set; }
-        public double?[]? temperature_120m_member02 { get; set; }
-        public double?[]? temperature_120m_member03 { get; set; }
-        public double?[]? temperature_120m_member04 { get; set; }
-        public double?[]? temperature_120m_member05 { get; set; }
-        public double?[]? temperature_120m_member06 { get; set; }
-        public double?[]? temperature_120m_member07 { get; set; }
-        public double?[]? temperature_120m_member08 { get; set; }
-        public double?[]? temperature_120m_member09 { get; set; }
-        public double?[]? temperature_120m_member10 { get; set; }
-        public double?[]? temperature_120m_member11 { get; set; }
-        public double?[]? temperature_120m_member12 { get; set; }
-        public double?[]? temperature_120m_member13 { get; set; }
-        public double?[]? temperature_120m_member14 { get; set; }
-        public double?[]? temperature_120m_member15 { get; set; }
-        public double?[]? temperature_120m_member16 { get; set; }
-        public double?[]? temperature_120m_member17 { get; set; }
-        public double?[]? temperature_120m_member18 { get; set; }
-        public double?[]? temperature_120m_member19 { get; set; }
-        public double?[]? temperature_120m_member20 { get; set; }
-        public double?[]? temperature_120m_member21 { get; set; }
-        public double?[]? temperature_120m_member22 { get; set; }
-        public double?[]? temperature_120m_member23 { get; set; }
-        public double?[]? temperature_120m_member24 { get; set; }
-        public double?[]? temperature_120m_member25 { get; set; }
-        public double?[]? temperature_120m_member26 { get; set; }
-        public double?[]? temperature_120m_member27 { get; set; }
-        public double?[]? temperature_120m_member28 { get; set; }
-        public double?[]? temperature_120m_member29 { get; set; }
-        public double?[]? temperature_120m_member30 { get; set; }
-        public double?[]? surface_temperature { get; set; }
-        public double?[]? surface_temperature_member01 { get; set; }
-        public double?[]? surface_temperature_member02 { get; set; }
-        public double?[]? surface_temperature_member03 { get; set; }
-        public double?[]? surface_temperature_member04 { get; set; }
-        public double?[]? surface_temperature_member05 { get; set; }
-        public double?[]? surface_temperature_member06 { get; set; }
-        public double?[]? surface_temperature_member07 { get; set; }
-        public double?[]? surface_temperature_member08 { get; set; }
-        public double?[]? surface_temperature_member09 { get; set; }
-        public double?[]? surface_temperature_member10 { get; set; }
-        public double?[]? surface_temperature_member11 { get; set; }
-        public double?[]? surface_temperature_member12 { get; set; }
-        public double?[]? surface_temperature_member13 { get; set; }
-        public double?[]? surface_temperature_member14 { get; set; }
-        public double?[]? surface_temperature_member15 { get; set; }
-        public double?[]? surface_temperature_member16 { get; set; }
-        public double?[]? surface_temperature_member17 { get; set; }
-        public double?[]? surface_temperature_member18 { get; set; }
-        public double?[]? surface_temperature_member19 { get; set; }
-        public double?[]? surface_temperature_member20 { get; set; }
-        public double?[]? surface_temperature_member21 { get; set; }
-        public double?[]? surface_temperature_member22 { get; set; }
-        public double?[]? surface_temperature_member23 { get; set; }
-        public double?[]? surface_temperature_member24 { get; set; }
-        public double?[]? surface_temperature_member25 { get; set; }
-        public double?[]? surface_temperature_member26 { get; set; }
-        public double?[]? surface_temperature_member27 { get; set; }
-        public double?[]? surface_temperature_member28 { get; set; }
-        public double?[]? surface_temperature_member29 { get; set; }
-        public double?[]? surface_temperature_member30 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member01 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member02 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member03 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member04 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member05 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member06 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member07 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member08 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member09 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member10 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member11 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member12 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member13 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member14 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member15 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member16 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member17 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member18 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member19 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member20 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member21 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member22 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member23 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member24 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member25 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member26 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member27 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member28 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member29 { get; set; }
-        public double?[]? soil_temperature_0_to_10cm_member30 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member01 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member02 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member03 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member04 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member05 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member06 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member07 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member08 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member09 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member10 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member11 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member12 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member13 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member14 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member15 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member16 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member17 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member18 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member19 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member20 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member21 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member22 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member23 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member24 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member25 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member26 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member27 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member28 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member29 { get; set; }
-        public double?[]? soil_temperature_10_to_40cm_member30 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member01 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member02 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member03 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member04 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member05 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member06 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member07 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member08 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member09 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member10 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member11 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member12 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member13 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member14 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member15 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member16 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member17 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member18 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member19 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member20 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member21 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member22 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member23 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member24 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member25 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member26 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member27 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member28 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member29 { get; set; }
-        public double?[]? soil_temperature_40_to_100cm_member30 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member01 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member02 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member03 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member04 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member05 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member06 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member07 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member08 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member09 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member10 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member11 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member12 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member13 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member14 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member15 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member16 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member17 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member18 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member19 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member20 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member21 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member22 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member23 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member24 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member25 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member26 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member27 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member28 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member29 { get; set; }
-        public double?[]? soil_temperature_100_to_200cm_member30 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member01 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member02 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member03 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member04 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member05 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member06 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member07 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member08 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member09 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member10 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member11 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member12 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member13 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member14 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member15 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member16 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member17 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member18 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member19 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member20 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member21 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member22 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member23 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member24 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member25 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member26 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member27 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member28 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member29 { get; set; }
-        public double?[]? soil_moisture_0_to_10cm_member30 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member01 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member02 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member03 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member04 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member05 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member06 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member07 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member08 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member09 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member10 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member11 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member12 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member13 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member14 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member15 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member16 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member17 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member18 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member19 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member20 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member21 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member22 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member23 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member24 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member25 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member26 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member27 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member28 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member29 { get; set; }
-        public double?[]? soil_moisture_10_to_40cm_member30 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member01 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member02 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member03 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member04 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member05 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member06 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member07 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member08 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member09 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member10 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member11 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member12 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member13 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member14 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member15 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member16 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member17 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member18 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member19 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member20 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member21 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member22 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member23 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member24 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member25 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member26 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member27 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member28 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member29 { get; set; }
-        public double?[]? soil_moisture_40_to_100cm_member30 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member01 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member02 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member03 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member04 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member05 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member06 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member07 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member08 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member09 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member10 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member11 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member12 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member13 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member14 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member15 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member16 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member17 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member18 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member19 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member20 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member21 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member22 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member23 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member24 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member25 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member26 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member27 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member28 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member29 { get; set; }
-        public double?[]? soil_moisture_100_to_200cm_member30 { get; set; }
         public double?[]? temperature_1000hPa { get; set; }
         public double?[]? temperature_1000hPa_member01 { get; set; }
         public double?[]? temperature_1000hPa_member02 { get; set; }
@@ -3925,18 +3243,18 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
-    public static class gefsHourlyForecastApi
+    public static class aigefsHourlyForecastApi
     {
 
-        private static DataFrame ToDataFrame(gefsParams data)
+        private static DataFrame ToDataFrame(aigefsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type aigefsParams to a DataFrame object.
              * 
              * Returns
              * -------
              * 
-             * Microsoft.Data.Analysis.DataFrame object containing the data from the gefsParams object.
+             * Microsoft.Data.Analysis.DataFrame object containing the data from the aigefsParams object.
              * 
              */
 
@@ -4041,285 +3359,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
 
             if (data.temperature_2m_member30 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m_member30", data.temperature_2m_member30));
-
-            if (data.relative_humidity_2m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m", data.relative_humidity_2m));
-
-            if (data.relative_humidity_2m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member01", data.relative_humidity_2m_member01));
-
-            if (data.relative_humidity_2m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member02", data.relative_humidity_2m_member02));
-
-            if (data.relative_humidity_2m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member03", data.relative_humidity_2m_member03));
-
-            if (data.relative_humidity_2m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member04", data.relative_humidity_2m_member04));
-
-            if (data.relative_humidity_2m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member05", data.relative_humidity_2m_member05));
-
-            if (data.relative_humidity_2m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member06", data.relative_humidity_2m_member06));
-
-            if (data.relative_humidity_2m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member07", data.relative_humidity_2m_member07));
-
-            if (data.relative_humidity_2m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member08", data.relative_humidity_2m_member08));
-
-            if (data.relative_humidity_2m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member09", data.relative_humidity_2m_member09));
-
-            if (data.relative_humidity_2m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member10", data.relative_humidity_2m_member10));
-
-            if (data.relative_humidity_2m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member11", data.relative_humidity_2m_member11));
-
-            if (data.relative_humidity_2m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member12", data.relative_humidity_2m_member12));
-
-            if (data.relative_humidity_2m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member13", data.relative_humidity_2m_member13));
-
-            if (data.relative_humidity_2m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member14", data.relative_humidity_2m_member14));
-
-            if (data.relative_humidity_2m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member15", data.relative_humidity_2m_member15));
-
-            if (data.relative_humidity_2m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member16", data.relative_humidity_2m_member16));
-
-            if (data.relative_humidity_2m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member17", data.relative_humidity_2m_member17));
-
-            if (data.relative_humidity_2m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member18", data.relative_humidity_2m_member18));
-
-            if (data.relative_humidity_2m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member19", data.relative_humidity_2m_member19));
-
-            if (data.relative_humidity_2m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member20", data.relative_humidity_2m_member20));
-
-            if (data.relative_humidity_2m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member21", data.relative_humidity_2m_member21));
-
-            if (data.relative_humidity_2m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member22", data.relative_humidity_2m_member22));
-
-            if (data.relative_humidity_2m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member23", data.relative_humidity_2m_member23));
-
-            if (data.relative_humidity_2m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member24", data.relative_humidity_2m_member24));
-
-            if (data.relative_humidity_2m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member25", data.relative_humidity_2m_member25));
-
-            if (data.relative_humidity_2m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member26", data.relative_humidity_2m_member26));
-
-            if (data.relative_humidity_2m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member27", data.relative_humidity_2m_member27));
-
-            if (data.relative_humidity_2m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member28", data.relative_humidity_2m_member28));
-
-            if (data.relative_humidity_2m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member29", data.relative_humidity_2m_member29));
-
-            if (data.relative_humidity_2m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("relative_humidity_2m_member30", data.relative_humidity_2m_member30));
-
-            if (data.dew_point_2m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m", data.dew_point_2m));
-
-            if (data.dew_point_2m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member01", data.dew_point_2m_member01));
-
-            if (data.dew_point_2m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member02", data.dew_point_2m_member02));
-
-            if (data.dew_point_2m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member03", data.dew_point_2m_member03));
-
-            if (data.dew_point_2m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member04", data.dew_point_2m_member04));
-
-            if (data.dew_point_2m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member05", data.dew_point_2m_member05));
-
-            if (data.dew_point_2m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member06", data.dew_point_2m_member06));
-
-            if (data.dew_point_2m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member07", data.dew_point_2m_member07));
-
-            if (data.dew_point_2m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member08", data.dew_point_2m_member08));
-
-            if (data.dew_point_2m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member09", data.dew_point_2m_member09));
-
-            if (data.dew_point_2m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member10", data.dew_point_2m_member10));
-
-            if (data.dew_point_2m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member11", data.dew_point_2m_member11));
-
-            if (data.dew_point_2m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member12", data.dew_point_2m_member12));
-
-            if (data.dew_point_2m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member13", data.dew_point_2m_member13));
-
-            if (data.dew_point_2m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member14", data.dew_point_2m_member14));
-
-            if (data.dew_point_2m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member15", data.dew_point_2m_member15));
-
-            if (data.dew_point_2m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member16", data.dew_point_2m_member16));
-
-            if (data.dew_point_2m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member17", data.dew_point_2m_member17));
-
-            if (data.dew_point_2m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member18", data.dew_point_2m_member18));
-
-            if (data.dew_point_2m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member19", data.dew_point_2m_member19));
-
-            if (data.dew_point_2m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member20", data.dew_point_2m_member20));
-
-            if (data.dew_point_2m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member21", data.dew_point_2m_member21));
-
-            if (data.dew_point_2m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member22", data.dew_point_2m_member22));
-
-            if (data.dew_point_2m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member23", data.dew_point_2m_member23));
-
-            if (data.dew_point_2m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member24", data.dew_point_2m_member24));
-
-            if (data.dew_point_2m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member25", data.dew_point_2m_member25));
-
-            if (data.dew_point_2m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member26", data.dew_point_2m_member26));
-
-            if (data.dew_point_2m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member27", data.dew_point_2m_member27));
-
-            if (data.dew_point_2m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member28", data.dew_point_2m_member28));
-
-            if (data.dew_point_2m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member29", data.dew_point_2m_member29));
-
-            if (data.dew_point_2m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("dew_point_2m_member30", data.dew_point_2m_member30));
-
-            if (data.apparent_temperature != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature", data.apparent_temperature));
-
-            if (data.apparent_temperature_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member01", data.apparent_temperature_member01));
-
-            if (data.apparent_temperature_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member02", data.apparent_temperature_member02));
-
-            if (data.apparent_temperature_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member03", data.apparent_temperature_member03));
-
-            if (data.apparent_temperature_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member04", data.apparent_temperature_member04));
-
-            if (data.apparent_temperature_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member05", data.apparent_temperature_member05));
-
-            if (data.apparent_temperature_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member06", data.apparent_temperature_member06));
-
-            if (data.apparent_temperature_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member07", data.apparent_temperature_member07));
-
-            if (data.apparent_temperature_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member08", data.apparent_temperature_member08));
-
-            if (data.apparent_temperature_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member09", data.apparent_temperature_member09));
-
-            if (data.apparent_temperature_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member10", data.apparent_temperature_member10));
-
-            if (data.apparent_temperature_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member11", data.apparent_temperature_member11));
-
-            if (data.apparent_temperature_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member12", data.apparent_temperature_member12));
-
-            if (data.apparent_temperature_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member13", data.apparent_temperature_member13));
-
-            if (data.apparent_temperature_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member14", data.apparent_temperature_member14));
-
-            if (data.apparent_temperature_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member15", data.apparent_temperature_member15));
-
-            if (data.apparent_temperature_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member16", data.apparent_temperature_member16));
-
-            if (data.apparent_temperature_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member17", data.apparent_temperature_member17));
-
-            if (data.apparent_temperature_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member18", data.apparent_temperature_member18));
-
-            if (data.apparent_temperature_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member19", data.apparent_temperature_member19));
-
-            if (data.apparent_temperature_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member20", data.apparent_temperature_member20));
-
-            if (data.apparent_temperature_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member21", data.apparent_temperature_member21));
-
-            if (data.apparent_temperature_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member22", data.apparent_temperature_member22));
-
-            if (data.apparent_temperature_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member23", data.apparent_temperature_member23));
-
-            if (data.apparent_temperature_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member24", data.apparent_temperature_member24));
-
-            if (data.apparent_temperature_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member25", data.apparent_temperature_member25));
-
-            if (data.apparent_temperature_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member26", data.apparent_temperature_member26));
-
-            if (data.apparent_temperature_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member27", data.apparent_temperature_member27));
-
-            if (data.apparent_temperature_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member28", data.apparent_temperature_member28));
-
-            if (data.apparent_temperature_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member29", data.apparent_temperature_member29));
-
-            if (data.apparent_temperature_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("apparent_temperature_member30", data.apparent_temperature_member30));
 
             if (data.precipitation != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation", data.precipitation));
@@ -4506,99 +3545,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
 
             if (data.rain_member30 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("rain_member30", data.rain_member30));
-
-            if (data.snow_depth != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth", data.snow_depth));
-
-            if (data.snow_depth_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member01", data.snow_depth_member01));
-
-            if (data.snow_depth_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member02", data.snow_depth_member02));
-
-            if (data.snow_depth_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member03", data.snow_depth_member03));
-
-            if (data.snow_depth_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member04", data.snow_depth_member04));
-
-            if (data.snow_depth_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member05", data.snow_depth_member05));
-
-            if (data.snow_depth_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member06", data.snow_depth_member06));
-
-            if (data.snow_depth_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member07", data.snow_depth_member07));
-
-            if (data.snow_depth_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member08", data.snow_depth_member08));
-
-            if (data.snow_depth_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member09", data.snow_depth_member09));
-
-            if (data.snow_depth_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member10", data.snow_depth_member10));
-
-            if (data.snow_depth_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member11", data.snow_depth_member11));
-
-            if (data.snow_depth_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member12", data.snow_depth_member12));
-
-            if (data.snow_depth_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member13", data.snow_depth_member13));
-
-            if (data.snow_depth_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member14", data.snow_depth_member14));
-
-            if (data.snow_depth_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member15", data.snow_depth_member15));
-
-            if (data.snow_depth_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member16", data.snow_depth_member16));
-
-            if (data.snow_depth_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member17", data.snow_depth_member17));
-
-            if (data.snow_depth_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member18", data.snow_depth_member18));
-
-            if (data.snow_depth_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member19", data.snow_depth_member19));
-
-            if (data.snow_depth_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member20", data.snow_depth_member20));
-
-            if (data.snow_depth_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member21", data.snow_depth_member21));
-
-            if (data.snow_depth_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member22", data.snow_depth_member22));
-
-            if (data.snow_depth_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member23", data.snow_depth_member23));
-
-            if (data.snow_depth_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member24", data.snow_depth_member24));
-
-            if (data.snow_depth_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member25", data.snow_depth_member25));
-
-            if (data.snow_depth_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member26", data.snow_depth_member26));
-
-            if (data.snow_depth_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member27", data.snow_depth_member27));
-
-            if (data.snow_depth_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member28", data.snow_depth_member28));
-
-            if (data.snow_depth_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member29", data.snow_depth_member29));
-
-            if (data.snow_depth_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snow_depth_member30", data.snow_depth_member30));
 
             if (data.snowfall != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("snowfall", data.snowfall));
@@ -5065,285 +4011,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
             if (data.cloud_cover_member30 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("cloud_cover_member30", data.cloud_cover_member30));
 
-            if (data.visibility != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility", data.visibility));
-
-            if (data.visibility_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member01", data.visibility_member01));
-
-            if (data.visibility_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member02", data.visibility_member02));
-
-            if (data.visibility_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member03", data.visibility_member03));
-
-            if (data.visibility_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member04", data.visibility_member04));
-
-            if (data.visibility_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member05", data.visibility_member05));
-
-            if (data.visibility_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member06", data.visibility_member06));
-
-            if (data.visibility_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member07", data.visibility_member07));
-
-            if (data.visibility_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member08", data.visibility_member08));
-
-            if (data.visibility_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member09", data.visibility_member09));
-
-            if (data.visibility_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member10", data.visibility_member10));
-
-            if (data.visibility_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member11", data.visibility_member11));
-
-            if (data.visibility_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member12", data.visibility_member12));
-
-            if (data.visibility_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member13", data.visibility_member13));
-
-            if (data.visibility_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member14", data.visibility_member14));
-
-            if (data.visibility_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member15", data.visibility_member15));
-
-            if (data.visibility_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member16", data.visibility_member16));
-
-            if (data.visibility_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member17", data.visibility_member17));
-
-            if (data.visibility_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member18", data.visibility_member18));
-
-            if (data.visibility_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member19", data.visibility_member19));
-
-            if (data.visibility_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member20", data.visibility_member20));
-
-            if (data.visibility_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member21", data.visibility_member21));
-
-            if (data.visibility_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member22", data.visibility_member22));
-
-            if (data.visibility_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member23", data.visibility_member23));
-
-            if (data.visibility_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member24", data.visibility_member24));
-
-            if (data.visibility_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member25", data.visibility_member25));
-
-            if (data.visibility_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member26", data.visibility_member26));
-
-            if (data.visibility_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member27", data.visibility_member27));
-
-            if (data.visibility_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member28", data.visibility_member28));
-
-            if (data.visibility_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member29", data.visibility_member29));
-
-            if (data.visibility_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility_member30", data.visibility_member30));
-
-            if (data.et0_fao_evapotranspiration != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration", data.et0_fao_evapotranspiration));
-
-            if (data.et0_fao_evapotranspiration_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member01", data.et0_fao_evapotranspiration_member01));
-
-            if (data.et0_fao_evapotranspiration_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member02", data.et0_fao_evapotranspiration_member02));
-
-            if (data.et0_fao_evapotranspiration_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member03", data.et0_fao_evapotranspiration_member03));
-
-            if (data.et0_fao_evapotranspiration_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member04", data.et0_fao_evapotranspiration_member04));
-
-            if (data.et0_fao_evapotranspiration_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member05", data.et0_fao_evapotranspiration_member05));
-
-            if (data.et0_fao_evapotranspiration_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member06", data.et0_fao_evapotranspiration_member06));
-
-            if (data.et0_fao_evapotranspiration_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member07", data.et0_fao_evapotranspiration_member07));
-
-            if (data.et0_fao_evapotranspiration_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member08", data.et0_fao_evapotranspiration_member08));
-
-            if (data.et0_fao_evapotranspiration_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member09", data.et0_fao_evapotranspiration_member09));
-
-            if (data.et0_fao_evapotranspiration_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member10", data.et0_fao_evapotranspiration_member10));
-
-            if (data.et0_fao_evapotranspiration_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member11", data.et0_fao_evapotranspiration_member11));
-
-            if (data.et0_fao_evapotranspiration_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member12", data.et0_fao_evapotranspiration_member12));
-
-            if (data.et0_fao_evapotranspiration_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member13", data.et0_fao_evapotranspiration_member13));
-
-            if (data.et0_fao_evapotranspiration_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member14", data.et0_fao_evapotranspiration_member14));
-
-            if (data.et0_fao_evapotranspiration_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member15", data.et0_fao_evapotranspiration_member15));
-
-            if (data.et0_fao_evapotranspiration_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member16", data.et0_fao_evapotranspiration_member16));
-
-            if (data.et0_fao_evapotranspiration_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member17", data.et0_fao_evapotranspiration_member17));
-
-            if (data.et0_fao_evapotranspiration_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member18", data.et0_fao_evapotranspiration_member18));
-
-            if (data.et0_fao_evapotranspiration_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member19", data.et0_fao_evapotranspiration_member19));
-
-            if (data.et0_fao_evapotranspiration_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member20", data.et0_fao_evapotranspiration_member20));
-
-            if (data.et0_fao_evapotranspiration_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member21", data.et0_fao_evapotranspiration_member21));
-
-            if (data.et0_fao_evapotranspiration_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member22", data.et0_fao_evapotranspiration_member22));
-
-            if (data.et0_fao_evapotranspiration_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member23", data.et0_fao_evapotranspiration_member23));
-
-            if (data.et0_fao_evapotranspiration_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member24", data.et0_fao_evapotranspiration_member24));
-
-            if (data.et0_fao_evapotranspiration_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member25", data.et0_fao_evapotranspiration_member25));
-
-            if (data.et0_fao_evapotranspiration_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member26", data.et0_fao_evapotranspiration_member26));
-
-            if (data.et0_fao_evapotranspiration_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member27", data.et0_fao_evapotranspiration_member27));
-
-            if (data.et0_fao_evapotranspiration_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member28", data.et0_fao_evapotranspiration_member28));
-
-            if (data.et0_fao_evapotranspiration_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member29", data.et0_fao_evapotranspiration_member29));
-
-            if (data.et0_fao_evapotranspiration_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("et0_fao_evapotranspiration_member30", data.et0_fao_evapotranspiration_member30));
-
-            if (data.vapour_pressure_deficit != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit", data.vapour_pressure_deficit));
-
-            if (data.vapour_pressure_deficit_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member01", data.vapour_pressure_deficit_member01));
-
-            if (data.vapour_pressure_deficit_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member02", data.vapour_pressure_deficit_member02));
-
-            if (data.vapour_pressure_deficit_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member03", data.vapour_pressure_deficit_member03));
-
-            if (data.vapour_pressure_deficit_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member04", data.vapour_pressure_deficit_member04));
-
-            if (data.vapour_pressure_deficit_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member05", data.vapour_pressure_deficit_member05));
-
-            if (data.vapour_pressure_deficit_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member06", data.vapour_pressure_deficit_member06));
-
-            if (data.vapour_pressure_deficit_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member07", data.vapour_pressure_deficit_member07));
-
-            if (data.vapour_pressure_deficit_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member08", data.vapour_pressure_deficit_member08));
-
-            if (data.vapour_pressure_deficit_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member09", data.vapour_pressure_deficit_member09));
-
-            if (data.vapour_pressure_deficit_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member10", data.vapour_pressure_deficit_member10));
-
-            if (data.vapour_pressure_deficit_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member11", data.vapour_pressure_deficit_member11));
-
-            if (data.vapour_pressure_deficit_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member12", data.vapour_pressure_deficit_member12));
-
-            if (data.vapour_pressure_deficit_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member13", data.vapour_pressure_deficit_member13));
-
-            if (data.vapour_pressure_deficit_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member14", data.vapour_pressure_deficit_member14));
-
-            if (data.vapour_pressure_deficit_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member15", data.vapour_pressure_deficit_member15));
-
-            if (data.vapour_pressure_deficit_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member16", data.vapour_pressure_deficit_member16));
-
-            if (data.vapour_pressure_deficit_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member17", data.vapour_pressure_deficit_member17));
-
-            if (data.vapour_pressure_deficit_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member18", data.vapour_pressure_deficit_member18));
-
-            if (data.vapour_pressure_deficit_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member19", data.vapour_pressure_deficit_member19));
-
-            if (data.vapour_pressure_deficit_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member20", data.vapour_pressure_deficit_member20));
-
-            if (data.vapour_pressure_deficit_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member21", data.vapour_pressure_deficit_member21));
-
-            if (data.vapour_pressure_deficit_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member22", data.vapour_pressure_deficit_member22));
-
-            if (data.vapour_pressure_deficit_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member23", data.vapour_pressure_deficit_member23));
-
-            if (data.vapour_pressure_deficit_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member24", data.vapour_pressure_deficit_member24));
-
-            if (data.vapour_pressure_deficit_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member25", data.vapour_pressure_deficit_member25));
-
-            if (data.vapour_pressure_deficit_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member26", data.vapour_pressure_deficit_member26));
-
-            if (data.vapour_pressure_deficit_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member27", data.vapour_pressure_deficit_member27));
-
-            if (data.vapour_pressure_deficit_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member28", data.vapour_pressure_deficit_member28));
-
-            if (data.vapour_pressure_deficit_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member29", data.vapour_pressure_deficit_member29));
-
-            if (data.vapour_pressure_deficit_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("vapour_pressure_deficit_member30", data.vapour_pressure_deficit_member30));
-
             if (data.wind_speed_10m != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_10m", data.wind_speed_10m));
 
@@ -5437,285 +4104,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
             if (data.wind_speed_10m_member30 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_10m_member30", data.wind_speed_10m_member30));
 
-            if (data.wind_speed_80m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m", data.wind_speed_80m));
-
-            if (data.wind_speed_80m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member01", data.wind_speed_80m_member01));
-
-            if (data.wind_speed_80m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member02", data.wind_speed_80m_member02));
-
-            if (data.wind_speed_80m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member03", data.wind_speed_80m_member03));
-
-            if (data.wind_speed_80m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member04", data.wind_speed_80m_member04));
-
-            if (data.wind_speed_80m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member05", data.wind_speed_80m_member05));
-
-            if (data.wind_speed_80m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member06", data.wind_speed_80m_member06));
-
-            if (data.wind_speed_80m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member07", data.wind_speed_80m_member07));
-
-            if (data.wind_speed_80m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member08", data.wind_speed_80m_member08));
-
-            if (data.wind_speed_80m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member09", data.wind_speed_80m_member09));
-
-            if (data.wind_speed_80m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member10", data.wind_speed_80m_member10));
-
-            if (data.wind_speed_80m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member11", data.wind_speed_80m_member11));
-
-            if (data.wind_speed_80m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member12", data.wind_speed_80m_member12));
-
-            if (data.wind_speed_80m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member13", data.wind_speed_80m_member13));
-
-            if (data.wind_speed_80m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member14", data.wind_speed_80m_member14));
-
-            if (data.wind_speed_80m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member15", data.wind_speed_80m_member15));
-
-            if (data.wind_speed_80m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member16", data.wind_speed_80m_member16));
-
-            if (data.wind_speed_80m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member17", data.wind_speed_80m_member17));
-
-            if (data.wind_speed_80m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member18", data.wind_speed_80m_member18));
-
-            if (data.wind_speed_80m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member19", data.wind_speed_80m_member19));
-
-            if (data.wind_speed_80m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member20", data.wind_speed_80m_member20));
-
-            if (data.wind_speed_80m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member21", data.wind_speed_80m_member21));
-
-            if (data.wind_speed_80m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member22", data.wind_speed_80m_member22));
-
-            if (data.wind_speed_80m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member23", data.wind_speed_80m_member23));
-
-            if (data.wind_speed_80m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member24", data.wind_speed_80m_member24));
-
-            if (data.wind_speed_80m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member25", data.wind_speed_80m_member25));
-
-            if (data.wind_speed_80m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member26", data.wind_speed_80m_member26));
-
-            if (data.wind_speed_80m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member27", data.wind_speed_80m_member27));
-
-            if (data.wind_speed_80m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member28", data.wind_speed_80m_member28));
-
-            if (data.wind_speed_80m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member29", data.wind_speed_80m_member29));
-
-            if (data.wind_speed_80m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m_member30", data.wind_speed_80m_member30));
-
-            if (data.wind_speed_100m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m", data.wind_speed_100m));
-
-            if (data.wind_speed_100m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member01", data.wind_speed_100m_member01));
-
-            if (data.wind_speed_100m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member02", data.wind_speed_100m_member02));
-
-            if (data.wind_speed_100m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member03", data.wind_speed_100m_member03));
-
-            if (data.wind_speed_100m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member04", data.wind_speed_100m_member04));
-
-            if (data.wind_speed_100m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member05", data.wind_speed_100m_member05));
-
-            if (data.wind_speed_100m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member06", data.wind_speed_100m_member06));
-
-            if (data.wind_speed_100m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member07", data.wind_speed_100m_member07));
-
-            if (data.wind_speed_100m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member08", data.wind_speed_100m_member08));
-
-            if (data.wind_speed_100m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member09", data.wind_speed_100m_member09));
-
-            if (data.wind_speed_100m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member10", data.wind_speed_100m_member10));
-
-            if (data.wind_speed_100m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member11", data.wind_speed_100m_member11));
-
-            if (data.wind_speed_100m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member12", data.wind_speed_100m_member12));
-
-            if (data.wind_speed_100m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member13", data.wind_speed_100m_member13));
-
-            if (data.wind_speed_100m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member14", data.wind_speed_100m_member14));
-
-            if (data.wind_speed_100m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member15", data.wind_speed_100m_member15));
-
-            if (data.wind_speed_100m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member16", data.wind_speed_100m_member16));
-
-            if (data.wind_speed_100m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member17", data.wind_speed_100m_member17));
-
-            if (data.wind_speed_100m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member18", data.wind_speed_100m_member18));
-
-            if (data.wind_speed_100m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member19", data.wind_speed_100m_member19));
-
-            if (data.wind_speed_100m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member20", data.wind_speed_100m_member20));
-
-            if (data.wind_speed_100m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member21", data.wind_speed_100m_member21));
-
-            if (data.wind_speed_100m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member22", data.wind_speed_100m_member22));
-
-            if (data.wind_speed_100m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member23", data.wind_speed_100m_member23));
-
-            if (data.wind_speed_100m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member24", data.wind_speed_100m_member24));
-
-            if (data.wind_speed_100m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member25", data.wind_speed_100m_member25));
-
-            if (data.wind_speed_100m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member26", data.wind_speed_100m_member26));
-
-            if (data.wind_speed_100m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member27", data.wind_speed_100m_member27));
-
-            if (data.wind_speed_100m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member28", data.wind_speed_100m_member28));
-
-            if (data.wind_speed_100m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member29", data.wind_speed_100m_member29));
-
-            if (data.wind_speed_100m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_100m_member30", data.wind_speed_100m_member30));
-
-            if (data.wind_speed_120m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m", data.wind_speed_120m));
-
-            if (data.wind_speed_120m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member01", data.wind_speed_120m_member01));
-
-            if (data.wind_speed_120m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member02", data.wind_speed_120m_member02));
-
-            if (data.wind_speed_120m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member03", data.wind_speed_120m_member03));
-
-            if (data.wind_speed_120m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member04", data.wind_speed_120m_member04));
-
-            if (data.wind_speed_120m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member05", data.wind_speed_120m_member05));
-
-            if (data.wind_speed_120m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member06", data.wind_speed_120m_member06));
-
-            if (data.wind_speed_120m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member07", data.wind_speed_120m_member07));
-
-            if (data.wind_speed_120m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member08", data.wind_speed_120m_member08));
-
-            if (data.wind_speed_120m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member09", data.wind_speed_120m_member09));
-
-            if (data.wind_speed_120m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member10", data.wind_speed_120m_member10));
-
-            if (data.wind_speed_120m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member11", data.wind_speed_120m_member11));
-
-            if (data.wind_speed_120m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member12", data.wind_speed_120m_member12));
-
-            if (data.wind_speed_120m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member13", data.wind_speed_120m_member13));
-
-            if (data.wind_speed_120m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member14", data.wind_speed_120m_member14));
-
-            if (data.wind_speed_120m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member15", data.wind_speed_120m_member15));
-
-            if (data.wind_speed_120m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member16", data.wind_speed_120m_member16));
-
-            if (data.wind_speed_120m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member17", data.wind_speed_120m_member17));
-
-            if (data.wind_speed_120m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member18", data.wind_speed_120m_member18));
-
-            if (data.wind_speed_120m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member19", data.wind_speed_120m_member19));
-
-            if (data.wind_speed_120m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member20", data.wind_speed_120m_member20));
-
-            if (data.wind_speed_120m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member21", data.wind_speed_120m_member21));
-
-            if (data.wind_speed_120m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member22", data.wind_speed_120m_member22));
-
-            if (data.wind_speed_120m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member23", data.wind_speed_120m_member23));
-
-            if (data.wind_speed_120m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member24", data.wind_speed_120m_member24));
-
-            if (data.wind_speed_120m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member25", data.wind_speed_120m_member25));
-
-            if (data.wind_speed_120m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member26", data.wind_speed_120m_member26));
-
-            if (data.wind_speed_120m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member27", data.wind_speed_120m_member27));
-
-            if (data.wind_speed_120m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member28", data.wind_speed_120m_member28));
-
-            if (data.wind_speed_120m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member29", data.wind_speed_120m_member29));
-
-            if (data.wind_speed_120m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_120m_member30", data.wind_speed_120m_member30));
-
             if (data.wind_direction_10m != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_10m", data.wind_direction_10m));
 
@@ -5808,1401 +4196,6 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
 
             if (data.wind_direction_10m_member30 != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_10m_member30", data.wind_direction_10m_member30));
-
-            if (data.wind_direction_80m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m", data.wind_direction_80m));
-
-            if (data.wind_direction_80m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member01", data.wind_direction_80m_member01));
-
-            if (data.wind_direction_80m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member02", data.wind_direction_80m_member02));
-
-            if (data.wind_direction_80m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member03", data.wind_direction_80m_member03));
-
-            if (data.wind_direction_80m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member04", data.wind_direction_80m_member04));
-
-            if (data.wind_direction_80m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member05", data.wind_direction_80m_member05));
-
-            if (data.wind_direction_80m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member06", data.wind_direction_80m_member06));
-
-            if (data.wind_direction_80m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member07", data.wind_direction_80m_member07));
-
-            if (data.wind_direction_80m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member08", data.wind_direction_80m_member08));
-
-            if (data.wind_direction_80m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member09", data.wind_direction_80m_member09));
-
-            if (data.wind_direction_80m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member10", data.wind_direction_80m_member10));
-
-            if (data.wind_direction_80m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member11", data.wind_direction_80m_member11));
-
-            if (data.wind_direction_80m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member12", data.wind_direction_80m_member12));
-
-            if (data.wind_direction_80m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member13", data.wind_direction_80m_member13));
-
-            if (data.wind_direction_80m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member14", data.wind_direction_80m_member14));
-
-            if (data.wind_direction_80m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member15", data.wind_direction_80m_member15));
-
-            if (data.wind_direction_80m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member16", data.wind_direction_80m_member16));
-
-            if (data.wind_direction_80m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member17", data.wind_direction_80m_member17));
-
-            if (data.wind_direction_80m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member18", data.wind_direction_80m_member18));
-
-            if (data.wind_direction_80m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member19", data.wind_direction_80m_member19));
-
-            if (data.wind_direction_80m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member20", data.wind_direction_80m_member20));
-
-            if (data.wind_direction_80m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member21", data.wind_direction_80m_member21));
-
-            if (data.wind_direction_80m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member22", data.wind_direction_80m_member22));
-
-            if (data.wind_direction_80m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member23", data.wind_direction_80m_member23));
-
-            if (data.wind_direction_80m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member24", data.wind_direction_80m_member24));
-
-            if (data.wind_direction_80m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member25", data.wind_direction_80m_member25));
-
-            if (data.wind_direction_80m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member26", data.wind_direction_80m_member26));
-
-            if (data.wind_direction_80m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member27", data.wind_direction_80m_member27));
-
-            if (data.wind_direction_80m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member28", data.wind_direction_80m_member28));
-
-            if (data.wind_direction_80m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member29", data.wind_direction_80m_member29));
-
-            if (data.wind_direction_80m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m_member30", data.wind_direction_80m_member30));
-
-            if (data.wind_direction_100m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m", data.wind_direction_100m));
-
-            if (data.wind_direction_100m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member01", data.wind_direction_100m_member01));
-
-            if (data.wind_direction_100m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member02", data.wind_direction_100m_member02));
-
-            if (data.wind_direction_100m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member03", data.wind_direction_100m_member03));
-
-            if (data.wind_direction_100m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member04", data.wind_direction_100m_member04));
-
-            if (data.wind_direction_100m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member05", data.wind_direction_100m_member05));
-
-            if (data.wind_direction_100m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member06", data.wind_direction_100m_member06));
-
-            if (data.wind_direction_100m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member07", data.wind_direction_100m_member07));
-
-            if (data.wind_direction_100m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member08", data.wind_direction_100m_member08));
-
-            if (data.wind_direction_100m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member09", data.wind_direction_100m_member09));
-
-            if (data.wind_direction_100m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member10", data.wind_direction_100m_member10));
-
-            if (data.wind_direction_100m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member11", data.wind_direction_100m_member11));
-
-            if (data.wind_direction_100m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member12", data.wind_direction_100m_member12));
-
-            if (data.wind_direction_100m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member13", data.wind_direction_100m_member13));
-
-            if (data.wind_direction_100m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member14", data.wind_direction_100m_member14));
-
-            if (data.wind_direction_100m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member15", data.wind_direction_100m_member15));
-
-            if (data.wind_direction_100m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member16", data.wind_direction_100m_member16));
-
-            if (data.wind_direction_100m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member17", data.wind_direction_100m_member17));
-
-            if (data.wind_direction_100m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member18", data.wind_direction_100m_member18));
-
-            if (data.wind_direction_100m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member19", data.wind_direction_100m_member19));
-
-            if (data.wind_direction_100m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member20", data.wind_direction_100m_member20));
-
-            if (data.wind_direction_100m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member21", data.wind_direction_100m_member21));
-
-            if (data.wind_direction_100m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member22", data.wind_direction_100m_member22));
-
-            if (data.wind_direction_100m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member23", data.wind_direction_100m_member23));
-
-            if (data.wind_direction_100m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member24", data.wind_direction_100m_member24));
-
-            if (data.wind_direction_100m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member25", data.wind_direction_100m_member25));
-
-            if (data.wind_direction_100m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member26", data.wind_direction_100m_member26));
-
-            if (data.wind_direction_100m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member27", data.wind_direction_100m_member27));
-
-            if (data.wind_direction_100m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member28", data.wind_direction_100m_member28));
-
-            if (data.wind_direction_100m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member29", data.wind_direction_100m_member29));
-
-            if (data.wind_direction_100m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_100m_member30", data.wind_direction_100m_member30));
-
-            if (data.wind_direction_120m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m", data.wind_direction_120m));
-
-            if (data.wind_direction_120m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member01", data.wind_direction_120m_member01));
-
-            if (data.wind_direction_120m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member02", data.wind_direction_120m_member02));
-
-            if (data.wind_direction_120m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member03", data.wind_direction_120m_member03));
-
-            if (data.wind_direction_120m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member04", data.wind_direction_120m_member04));
-
-            if (data.wind_direction_120m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member05", data.wind_direction_120m_member05));
-
-            if (data.wind_direction_120m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member06", data.wind_direction_120m_member06));
-
-            if (data.wind_direction_120m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member07", data.wind_direction_120m_member07));
-
-            if (data.wind_direction_120m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member08", data.wind_direction_120m_member08));
-
-            if (data.wind_direction_120m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member09", data.wind_direction_120m_member09));
-
-            if (data.wind_direction_120m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member10", data.wind_direction_120m_member10));
-
-            if (data.wind_direction_120m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member11", data.wind_direction_120m_member11));
-
-            if (data.wind_direction_120m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member12", data.wind_direction_120m_member12));
-
-            if (data.wind_direction_120m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member13", data.wind_direction_120m_member13));
-
-            if (data.wind_direction_120m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member14", data.wind_direction_120m_member14));
-
-            if (data.wind_direction_120m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member15", data.wind_direction_120m_member15));
-
-            if (data.wind_direction_120m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member16", data.wind_direction_120m_member16));
-
-            if (data.wind_direction_120m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member17", data.wind_direction_120m_member17));
-
-            if (data.wind_direction_120m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member18", data.wind_direction_120m_member18));
-
-            if (data.wind_direction_120m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member19", data.wind_direction_120m_member19));
-
-            if (data.wind_direction_120m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member20", data.wind_direction_120m_member20));
-
-            if (data.wind_direction_120m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member21", data.wind_direction_120m_member21));
-
-            if (data.wind_direction_120m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member22", data.wind_direction_120m_member22));
-
-            if (data.wind_direction_120m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member23", data.wind_direction_120m_member23));
-
-            if (data.wind_direction_120m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member24", data.wind_direction_120m_member24));
-
-            if (data.wind_direction_120m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member25", data.wind_direction_120m_member25));
-
-            if (data.wind_direction_120m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member26", data.wind_direction_120m_member26));
-
-            if (data.wind_direction_120m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member27", data.wind_direction_120m_member27));
-
-            if (data.wind_direction_120m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member28", data.wind_direction_120m_member28));
-
-            if (data.wind_direction_120m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member29", data.wind_direction_120m_member29));
-
-            if (data.wind_direction_120m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_120m_member30", data.wind_direction_120m_member30));
-
-            if (data.wind_gusts_10m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m", data.wind_gusts_10m));
-
-            if (data.wind_gusts_10m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member01", data.wind_gusts_10m_member01));
-
-            if (data.wind_gusts_10m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member02", data.wind_gusts_10m_member02));
-
-            if (data.wind_gusts_10m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member03", data.wind_gusts_10m_member03));
-
-            if (data.wind_gusts_10m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member04", data.wind_gusts_10m_member04));
-
-            if (data.wind_gusts_10m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member05", data.wind_gusts_10m_member05));
-
-            if (data.wind_gusts_10m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member06", data.wind_gusts_10m_member06));
-
-            if (data.wind_gusts_10m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member07", data.wind_gusts_10m_member07));
-
-            if (data.wind_gusts_10m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member08", data.wind_gusts_10m_member08));
-
-            if (data.wind_gusts_10m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member09", data.wind_gusts_10m_member09));
-
-            if (data.wind_gusts_10m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member10", data.wind_gusts_10m_member10));
-
-            if (data.wind_gusts_10m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member11", data.wind_gusts_10m_member11));
-
-            if (data.wind_gusts_10m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member12", data.wind_gusts_10m_member12));
-
-            if (data.wind_gusts_10m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member13", data.wind_gusts_10m_member13));
-
-            if (data.wind_gusts_10m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member14", data.wind_gusts_10m_member14));
-
-            if (data.wind_gusts_10m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member15", data.wind_gusts_10m_member15));
-
-            if (data.wind_gusts_10m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member16", data.wind_gusts_10m_member16));
-
-            if (data.wind_gusts_10m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member17", data.wind_gusts_10m_member17));
-
-            if (data.wind_gusts_10m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member18", data.wind_gusts_10m_member18));
-
-            if (data.wind_gusts_10m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member19", data.wind_gusts_10m_member19));
-
-            if (data.wind_gusts_10m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member20", data.wind_gusts_10m_member20));
-
-            if (data.wind_gusts_10m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member21", data.wind_gusts_10m_member21));
-
-            if (data.wind_gusts_10m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member22", data.wind_gusts_10m_member22));
-
-            if (data.wind_gusts_10m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member23", data.wind_gusts_10m_member23));
-
-            if (data.wind_gusts_10m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member24", data.wind_gusts_10m_member24));
-
-            if (data.wind_gusts_10m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member25", data.wind_gusts_10m_member25));
-
-            if (data.wind_gusts_10m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member26", data.wind_gusts_10m_member26));
-
-            if (data.wind_gusts_10m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member27", data.wind_gusts_10m_member27));
-
-            if (data.wind_gusts_10m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member28", data.wind_gusts_10m_member28));
-
-            if (data.wind_gusts_10m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member29", data.wind_gusts_10m_member29));
-
-            if (data.wind_gusts_10m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_gusts_10m_member30", data.wind_gusts_10m_member30));
-
-            if (data.temperature_80m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m", data.temperature_80m));
-
-            if (data.temperature_80m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member01", data.temperature_80m_member01));
-
-            if (data.temperature_80m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member02", data.temperature_80m_member02));
-
-            if (data.temperature_80m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member03", data.temperature_80m_member03));
-
-            if (data.temperature_80m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member04", data.temperature_80m_member04));
-
-            if (data.temperature_80m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member05", data.temperature_80m_member05));
-
-            if (data.temperature_80m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member06", data.temperature_80m_member06));
-
-            if (data.temperature_80m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member07", data.temperature_80m_member07));
-
-            if (data.temperature_80m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member08", data.temperature_80m_member08));
-
-            if (data.temperature_80m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member09", data.temperature_80m_member09));
-
-            if (data.temperature_80m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member10", data.temperature_80m_member10));
-
-            if (data.temperature_80m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member11", data.temperature_80m_member11));
-
-            if (data.temperature_80m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member12", data.temperature_80m_member12));
-
-            if (data.temperature_80m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member13", data.temperature_80m_member13));
-
-            if (data.temperature_80m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member14", data.temperature_80m_member14));
-
-            if (data.temperature_80m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member15", data.temperature_80m_member15));
-
-            if (data.temperature_80m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member16", data.temperature_80m_member16));
-
-            if (data.temperature_80m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member17", data.temperature_80m_member17));
-
-            if (data.temperature_80m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member18", data.temperature_80m_member18));
-
-            if (data.temperature_80m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member19", data.temperature_80m_member19));
-
-            if (data.temperature_80m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member20", data.temperature_80m_member20));
-
-            if (data.temperature_80m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member21", data.temperature_80m_member21));
-
-            if (data.temperature_80m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member22", data.temperature_80m_member22));
-
-            if (data.temperature_80m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member23", data.temperature_80m_member23));
-
-            if (data.temperature_80m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member24", data.temperature_80m_member24));
-
-            if (data.temperature_80m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member25", data.temperature_80m_member25));
-
-            if (data.temperature_80m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member26", data.temperature_80m_member26));
-
-            if (data.temperature_80m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member27", data.temperature_80m_member27));
-
-            if (data.temperature_80m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member28", data.temperature_80m_member28));
-
-            if (data.temperature_80m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member29", data.temperature_80m_member29));
-
-            if (data.temperature_80m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_80m_member30", data.temperature_80m_member30));
-
-            if (data.temperature_120m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m", data.temperature_120m));
-
-            if (data.temperature_120m_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member01", data.temperature_120m_member01));
-
-            if (data.temperature_120m_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member02", data.temperature_120m_member02));
-
-            if (data.temperature_120m_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member03", data.temperature_120m_member03));
-
-            if (data.temperature_120m_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member04", data.temperature_120m_member04));
-
-            if (data.temperature_120m_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member05", data.temperature_120m_member05));
-
-            if (data.temperature_120m_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member06", data.temperature_120m_member06));
-
-            if (data.temperature_120m_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member07", data.temperature_120m_member07));
-
-            if (data.temperature_120m_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member08", data.temperature_120m_member08));
-
-            if (data.temperature_120m_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member09", data.temperature_120m_member09));
-
-            if (data.temperature_120m_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member10", data.temperature_120m_member10));
-
-            if (data.temperature_120m_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member11", data.temperature_120m_member11));
-
-            if (data.temperature_120m_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member12", data.temperature_120m_member12));
-
-            if (data.temperature_120m_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member13", data.temperature_120m_member13));
-
-            if (data.temperature_120m_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member14", data.temperature_120m_member14));
-
-            if (data.temperature_120m_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member15", data.temperature_120m_member15));
-
-            if (data.temperature_120m_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member16", data.temperature_120m_member16));
-
-            if (data.temperature_120m_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member17", data.temperature_120m_member17));
-
-            if (data.temperature_120m_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member18", data.temperature_120m_member18));
-
-            if (data.temperature_120m_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member19", data.temperature_120m_member19));
-
-            if (data.temperature_120m_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member20", data.temperature_120m_member20));
-
-            if (data.temperature_120m_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member21", data.temperature_120m_member21));
-
-            if (data.temperature_120m_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member22", data.temperature_120m_member22));
-
-            if (data.temperature_120m_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member23", data.temperature_120m_member23));
-
-            if (data.temperature_120m_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member24", data.temperature_120m_member24));
-
-            if (data.temperature_120m_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member25", data.temperature_120m_member25));
-
-            if (data.temperature_120m_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member26", data.temperature_120m_member26));
-
-            if (data.temperature_120m_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member27", data.temperature_120m_member27));
-
-            if (data.temperature_120m_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member28", data.temperature_120m_member28));
-
-            if (data.temperature_120m_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member29", data.temperature_120m_member29));
-
-            if (data.temperature_120m_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_120m_member30", data.temperature_120m_member30));
-
-            if (data.surface_temperature != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature", data.surface_temperature));
-
-            if (data.surface_temperature_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member01", data.surface_temperature_member01));
-
-            if (data.surface_temperature_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member02", data.surface_temperature_member02));
-
-            if (data.surface_temperature_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member03", data.surface_temperature_member03));
-
-            if (data.surface_temperature_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member04", data.surface_temperature_member04));
-
-            if (data.surface_temperature_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member05", data.surface_temperature_member05));
-
-            if (data.surface_temperature_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member06", data.surface_temperature_member06));
-
-            if (data.surface_temperature_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member07", data.surface_temperature_member07));
-
-            if (data.surface_temperature_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member08", data.surface_temperature_member08));
-
-            if (data.surface_temperature_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member09", data.surface_temperature_member09));
-
-            if (data.surface_temperature_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member10", data.surface_temperature_member10));
-
-            if (data.surface_temperature_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member11", data.surface_temperature_member11));
-
-            if (data.surface_temperature_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member12", data.surface_temperature_member12));
-
-            if (data.surface_temperature_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member13", data.surface_temperature_member13));
-
-            if (data.surface_temperature_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member14", data.surface_temperature_member14));
-
-            if (data.surface_temperature_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member15", data.surface_temperature_member15));
-
-            if (data.surface_temperature_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member16", data.surface_temperature_member16));
-
-            if (data.surface_temperature_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member17", data.surface_temperature_member17));
-
-            if (data.surface_temperature_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member18", data.surface_temperature_member18));
-
-            if (data.surface_temperature_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member19", data.surface_temperature_member19));
-
-            if (data.surface_temperature_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member20", data.surface_temperature_member20));
-
-            if (data.surface_temperature_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member21", data.surface_temperature_member21));
-
-            if (data.surface_temperature_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member22", data.surface_temperature_member22));
-
-            if (data.surface_temperature_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member23", data.surface_temperature_member23));
-
-            if (data.surface_temperature_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member24", data.surface_temperature_member24));
-
-            if (data.surface_temperature_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member25", data.surface_temperature_member25));
-
-            if (data.surface_temperature_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member26", data.surface_temperature_member26));
-
-            if (data.surface_temperature_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member27", data.surface_temperature_member27));
-
-            if (data.surface_temperature_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member28", data.surface_temperature_member28));
-
-            if (data.surface_temperature_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member29", data.surface_temperature_member29));
-
-            if (data.surface_temperature_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_temperature_member30", data.surface_temperature_member30));
-
-            if (data.soil_temperature_0_to_10cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm", data.soil_temperature_0_to_10cm));
-
-            if (data.soil_temperature_0_to_10cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member01", data.soil_temperature_0_to_10cm_member01));
-
-            if (data.soil_temperature_0_to_10cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member02", data.soil_temperature_0_to_10cm_member02));
-
-            if (data.soil_temperature_0_to_10cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member03", data.soil_temperature_0_to_10cm_member03));
-
-            if (data.soil_temperature_0_to_10cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member04", data.soil_temperature_0_to_10cm_member04));
-
-            if (data.soil_temperature_0_to_10cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member05", data.soil_temperature_0_to_10cm_member05));
-
-            if (data.soil_temperature_0_to_10cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member06", data.soil_temperature_0_to_10cm_member06));
-
-            if (data.soil_temperature_0_to_10cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member07", data.soil_temperature_0_to_10cm_member07));
-
-            if (data.soil_temperature_0_to_10cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member08", data.soil_temperature_0_to_10cm_member08));
-
-            if (data.soil_temperature_0_to_10cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member09", data.soil_temperature_0_to_10cm_member09));
-
-            if (data.soil_temperature_0_to_10cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member10", data.soil_temperature_0_to_10cm_member10));
-
-            if (data.soil_temperature_0_to_10cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member11", data.soil_temperature_0_to_10cm_member11));
-
-            if (data.soil_temperature_0_to_10cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member12", data.soil_temperature_0_to_10cm_member12));
-
-            if (data.soil_temperature_0_to_10cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member13", data.soil_temperature_0_to_10cm_member13));
-
-            if (data.soil_temperature_0_to_10cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member14", data.soil_temperature_0_to_10cm_member14));
-
-            if (data.soil_temperature_0_to_10cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member15", data.soil_temperature_0_to_10cm_member15));
-
-            if (data.soil_temperature_0_to_10cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member16", data.soil_temperature_0_to_10cm_member16));
-
-            if (data.soil_temperature_0_to_10cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member17", data.soil_temperature_0_to_10cm_member17));
-
-            if (data.soil_temperature_0_to_10cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member18", data.soil_temperature_0_to_10cm_member18));
-
-            if (data.soil_temperature_0_to_10cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member19", data.soil_temperature_0_to_10cm_member19));
-
-            if (data.soil_temperature_0_to_10cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member20", data.soil_temperature_0_to_10cm_member20));
-
-            if (data.soil_temperature_0_to_10cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member21", data.soil_temperature_0_to_10cm_member21));
-
-            if (data.soil_temperature_0_to_10cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member22", data.soil_temperature_0_to_10cm_member22));
-
-            if (data.soil_temperature_0_to_10cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member23", data.soil_temperature_0_to_10cm_member23));
-
-            if (data.soil_temperature_0_to_10cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member24", data.soil_temperature_0_to_10cm_member24));
-
-            if (data.soil_temperature_0_to_10cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member25", data.soil_temperature_0_to_10cm_member25));
-
-            if (data.soil_temperature_0_to_10cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member26", data.soil_temperature_0_to_10cm_member26));
-
-            if (data.soil_temperature_0_to_10cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member27", data.soil_temperature_0_to_10cm_member27));
-
-            if (data.soil_temperature_0_to_10cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member28", data.soil_temperature_0_to_10cm_member28));
-
-            if (data.soil_temperature_0_to_10cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member29", data.soil_temperature_0_to_10cm_member29));
-
-            if (data.soil_temperature_0_to_10cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_0_to_10cm_member30", data.soil_temperature_0_to_10cm_member30));
-
-            if (data.soil_temperature_10_to_40cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm", data.soil_temperature_10_to_40cm));
-
-            if (data.soil_temperature_10_to_40cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member01", data.soil_temperature_10_to_40cm_member01));
-
-            if (data.soil_temperature_10_to_40cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member02", data.soil_temperature_10_to_40cm_member02));
-
-            if (data.soil_temperature_10_to_40cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member03", data.soil_temperature_10_to_40cm_member03));
-
-            if (data.soil_temperature_10_to_40cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member04", data.soil_temperature_10_to_40cm_member04));
-
-            if (data.soil_temperature_10_to_40cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member05", data.soil_temperature_10_to_40cm_member05));
-
-            if (data.soil_temperature_10_to_40cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member06", data.soil_temperature_10_to_40cm_member06));
-
-            if (data.soil_temperature_10_to_40cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member07", data.soil_temperature_10_to_40cm_member07));
-
-            if (data.soil_temperature_10_to_40cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member08", data.soil_temperature_10_to_40cm_member08));
-
-            if (data.soil_temperature_10_to_40cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member09", data.soil_temperature_10_to_40cm_member09));
-
-            if (data.soil_temperature_10_to_40cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member10", data.soil_temperature_10_to_40cm_member10));
-
-            if (data.soil_temperature_10_to_40cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member11", data.soil_temperature_10_to_40cm_member11));
-
-            if (data.soil_temperature_10_to_40cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member12", data.soil_temperature_10_to_40cm_member12));
-
-            if (data.soil_temperature_10_to_40cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member13", data.soil_temperature_10_to_40cm_member13));
-
-            if (data.soil_temperature_10_to_40cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member14", data.soil_temperature_10_to_40cm_member14));
-
-            if (data.soil_temperature_10_to_40cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member15", data.soil_temperature_10_to_40cm_member15));
-
-            if (data.soil_temperature_10_to_40cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member16", data.soil_temperature_10_to_40cm_member16));
-
-            if (data.soil_temperature_10_to_40cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member17", data.soil_temperature_10_to_40cm_member17));
-
-            if (data.soil_temperature_10_to_40cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member18", data.soil_temperature_10_to_40cm_member18));
-
-            if (data.soil_temperature_10_to_40cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member19", data.soil_temperature_10_to_40cm_member19));
-
-            if (data.soil_temperature_10_to_40cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member20", data.soil_temperature_10_to_40cm_member20));
-
-            if (data.soil_temperature_10_to_40cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member21", data.soil_temperature_10_to_40cm_member21));
-
-            if (data.soil_temperature_10_to_40cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member22", data.soil_temperature_10_to_40cm_member22));
-
-            if (data.soil_temperature_10_to_40cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member23", data.soil_temperature_10_to_40cm_member23));
-
-            if (data.soil_temperature_10_to_40cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member24", data.soil_temperature_10_to_40cm_member24));
-
-            if (data.soil_temperature_10_to_40cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member25", data.soil_temperature_10_to_40cm_member25));
-
-            if (data.soil_temperature_10_to_40cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member26", data.soil_temperature_10_to_40cm_member26));
-
-            if (data.soil_temperature_10_to_40cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member27", data.soil_temperature_10_to_40cm_member27));
-
-            if (data.soil_temperature_10_to_40cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member28", data.soil_temperature_10_to_40cm_member28));
-
-            if (data.soil_temperature_10_to_40cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member29", data.soil_temperature_10_to_40cm_member29));
-
-            if (data.soil_temperature_10_to_40cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_10_to_40cm_member30", data.soil_temperature_10_to_40cm_member30));
-
-            if (data.soil_temperature_40_to_100cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm", data.soil_temperature_40_to_100cm));
-
-            if (data.soil_temperature_40_to_100cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member01", data.soil_temperature_40_to_100cm_member01));
-
-            if (data.soil_temperature_40_to_100cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member02", data.soil_temperature_40_to_100cm_member02));
-
-            if (data.soil_temperature_40_to_100cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member03", data.soil_temperature_40_to_100cm_member03));
-
-            if (data.soil_temperature_40_to_100cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member04", data.soil_temperature_40_to_100cm_member04));
-
-            if (data.soil_temperature_40_to_100cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member05", data.soil_temperature_40_to_100cm_member05));
-
-            if (data.soil_temperature_40_to_100cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member06", data.soil_temperature_40_to_100cm_member06));
-
-            if (data.soil_temperature_40_to_100cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member07", data.soil_temperature_40_to_100cm_member07));
-
-            if (data.soil_temperature_40_to_100cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member08", data.soil_temperature_40_to_100cm_member08));
-
-            if (data.soil_temperature_40_to_100cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member09", data.soil_temperature_40_to_100cm_member09));
-
-            if (data.soil_temperature_40_to_100cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member10", data.soil_temperature_40_to_100cm_member10));
-
-            if (data.soil_temperature_40_to_100cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member11", data.soil_temperature_40_to_100cm_member11));
-
-            if (data.soil_temperature_40_to_100cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member12", data.soil_temperature_40_to_100cm_member12));
-
-            if (data.soil_temperature_40_to_100cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member13", data.soil_temperature_40_to_100cm_member13));
-
-            if (data.soil_temperature_40_to_100cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member14", data.soil_temperature_40_to_100cm_member14));
-
-            if (data.soil_temperature_40_to_100cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member15", data.soil_temperature_40_to_100cm_member15));
-
-            if (data.soil_temperature_40_to_100cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member16", data.soil_temperature_40_to_100cm_member16));
-
-            if (data.soil_temperature_40_to_100cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member17", data.soil_temperature_40_to_100cm_member17));
-
-            if (data.soil_temperature_40_to_100cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member18", data.soil_temperature_40_to_100cm_member18));
-
-            if (data.soil_temperature_40_to_100cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member19", data.soil_temperature_40_to_100cm_member19));
-
-            if (data.soil_temperature_40_to_100cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member20", data.soil_temperature_40_to_100cm_member20));
-
-            if (data.soil_temperature_40_to_100cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member21", data.soil_temperature_40_to_100cm_member21));
-
-            if (data.soil_temperature_40_to_100cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member22", data.soil_temperature_40_to_100cm_member22));
-
-            if (data.soil_temperature_40_to_100cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member23", data.soil_temperature_40_to_100cm_member23));
-
-            if (data.soil_temperature_40_to_100cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member24", data.soil_temperature_40_to_100cm_member24));
-
-            if (data.soil_temperature_40_to_100cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member25", data.soil_temperature_40_to_100cm_member25));
-
-            if (data.soil_temperature_40_to_100cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member26", data.soil_temperature_40_to_100cm_member26));
-
-            if (data.soil_temperature_40_to_100cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member27", data.soil_temperature_40_to_100cm_member27));
-
-            if (data.soil_temperature_40_to_100cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member28", data.soil_temperature_40_to_100cm_member28));
-
-            if (data.soil_temperature_40_to_100cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member29", data.soil_temperature_40_to_100cm_member29));
-
-            if (data.soil_temperature_40_to_100cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_40_to_100cm_member30", data.soil_temperature_40_to_100cm_member30));
-
-            if (data.soil_temperature_100_to_200cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm", data.soil_temperature_100_to_200cm));
-
-            if (data.soil_temperature_100_to_200cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member01", data.soil_temperature_100_to_200cm_member01));
-
-            if (data.soil_temperature_100_to_200cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member02", data.soil_temperature_100_to_200cm_member02));
-
-            if (data.soil_temperature_100_to_200cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member03", data.soil_temperature_100_to_200cm_member03));
-
-            if (data.soil_temperature_100_to_200cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member04", data.soil_temperature_100_to_200cm_member04));
-
-            if (data.soil_temperature_100_to_200cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member05", data.soil_temperature_100_to_200cm_member05));
-
-            if (data.soil_temperature_100_to_200cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member06", data.soil_temperature_100_to_200cm_member06));
-
-            if (data.soil_temperature_100_to_200cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member07", data.soil_temperature_100_to_200cm_member07));
-
-            if (data.soil_temperature_100_to_200cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member08", data.soil_temperature_100_to_200cm_member08));
-
-            if (data.soil_temperature_100_to_200cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member09", data.soil_temperature_100_to_200cm_member09));
-
-            if (data.soil_temperature_100_to_200cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member10", data.soil_temperature_100_to_200cm_member10));
-
-            if (data.soil_temperature_100_to_200cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member11", data.soil_temperature_100_to_200cm_member11));
-
-            if (data.soil_temperature_100_to_200cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member12", data.soil_temperature_100_to_200cm_member12));
-
-            if (data.soil_temperature_100_to_200cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member13", data.soil_temperature_100_to_200cm_member13));
-
-            if (data.soil_temperature_100_to_200cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member14", data.soil_temperature_100_to_200cm_member14));
-
-            if (data.soil_temperature_100_to_200cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member15", data.soil_temperature_100_to_200cm_member15));
-
-            if (data.soil_temperature_100_to_200cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member16", data.soil_temperature_100_to_200cm_member16));
-
-            if (data.soil_temperature_100_to_200cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member17", data.soil_temperature_100_to_200cm_member17));
-
-            if (data.soil_temperature_100_to_200cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member18", data.soil_temperature_100_to_200cm_member18));
-
-            if (data.soil_temperature_100_to_200cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member19", data.soil_temperature_100_to_200cm_member19));
-
-            if (data.soil_temperature_100_to_200cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member20", data.soil_temperature_100_to_200cm_member20));
-
-            if (data.soil_temperature_100_to_200cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member21", data.soil_temperature_100_to_200cm_member21));
-
-            if (data.soil_temperature_100_to_200cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member22", data.soil_temperature_100_to_200cm_member22));
-
-            if (data.soil_temperature_100_to_200cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member23", data.soil_temperature_100_to_200cm_member23));
-
-            if (data.soil_temperature_100_to_200cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member24", data.soil_temperature_100_to_200cm_member24));
-
-            if (data.soil_temperature_100_to_200cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member25", data.soil_temperature_100_to_200cm_member25));
-
-            if (data.soil_temperature_100_to_200cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member26", data.soil_temperature_100_to_200cm_member26));
-
-            if (data.soil_temperature_100_to_200cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member27", data.soil_temperature_100_to_200cm_member27));
-
-            if (data.soil_temperature_100_to_200cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member28", data.soil_temperature_100_to_200cm_member28));
-
-            if (data.soil_temperature_100_to_200cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member29", data.soil_temperature_100_to_200cm_member29));
-
-            if (data.soil_temperature_100_to_200cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_temperature_100_to_200cm_member30", data.soil_temperature_100_to_200cm_member30));
-
-            if (data.soil_moisture_0_to_10cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm", data.soil_moisture_0_to_10cm));
-
-            if (data.soil_moisture_0_to_10cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member01", data.soil_moisture_0_to_10cm_member01));
-
-            if (data.soil_moisture_0_to_10cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member02", data.soil_moisture_0_to_10cm_member02));
-
-            if (data.soil_moisture_0_to_10cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member03", data.soil_moisture_0_to_10cm_member03));
-
-            if (data.soil_moisture_0_to_10cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member04", data.soil_moisture_0_to_10cm_member04));
-
-            if (data.soil_moisture_0_to_10cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member05", data.soil_moisture_0_to_10cm_member05));
-
-            if (data.soil_moisture_0_to_10cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member06", data.soil_moisture_0_to_10cm_member06));
-
-            if (data.soil_moisture_0_to_10cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member07", data.soil_moisture_0_to_10cm_member07));
-
-            if (data.soil_moisture_0_to_10cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member08", data.soil_moisture_0_to_10cm_member08));
-
-            if (data.soil_moisture_0_to_10cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member09", data.soil_moisture_0_to_10cm_member09));
-
-            if (data.soil_moisture_0_to_10cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member10", data.soil_moisture_0_to_10cm_member10));
-
-            if (data.soil_moisture_0_to_10cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member11", data.soil_moisture_0_to_10cm_member11));
-
-            if (data.soil_moisture_0_to_10cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member12", data.soil_moisture_0_to_10cm_member12));
-
-            if (data.soil_moisture_0_to_10cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member13", data.soil_moisture_0_to_10cm_member13));
-
-            if (data.soil_moisture_0_to_10cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member14", data.soil_moisture_0_to_10cm_member14));
-
-            if (data.soil_moisture_0_to_10cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member15", data.soil_moisture_0_to_10cm_member15));
-
-            if (data.soil_moisture_0_to_10cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member16", data.soil_moisture_0_to_10cm_member16));
-
-            if (data.soil_moisture_0_to_10cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member17", data.soil_moisture_0_to_10cm_member17));
-
-            if (data.soil_moisture_0_to_10cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member18", data.soil_moisture_0_to_10cm_member18));
-
-            if (data.soil_moisture_0_to_10cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member19", data.soil_moisture_0_to_10cm_member19));
-
-            if (data.soil_moisture_0_to_10cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member20", data.soil_moisture_0_to_10cm_member20));
-
-            if (data.soil_moisture_0_to_10cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member21", data.soil_moisture_0_to_10cm_member21));
-
-            if (data.soil_moisture_0_to_10cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member22", data.soil_moisture_0_to_10cm_member22));
-
-            if (data.soil_moisture_0_to_10cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member23", data.soil_moisture_0_to_10cm_member23));
-
-            if (data.soil_moisture_0_to_10cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member24", data.soil_moisture_0_to_10cm_member24));
-
-            if (data.soil_moisture_0_to_10cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member25", data.soil_moisture_0_to_10cm_member25));
-
-            if (data.soil_moisture_0_to_10cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member26", data.soil_moisture_0_to_10cm_member26));
-
-            if (data.soil_moisture_0_to_10cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member27", data.soil_moisture_0_to_10cm_member27));
-
-            if (data.soil_moisture_0_to_10cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member28", data.soil_moisture_0_to_10cm_member28));
-
-            if (data.soil_moisture_0_to_10cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member29", data.soil_moisture_0_to_10cm_member29));
-
-            if (data.soil_moisture_0_to_10cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_0_to_10cm_member30", data.soil_moisture_0_to_10cm_member30));
-
-            if (data.soil_moisture_10_to_40cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm", data.soil_moisture_10_to_40cm));
-
-            if (data.soil_moisture_10_to_40cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member01", data.soil_moisture_10_to_40cm_member01));
-
-            if (data.soil_moisture_10_to_40cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member02", data.soil_moisture_10_to_40cm_member02));
-
-            if (data.soil_moisture_10_to_40cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member03", data.soil_moisture_10_to_40cm_member03));
-
-            if (data.soil_moisture_10_to_40cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member04", data.soil_moisture_10_to_40cm_member04));
-
-            if (data.soil_moisture_10_to_40cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member05", data.soil_moisture_10_to_40cm_member05));
-
-            if (data.soil_moisture_10_to_40cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member06", data.soil_moisture_10_to_40cm_member06));
-
-            if (data.soil_moisture_10_to_40cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member07", data.soil_moisture_10_to_40cm_member07));
-
-            if (data.soil_moisture_10_to_40cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member08", data.soil_moisture_10_to_40cm_member08));
-
-            if (data.soil_moisture_10_to_40cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member09", data.soil_moisture_10_to_40cm_member09));
-
-            if (data.soil_moisture_10_to_40cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member10", data.soil_moisture_10_to_40cm_member10));
-
-            if (data.soil_moisture_10_to_40cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member11", data.soil_moisture_10_to_40cm_member11));
-
-            if (data.soil_moisture_10_to_40cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member12", data.soil_moisture_10_to_40cm_member12));
-
-            if (data.soil_moisture_10_to_40cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member13", data.soil_moisture_10_to_40cm_member13));
-
-            if (data.soil_moisture_10_to_40cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member14", data.soil_moisture_10_to_40cm_member14));
-
-            if (data.soil_moisture_10_to_40cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member15", data.soil_moisture_10_to_40cm_member15));
-
-            if (data.soil_moisture_10_to_40cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member16", data.soil_moisture_10_to_40cm_member16));
-
-            if (data.soil_moisture_10_to_40cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member17", data.soil_moisture_10_to_40cm_member17));
-
-            if (data.soil_moisture_10_to_40cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member18", data.soil_moisture_10_to_40cm_member18));
-
-            if (data.soil_moisture_10_to_40cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member19", data.soil_moisture_10_to_40cm_member19));
-
-            if (data.soil_moisture_10_to_40cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member20", data.soil_moisture_10_to_40cm_member20));
-
-            if (data.soil_moisture_10_to_40cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member21", data.soil_moisture_10_to_40cm_member21));
-
-            if (data.soil_moisture_10_to_40cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member22", data.soil_moisture_10_to_40cm_member22));
-
-            if (data.soil_moisture_10_to_40cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member23", data.soil_moisture_10_to_40cm_member23));
-
-            if (data.soil_moisture_10_to_40cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member24", data.soil_moisture_10_to_40cm_member24));
-
-            if (data.soil_moisture_10_to_40cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member25", data.soil_moisture_10_to_40cm_member25));
-
-            if (data.soil_moisture_10_to_40cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member26", data.soil_moisture_10_to_40cm_member26));
-
-            if (data.soil_moisture_10_to_40cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member27", data.soil_moisture_10_to_40cm_member27));
-
-            if (data.soil_moisture_10_to_40cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member28", data.soil_moisture_10_to_40cm_member28));
-
-            if (data.soil_moisture_10_to_40cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member29", data.soil_moisture_10_to_40cm_member29));
-
-            if (data.soil_moisture_10_to_40cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_10_to_40cm_member30", data.soil_moisture_10_to_40cm_member30));
-
-            if (data.soil_moisture_40_to_100cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm", data.soil_moisture_40_to_100cm));
-
-            if (data.soil_moisture_40_to_100cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member01", data.soil_moisture_40_to_100cm_member01));
-
-            if (data.soil_moisture_40_to_100cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member02", data.soil_moisture_40_to_100cm_member02));
-
-            if (data.soil_moisture_40_to_100cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member03", data.soil_moisture_40_to_100cm_member03));
-
-            if (data.soil_moisture_40_to_100cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member04", data.soil_moisture_40_to_100cm_member04));
-
-            if (data.soil_moisture_40_to_100cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member05", data.soil_moisture_40_to_100cm_member05));
-
-            if (data.soil_moisture_40_to_100cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member06", data.soil_moisture_40_to_100cm_member06));
-
-            if (data.soil_moisture_40_to_100cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member07", data.soil_moisture_40_to_100cm_member07));
-
-            if (data.soil_moisture_40_to_100cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member08", data.soil_moisture_40_to_100cm_member08));
-
-            if (data.soil_moisture_40_to_100cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member09", data.soil_moisture_40_to_100cm_member09));
-
-            if (data.soil_moisture_40_to_100cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member10", data.soil_moisture_40_to_100cm_member10));
-
-            if (data.soil_moisture_40_to_100cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member11", data.soil_moisture_40_to_100cm_member11));
-
-            if (data.soil_moisture_40_to_100cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member12", data.soil_moisture_40_to_100cm_member12));
-
-            if (data.soil_moisture_40_to_100cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member13", data.soil_moisture_40_to_100cm_member13));
-
-            if (data.soil_moisture_40_to_100cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member14", data.soil_moisture_40_to_100cm_member14));
-
-            if (data.soil_moisture_40_to_100cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member15", data.soil_moisture_40_to_100cm_member15));
-
-            if (data.soil_moisture_40_to_100cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member16", data.soil_moisture_40_to_100cm_member16));
-
-            if (data.soil_moisture_40_to_100cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member17", data.soil_moisture_40_to_100cm_member17));
-
-            if (data.soil_moisture_40_to_100cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member18", data.soil_moisture_40_to_100cm_member18));
-
-            if (data.soil_moisture_40_to_100cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member19", data.soil_moisture_40_to_100cm_member19));
-
-            if (data.soil_moisture_40_to_100cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member20", data.soil_moisture_40_to_100cm_member20));
-
-            if (data.soil_moisture_40_to_100cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member21", data.soil_moisture_40_to_100cm_member21));
-
-            if (data.soil_moisture_40_to_100cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member22", data.soil_moisture_40_to_100cm_member22));
-
-            if (data.soil_moisture_40_to_100cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member23", data.soil_moisture_40_to_100cm_member23));
-
-            if (data.soil_moisture_40_to_100cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member24", data.soil_moisture_40_to_100cm_member24));
-
-            if (data.soil_moisture_40_to_100cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member25", data.soil_moisture_40_to_100cm_member25));
-
-            if (data.soil_moisture_40_to_100cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member26", data.soil_moisture_40_to_100cm_member26));
-
-            if (data.soil_moisture_40_to_100cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member27", data.soil_moisture_40_to_100cm_member27));
-
-            if (data.soil_moisture_40_to_100cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member28", data.soil_moisture_40_to_100cm_member28));
-
-            if (data.soil_moisture_40_to_100cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member29", data.soil_moisture_40_to_100cm_member29));
-
-            if (data.soil_moisture_40_to_100cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_40_to_100cm_member30", data.soil_moisture_40_to_100cm_member30));
-
-            if (data.soil_moisture_100_to_200cm != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm", data.soil_moisture_100_to_200cm));
-
-            if (data.soil_moisture_100_to_200cm_member01 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member01", data.soil_moisture_100_to_200cm_member01));
-
-            if (data.soil_moisture_100_to_200cm_member02 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member02", data.soil_moisture_100_to_200cm_member02));
-
-            if (data.soil_moisture_100_to_200cm_member03 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member03", data.soil_moisture_100_to_200cm_member03));
-
-            if (data.soil_moisture_100_to_200cm_member04 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member04", data.soil_moisture_100_to_200cm_member04));
-
-            if (data.soil_moisture_100_to_200cm_member05 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member05", data.soil_moisture_100_to_200cm_member05));
-
-            if (data.soil_moisture_100_to_200cm_member06 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member06", data.soil_moisture_100_to_200cm_member06));
-
-            if (data.soil_moisture_100_to_200cm_member07 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member07", data.soil_moisture_100_to_200cm_member07));
-
-            if (data.soil_moisture_100_to_200cm_member08 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member08", data.soil_moisture_100_to_200cm_member08));
-
-            if (data.soil_moisture_100_to_200cm_member09 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member09", data.soil_moisture_100_to_200cm_member09));
-
-            if (data.soil_moisture_100_to_200cm_member10 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member10", data.soil_moisture_100_to_200cm_member10));
-
-            if (data.soil_moisture_100_to_200cm_member11 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member11", data.soil_moisture_100_to_200cm_member11));
-
-            if (data.soil_moisture_100_to_200cm_member12 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member12", data.soil_moisture_100_to_200cm_member12));
-
-            if (data.soil_moisture_100_to_200cm_member13 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member13", data.soil_moisture_100_to_200cm_member13));
-
-            if (data.soil_moisture_100_to_200cm_member14 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member14", data.soil_moisture_100_to_200cm_member14));
-
-            if (data.soil_moisture_100_to_200cm_member15 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member15", data.soil_moisture_100_to_200cm_member15));
-
-            if (data.soil_moisture_100_to_200cm_member16 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member16", data.soil_moisture_100_to_200cm_member16));
-
-            if (data.soil_moisture_100_to_200cm_member17 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member17", data.soil_moisture_100_to_200cm_member17));
-
-            if (data.soil_moisture_100_to_200cm_member18 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member18", data.soil_moisture_100_to_200cm_member18));
-
-            if (data.soil_moisture_100_to_200cm_member19 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member19", data.soil_moisture_100_to_200cm_member19));
-
-            if (data.soil_moisture_100_to_200cm_member20 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member20", data.soil_moisture_100_to_200cm_member20));
-
-            if (data.soil_moisture_100_to_200cm_member21 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member21", data.soil_moisture_100_to_200cm_member21));
-
-            if (data.soil_moisture_100_to_200cm_member22 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member22", data.soil_moisture_100_to_200cm_member22));
-
-            if (data.soil_moisture_100_to_200cm_member23 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member23", data.soil_moisture_100_to_200cm_member23));
-
-            if (data.soil_moisture_100_to_200cm_member24 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member24", data.soil_moisture_100_to_200cm_member24));
-
-            if (data.soil_moisture_100_to_200cm_member25 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member25", data.soil_moisture_100_to_200cm_member25));
-
-            if (data.soil_moisture_100_to_200cm_member26 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member26", data.soil_moisture_100_to_200cm_member26));
-
-            if (data.soil_moisture_100_to_200cm_member27 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member27", data.soil_moisture_100_to_200cm_member27));
-
-            if (data.soil_moisture_100_to_200cm_member28 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member28", data.soil_moisture_100_to_200cm_member28));
-
-            if (data.soil_moisture_100_to_200cm_member29 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member29", data.soil_moisture_100_to_200cm_member29));
-
-            if (data.soil_moisture_100_to_200cm_member30 != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("soil_moisture_100_to_200cm_member30", data.soil_moisture_100_to_200cm_member30));
 
             if (data.temperature_1000hPa != null)
                 df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_1000hPa", data.temperature_1000hPa));
@@ -15685,7 +12678,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GEFS ensemble mean point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a NOAA/NCEP/AIGEFS ensemble mean point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -15725,136 +12718,122 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
          * 
          *      Variables
          *      ---------
-         *      "temperature_2m" 
-                "relative_humidity_2m" 
-                "apparent_temperature" 
-                "cape"
-                "precipitation" 
+                "temperature_2m"
+                "precipitation"
                 "rain"
-                "snow"  
-                "snowfall" 
-                "snow_depth" 
-                "pressure_msl" 
-                "surface_pressure" 
-                "cloud_cover" 
-                "cloud_cover_low" 
-                "cloud_cover_mid" 
-                "cloud_cover_high" 
-                "visibility" 
-                "evapotranspiration" 
-                "et0_fao_evapotranspiration" 
-                "vapour_pressure_deficit" 
-                "wind_speed_10m" 
-                "wind_speed_80m" 
-                "wind_speed_120m" 
-                "wind_speed_180m" 
-                "wind_direction_10m" 
-                "wind_direction_80m" 
-                "wind_direction_120m" 
-                "wind_direction_180m" 
-                "temperature_80m" 
-                "wind_gusts_10m" 
-                "temperature_120m" 
-                "temperature_180m" 
-                "soil_temperature_0cm" 
-                "soil_temperature_6cm" 
-                "soil_temperature_18cm" 
-                "soil_temperature_54cm" 
-                "soil_moisture_0_to_1cm" 
-                "soil_moisture_1_to_3cm" 
-                "soil_moisture_3_to_9cm" 
-                "soil_moisture_9_to_27cm" 
-                "soil_moisture_27_to_81cm"
-                "temperature_1000hPa" 
-                "temperature_925hPa" 
-                "temperature_850hPa" 
-                "temperature_700hPa" 
-                "temperature_600hPa" 
-                "temperature_500hPa" 
-                "temperature_400hPa" 
-                "temperature_300hPa" 
-                "temperature_250hPa" 
-                "temperature_200hPa" 
-                "temperature_150hPa" 
-                "temperature_100hPa" 
-                "temperature_50hPa" 
-                "dew_point_1000hPa" 
-                "dew_point_925hPa" 
-                "dew_point_850hPa" 
-                "dew_point_700hPa" 
-                "dew_point_600hPa" 
-                "dew_point_500hPa" 
-                "dew_point_400hPa" 
-                "dew_point_300hPa" 
-                "dew_point_250hPa" 
-                "dew_point_200hPa" 
-                "dew_point_150hPa" 
-                "dew_point_100hPa" 
-                "dew_point_50hPa" 
-                "relative_humidity_1000hPa" 
-                "relative_humidity_925hPa" 
-                "relative_humidity_850hPa" 
-                "relative_humidity_700hPa" 
-                "relative_humidity_600hPa" 
-                "relative_humidity_500hPa" 
-                "relative_humidity_400hPa" 
-                "relative_humidity_300hPa" 
-                "relative_humidity_250hPa" 
-                "relative_humidity_200hPa" 
-                "relative_humidity_150hPa" 
-                "relative_humidity_100hPa" 
-                "relative_humidity_50hPa" 
-                "wind_speed_1000hPa" 
-                "wind_speed_925hPa" 
-                "wind_speed_850hPa" 
-                "wind_speed_700hPa" 
-                "wind_speed_600hPa" 
-                "wind_speed_500hPa" 
-                "wind_speed_400hPa" 
-                "wind_speed_300hPa" 
-                "wind_speed_250hPa" 
-                "wind_speed_200hPa" 
-                "wind_speed_150hPa" 
-                "wind_speed_100hPa" 
-                "wind_speed_50hPa" 
-                "wind_direction_1000hPa" 
-                "wind_direction_925hPa" 
-                "wind_direction_850hPa" 
-                "wind_direction_700hPa" 
-                "wind_direction_600hPa" 
-                "wind_direction_500hPa" 
-                "wind_direction_400hPa" 
-                "wind_direction_300hPa" 
-                "wind_direction_250hPa" 
-                "wind_direction_200hPa" 
-                "wind_direction_150hPa" 
-                "wind_direction_100hPa" 
-                "wind_direction_50hPa" 
-                "vertical_velocity_1000hPa" 
-                "vertical_velocity_925hPa" 
-                "vertical_velocity_850hPa" 
-                "vertical_velocity_700hPa" 
-                "vertical_velocity_600hPa" 
-                "vertical_velocity_500hPa" 
-                "vertical_velocity_400hPa" 
-                "vertical_velocity_300hPa" 
-                "vertical_velocity_250hPa" 
-                "vertical_velocity_200hPa" 
-                "vertical_velocity_150hPa" 
-                "vertical_velocity_100hPa" 
-                "vertical_velocity_50hPa" 
-                "geopotential_height_1000hPa" 
-                "geopotential_height_925hPa" 
-                "geopotential_height_850hPa" 
-                "geopotential_height_700hPa" 
-                "geopotential_height_600hPa" 
-                "geopotential_height_500hPa" 
-                "geopotential_height_400hPa" 
-                "geopotential_height_300hPa" 
-                "geopotential_height_250hPa" 
-                "geopotential_height_200hPa" 
-                "geopotential_height_150hPa" 
-                "geopotential_height_100hPa" 
+                "snowfall"
+                "weather_code"
+                "pressure_msl"
+                "surface_pressure"
+                "cloud_cover"
+                "cloud_cover_low"
+                "cloud_cover_mid"
+                "cloud_cover_high"
+                "wind_speed_10m"
+                "wind_direction_10m"
+                "temperature_1000hPa"
+                "temperature_925hPa"
+                "temperature_850hPa"
+                "temperature_700hPa"
+                "temperature_600hPa"
+                "temperature_500hPa"
+                "temperature_400hPa"
+                "temperature_300hPa"
+                "temperature_250hPa"
+                "temperature_200hPa"
+                "temperature_150hPa"
+                "temperature_100hPa"
+                "temperature_50hPa"
+                "relative_humidity_1000hPa"
+                "relative_humidity_925hPa"
+                "relative_humidity_850hPa"
+                "relative_humidity_700hPa"
+                "relative_humidity_600hPa"
+                "relative_humidity_500hPa"
+                "relative_humidity_400hPa"
+                "relative_humidity_300hPa"
+                "relative_humidity_250hPa"
+                "relative_humidity_200hPa"
+                "relative_humidity_150hPa"
+                "relative_humidity_100hPa"
+                "relative_humidity_50hPa"
+                "dew_point_1000hPa"
+                "dew_point_925hPa"
+                "dew_point_850hPa"
+                "dew_point_700hPa"
+                "dew_point_600hPa"
+                "dew_point_500hPa"
+                "dew_point_400hPa"
+                "dew_point_300hPa"
+                "dew_point_250hPa"
+                "dew_point_200hPa"
+                "dew_point_150hPa"
+                "dew_point_100hPa"
+                "dew_point_50hPa"
+                "cloud_cover_1000hPa"
+                "cloud_cover_925hPa"
+                "cloud_cover_850hPa"
+                "cloud_cover_700hPa"
+                "cloud_cover_600hPa"
+                "cloud_cover_500hPa"
+                "cloud_cover_400hPa"
+                "cloud_cover_300hPa"
+                "cloud_cover_250hPa"
+                "cloud_cover_200hPa"
+                "cloud_cover_150hPa"
+                "cloud_cover_100hPa"
+                "cloud_cover_50hPa"
+                "wind_speed_1000hPa"
+                "wind_speed_925hPa"
+                "wind_speed_850hPa"
+                "wind_speed_700hPa"
+                "wind_speed_600hPa"
+                "wind_speed_500hPa"
+                "wind_speed_400hPa"
+                "wind_speed_300hPa"
+                "wind_speed_250hPa"
+                "wind_speed_200hPa"
+                "wind_speed_150hPa"
+                "wind_speed_100hPa"
+                "wind_speed_50hPa"
+                "wind_direction_1000hPa"
+                "wind_direction_925hPa"
+                "wind_direction_850hPa"
+                "wind_direction_700hPa"
+                "wind_direction_600hPa"
+                "wind_direction_500hPa"
+                "wind_direction_400hPa"
+                "wind_direction_300hPa"
+                "wind_direction_250hPa"
+                "wind_direction_200hPa"
+                "wind_direction_150hPa"
+                "wind_direction_100hPa"
+                "wind_direction_50hPa"
+                "vertical_velocity_1000hPa"
+                "vertical_velocity_925hPa"
+                "vertical_velocity_850hPa"
+                "vertical_velocity_700hPa"
+                "vertical_velocity_600hPa"
+                "vertical_velocity_500hPa"
+                "vertical_velocity_400hPa"
+                "vertical_velocity_300hPa"
+                "vertical_velocity_250hPa"
+                "vertical_velocity_200hPa"
+                "vertical_velocity_150hPa"
+                "vertical_velocity_100hPa"
+                "vertical_velocity_50hPa"
+                "geopotential_height_1000hPa"
+                "geopotential_height_925hPa"
+                "geopotential_height_850hPa"
+                "geopotential_height_700hPa"
+                "geopotential_height_600hPa"
+                "geopotential_height_500hPa"
+                "geopotential_height_400hPa"
+                "geopotential_height_300hPa"
+                "geopotential_height_250hPa"
+                "geopotential_height_200hPa"
+                "geopotential_height_150hPa"
+                "geopotential_height_100hPa"
                 "geopotential_height_50hPa" 
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
@@ -15869,7 +12848,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
          * Returns
          * -------
          * 
-         * The GEFS Ensemble Mean Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The AIGEFS Ensemble Mean Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
@@ -15877,41 +12856,19 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
             if (variables == null || variables.Length == 0)
             {
-                variables = new[] {"temperature_2m" ,
-                                    "relative_humidity_2m" ,
-                                    "dew_point_2m" ,
-                                    "apparent_temperature" ,
+                variables = new[] { "temperature_2m" ,
                                     "precipitation" ,
                                     "rain" ,
-                                    "snow_depth" ,
                                     "snowfall" ,
                                     "weather_code" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
                                     "cloud_cover" ,
-                                    "visibility" ,
-                                    "et0_fao_evapotranspiration" ,
-                                    "vapour_pressure_deficit" ,
+                                    "cloud_cover_low" ,
+                                    "cloud_cover_mid" ,
+                                    "cloud_cover_high" ,
                                     "wind_speed_10m" ,
-                                    "wind_speed_80m" ,
-                                    "wind_speed_100m" ,
-                                    "wind_speed_120m" ,
                                     "wind_direction_10m" ,
-                                    "wind_direction_80m" ,
-                                    "wind_direction_100m" ,
-                                    "wind_direction_120m" ,
-                                    "wind_gusts_10m" ,
-                                    "temperature_80m" ,
-                                    "temperature_120m" ,
-                                    "surface_temperature" ,
-                                    "soil_temperature_0_to_10cm" ,
-                                    "soil_temperature_10_to_40cm" ,
-                                    "soil_temperature_40_to_100cm" ,
-                                    "soil_temperature_100_to_200cm" ,
-                                    "soil_moisture_0_to_10cm" ,
-                                    "soil_moisture_10_to_40cm" ,
-                                    "soil_moisture_40_to_100cm" ,
-                                    "soil_moisture_100_to_200cm" ,
                                     "temperature_1000hPa" ,
                                     "temperature_925hPa" ,
                                     "temperature_850hPa" ,
@@ -15927,8 +12884,8 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                                     "temperature_50hPa" ,
                                     "relative_humidity_1000hPa" ,
                                     "relative_humidity_925hPa" ,
-                                    "relative_humidity_700hPa" ,
                                     "relative_humidity_850hPa" ,
+                                    "relative_humidity_700hPa" ,
                                     "relative_humidity_600hPa" ,
                                     "relative_humidity_500hPa" ,
                                     "relative_humidity_400hPa" ,
@@ -15946,8 +12903,8 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                                     "dew_point_500hPa" ,
                                     "dew_point_400hPa" ,
                                     "dew_point_300hPa" ,
-                                    "dew_point_200hPa" ,
                                     "dew_point_250hPa" ,
+                                    "dew_point_200hPa" ,
                                     "dew_point_150hPa" ,
                                     "dew_point_100hPa" ,
                                     "dew_point_50hPa" ,
@@ -15977,8 +12934,8 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                                     "wind_speed_150hPa" ,
                                     "wind_speed_100hPa" ,
                                     "wind_speed_50hPa" ,
-                                    "wind_direction_925hPa" ,
                                     "wind_direction_1000hPa" ,
+                                    "wind_direction_925hPa" ,
                                     "wind_direction_850hPa" ,
                                     "wind_direction_700hPa" ,
                                     "wind_direction_600hPa" ,
@@ -16033,7 +12990,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
 
             string url = $"https://ensemble-api.open-meteo.com/v1/ensemble?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=ncep_gefs_seamless&forecast_days={days}" +
+                $"&models=ncep_aigefs025&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             var response = await RetrieveData.GetDataAsync(url,
@@ -16052,8 +13009,8 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                 return null;
             }
 
-            // Deserialize the "hourly" property into our gefsParams class. If deserialization fails, print an error message and return.
-            var data = JsonSerializer.Deserialize<gefsParams>(hourlyWeatherElement.GetRawText());
+            // Deserialize the "hourly" property into our aigefsParams class. If deserialization fails, print an error message and return.
+            var data = JsonSerializer.Deserialize<aigefsParams>(hourlyWeatherElement.GetRawText());
             if (data == null)
             {
                 Console.WriteLine("Unable to parse hourly weather data.");
@@ -16089,7 +13046,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                     {
                         string latString = (string)latitude.Replace('.', '_');
                         string lonString = (string)longitude.Replace('.', '_');
-                        fileName = $"GEFS_PointForecast_{latString}_{lonString}.csv";
+                        fileName = $"AIGEFS_PointForecast_{latString}_{lonString}.csv";
                     }
                     else
                     {
@@ -16104,7 +13061,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
 
             else
             {
-                Console.WriteLine($"GEFS Data Not Available At This Time");
+                Console.WriteLine($"AIGEFS Data Not Available At This Time");
                 return null;
             }
         }

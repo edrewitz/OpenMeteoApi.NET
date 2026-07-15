@@ -262,7 +262,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.MeteoFrance.ARPEGE
         private static DataFrame ToDataFrame(arpegeParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type arpegeParams to a DataFrame object.
              * 
              * Returns
              * -------
