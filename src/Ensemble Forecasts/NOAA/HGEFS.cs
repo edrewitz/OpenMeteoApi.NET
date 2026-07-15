@@ -123,7 +123,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.HGEFS
         private static DataFrame ToDataFrame(hgefsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type hgefsParams to a DataFrame object.
              * 
              * Returns
              * -------

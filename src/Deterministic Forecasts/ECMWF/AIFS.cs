@@ -155,7 +155,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.ECMWF.ECMWF_AIFS
         private static DataFrame ToDataFrame(aifsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type aifsParams to a DataFrame object.
              * 
              * Returns
              * -------

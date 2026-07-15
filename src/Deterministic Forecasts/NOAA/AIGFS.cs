@@ -123,7 +123,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.AIGFS
         private static DataFrame ToDataFrame(aigfsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type aigfsParams to a DataFrame object.
              * 
              * Returns
              * -------
