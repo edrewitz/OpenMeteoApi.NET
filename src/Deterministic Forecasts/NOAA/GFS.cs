@@ -10,7 +10,7 @@ using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NOAA.GFS
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.GFS
 {
     public class gfsParams
     {
