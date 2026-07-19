@@ -5,7 +5,7 @@
  */
 
 
-namespace OpenMeteoApiNet.Variables.ICON_EPS
+namespace OpenMeteoApiNet.Variables.HourlyData.ICON_EPS
 {
     public class iconEPSParams
     {

@@ -1,13 +1,13 @@
-﻿
-/*
+﻿/*
  * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
  * 
  * (C) Eric J. Drewitz 2026
  */
 
-namespace OpenMeteoApiNet.Variables.AIFS
+
+namespace OpenMeteoApiNet.Variables.HourlyData.IFS_HRES
 {
-    public class aifsParams
+    public class ifsHRESParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }

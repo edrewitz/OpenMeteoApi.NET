@@ -5,7 +5,7 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.Variables.ICON_EPS;
+using OpenMeteoApiNet.Variables.HourlyData.ICON_EPS;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;

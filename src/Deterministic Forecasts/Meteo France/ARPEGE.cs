@@ -5,7 +5,7 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.Variables.ARPEGE;
+using OpenMeteoApiNet.Variables.HourlyData.ARPEGE;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;

@@ -4,7 +4,7 @@
  * (C) Eric J. Drewitz 2026
  */
 
-namespace OpenMeteoApiNet.Variables.UKMO_Global_ENS
+namespace OpenMeteoApiNet.Variables.HourlyData.UKMO_Global_ENS
 {
     public class ukmoGlobalENSParams
     {

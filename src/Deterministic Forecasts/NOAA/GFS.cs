@@ -5,7 +5,7 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.Variables.GFS;
+using OpenMeteoApiNet.Variables.HourlyData.GFS;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;

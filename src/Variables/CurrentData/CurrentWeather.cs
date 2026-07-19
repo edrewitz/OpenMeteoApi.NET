@@ -4,7 +4,7 @@
  * (C) Eric J. Drewitz 2026
  */
 
-namespace OpenMeteoApiNet.Variables.CurrentWeather
+namespace OpenMeteoApiNet.Variables.CurrentData.CurrentWeather
 {
     public class currentWeather
     {

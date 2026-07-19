@@ -4,7 +4,7 @@
  * (C) Eric J. Drewitz 2026
  */
 
-namespace OpenMeteoApiNet.Variables.GEFS
+namespace OpenMeteoApiNet.Variables.HourlyData.GEFS
 {
     public class gefsParams
     {

@@ -4,7 +4,7 @@
  * (C) Eric J. Drewitz 2026
  */
 
-namespace OpenMeteoApiNet.Variables.AIGEFS
+namespace OpenMeteoApiNet.Variables.HourlyData.AIGEFS
 {
     public class aigefsParams
     {

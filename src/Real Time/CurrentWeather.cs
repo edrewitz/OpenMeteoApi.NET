@@ -5,7 +5,7 @@
  */
 
 using System.Text.Json;
-using OpenMeteoApiNet.Variables.CurrentWeather;
+using OpenMeteoApiNet.Variables.CurrentData.CurrentWeather;
 using OpenMeteoApiNet.Utils.DataAccess;
 
 namespace OpenMeteoApiNet.RealTime.CurrentWeather

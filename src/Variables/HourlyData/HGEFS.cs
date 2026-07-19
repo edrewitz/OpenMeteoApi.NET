@@ -5,7 +5,7 @@
  */
 
 
-namespace OpenMeteoApiNet.Variables.HGEFS
+namespace OpenMeteoApiNet.Variables.HourlyData.HGEFS
 {
     public class hgefsParams
     {

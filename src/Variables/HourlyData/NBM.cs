@@ -6,7 +6,7 @@
  */
 
 
-namespace OpenMeteoApiNet.Variables.NBM
+namespace OpenMeteoApiNet.Variables.HourlyData.NBM
 {
     public class nbmParams
     {

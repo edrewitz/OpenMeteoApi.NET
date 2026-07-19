@@ -4,52 +4,18 @@
  * (C) Eric J. Drewitz 2026
  */
 
-
-namespace OpenMeteoApiNet.Variables.IFS_HRES
+namespace OpenMeteoApiNet.Variables.HourlyData.AIGFS
 {
-    public class ifsHRESParams
+    public class aigfsParams
     {
         public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
-        public double?[]? relative_humidity_2m { get; set; }
-        public double?[]? dew_point_2m { get; set; }
-        public double?[]? apparent_temperature { get; set; }
-        public double?[]? precipitation { get; set; }
-        public double?[]? rain { get; set; }
-        public double?[]? showers { get; set; }
-        public double?[]? snowfall { get; set; }
-        public double?[]? runoff { get; set; }
-        public double?[]? visibility { get; set; }
-        public double?[]? weather_code { get; set; }
-        public double?[]? pressure_msl { get; set; }
-        public double?[]? surface_pressure { get; set; }
         public double?[]? cloud_cover { get; set; }
         public double?[]? cloud_cover_low { get; set; }
         public double?[]? cloud_cover_mid { get; set; }
         public double?[]? cloud_cover_high { get; set; }
-        public double?[]? sunshine_duration { get; set; }
-        public double?[]? potential_evapotranspiration { get; set; }
-        public double?[]? et0_fao_evapotranspiration { get; set; }
-        public double?[]? wind_speed_10m { get; set; }
-        public double?[]? wind_speed_100m { get; set; }
-        public double?[]? wind_speed_200m { get; set; }
-        public double?[]? wind_direction_10m { get; set; }
-        public double?[]? wind_direction_100m { get; set; }
-        public double?[]? wind_direction_200m { get; set; }
-        public double?[]? wind_gusts_10m { get; set; }
-        public double?[]? cape { get; set; }
-        public double?[]? convective_inhibition { get; set; }
-        public double?[]? total_column_integrated_water_vapour { get; set; }
-        public double?[]? vapour_pressure_deficit { get; set; }
-        public double?[]? surface_temperature { get; set; }
-        public double?[]? soil_temperature_0_to_7cm { get; set; }
-        public double?[]? soil_temperature_7_to_28cm { get; set; }
-        public double?[]? soil_temperature_28_to_100cm { get; set; }
-        public double?[]? soil_temperature_100_to_255cm { get; set; }
-        public double?[]? soil_moisture_0_to_7cm { get; set; }
-        public double?[]? soil_moisture_28_to_100cm { get; set; }
-        public double?[]? soil_moisture_7_to_28cm { get; set; }
-        public double?[]? soil_moisture_100_to_255cm { get; set; }
+        public double?[]? precipitation { get; set; }
+        public double?[]? pressure_msl { get; set; }
         public double?[]? temperature_1000hPa { get; set; }
         public double?[]? temperature_925hPa { get; set; }
         public double?[]? temperature_850hPa { get; set; }
@@ -63,6 +29,19 @@ namespace OpenMeteoApiNet.Variables.IFS_HRES
         public double?[]? temperature_150hPa { get; set; }
         public double?[]? temperature_100hPa { get; set; }
         public double?[]? temperature_50hPa { get; set; }
+        public double?[]? dew_point_1000hPa { get; set; }
+        public double?[]? dew_point_925hPa { get; set; }
+        public double?[]? dew_point_850hPa { get; set; }
+        public double?[]? dew_point_700hPa { get; set; }
+        public double?[]? dew_point_600hPa { get; set; }
+        public double?[]? dew_point_500hPa { get; set; }
+        public double?[]? dew_point_400hPa { get; set; }
+        public double?[]? dew_point_300hPa { get; set; }
+        public double?[]? dew_point_250hPa { get; set; }
+        public double?[]? dew_point_200hPa { get; set; }
+        public double?[]? dew_point_150hPa { get; set; }
+        public double?[]? dew_point_100hPa { get; set; }
+        public double?[]? dew_point_50hPa { get; set; }
         public double?[]? relative_humidity_1000hPa { get; set; }
         public double?[]? relative_humidity_925hPa { get; set; }
         public double?[]? relative_humidity_850hPa { get; set; }
@@ -76,19 +55,6 @@ namespace OpenMeteoApiNet.Variables.IFS_HRES
         public double?[]? relative_humidity_150hPa { get; set; }
         public double?[]? relative_humidity_100hPa { get; set; }
         public double?[]? relative_humidity_50hPa { get; set; }
-        public double?[]? cloud_cover_1000hPa { get; set; }
-        public double?[]? cloud_cover_925hPa { get; set; }
-        public double?[]? cloud_cover_850hPa { get; set; }
-        public double?[]? cloud_cover_700hPa { get; set; }
-        public double?[]? cloud_cover_600hPa { get; set; }
-        public double?[]? cloud_cover_500hPa { get; set; }
-        public double?[]? cloud_cover_400hPa { get; set; }
-        public double?[]? cloud_cover_300hPa { get; set; }
-        public double?[]? cloud_cover_250hPa { get; set; }
-        public double?[]? cloud_cover_200hPa { get; set; }
-        public double?[]? cloud_cover_150hPa { get; set; }
-        public double?[]? cloud_cover_100hPa { get; set; }
-        public double?[]? cloud_cover_50hPa { get; set; }
         public double?[]? wind_speed_1000hPa { get; set; }
         public double?[]? wind_speed_925hPa { get; set; }
         public double?[]? wind_speed_850hPa { get; set; }
@@ -143,5 +109,6 @@ namespace OpenMeteoApiNet.Variables.IFS_HRES
         public double?[]? geopotential_height_50hPa { get; set; }
         public List<DateTime>? parsedDateTimes { get; set; }
         public List<DateTime>? parsedLocalTimes { get; set; }
+
     }
 }
