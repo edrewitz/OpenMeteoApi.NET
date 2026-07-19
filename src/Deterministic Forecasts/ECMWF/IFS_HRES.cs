@@ -449,7 +449,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.ECMWF.ECMWF_IFS_HRES
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns ECMWF IFS Medium-range Control forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns the hourly ECMWF IFS Medium-range Control forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 

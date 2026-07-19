@@ -8,6 +8,7 @@ namespace OpenMeteoApiNet.Variables.HourlyData.UKMO_Global_ENS
 {
     public class ukmoGlobalENSParams
     {
+        public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
         public double?[]? temperature_2m_member01 { get; set; }
         public double?[]? temperature_2m_member02 { get; set; }
@@ -332,7 +333,8 @@ namespace OpenMeteoApiNet.Variables.HourlyData.UKMO_Global_ENS
         public double?[]? surface_temperature_member15 { get; set; }
         public double?[]? surface_temperature_member16 { get; set; }
         public double?[]? surface_temperature_member17 { get; set; }
-
+        public List<DateTime>? parsedDateTimes { get; set; }
+        public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
 }

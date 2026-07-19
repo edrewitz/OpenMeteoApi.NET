@@ -399,7 +399,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a CMC/GEM point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly CMC/GEM point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 

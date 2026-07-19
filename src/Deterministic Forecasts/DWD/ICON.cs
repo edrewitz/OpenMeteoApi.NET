@@ -511,7 +511,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.DWD.ICON
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns DWD ICON Forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns the hourly DWD ICON Forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 

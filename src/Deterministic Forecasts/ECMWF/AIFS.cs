@@ -447,7 +447,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.ECMWF.ECMWF_AIFS
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns ECMWF AIFS Forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns the hourly ECMWF AIFS Forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 

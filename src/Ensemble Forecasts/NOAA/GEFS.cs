@@ -20,7 +20,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
         private static DataFrame ToDataFrame(gefsParams data)
         {
             /*
-             * Converts the data object of type iconParams to a DataFrame object.
+             * Converts the data object of type gefsParams to a DataFrame object.
              * 
              * Returns
              * -------

@@ -679,7 +679,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.MeteoFrance.ARPEGE
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a Meteo France/ARPEGE point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly Meteo France/ARPEGE point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 

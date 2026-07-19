@@ -8,6 +8,7 @@ namespace OpenMeteoApiNet.Variables.HourlyData.AIFS_ENS
 {
     public class aifsENSParams
     {
+        public string?[]? time { get; set; }
         public double?[]? temperature_2m { get; set; }
         public double?[]? temperature_2m_member01 { get; set; }
         public double?[]? temperature_2m_member02 { get; set; }
@@ -6485,6 +6486,8 @@ namespace OpenMeteoApiNet.Variables.HourlyData.AIFS_ENS
         public double?[]? geopotential_height_50hPa_member48 { get; set; }
         public double?[]? geopotential_height_50hPa_member49 { get; set; }
         public double?[]? geopotential_height_50hPa_member50 { get; set; }
+        public List<DateTime>? parsedDateTimes { get; set; }
+        public List<DateTime>? parsedLocalTimes { get; set; }
 
     }
 

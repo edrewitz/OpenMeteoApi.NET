@@ -494,7 +494,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.JMA.JMA
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a Japan Meteorological Agency (JMA) point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly Japan Meteorological Agency (JMA) point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 

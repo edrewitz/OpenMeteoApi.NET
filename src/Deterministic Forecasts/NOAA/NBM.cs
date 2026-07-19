@@ -87,7 +87,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 

@@ -2094,7 +2094,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns DWD ICON EPS 2-Meter Forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns the hourly DWD ICON EPS Forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 
