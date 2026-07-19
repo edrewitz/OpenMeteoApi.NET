@@ -1,6 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+ * OpenMeteoApiNet - A C# library for accessing the Open-Meteo API.
+ * 
+ * (C) Eric J. Drewitz 2026
+ */
 
 namespace OpenMeteoApiNet.Variables.IFS_ENS
 {
