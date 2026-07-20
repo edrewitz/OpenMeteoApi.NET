@@ -14,6 +14,9 @@ NuGet Downloads:
 
 ![NuGet Downloads](https://img.shields.io/nuget/dt/OpenMeteoApiNet)
 
+Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21463564.svg)](https://doi.org/10.5281/zenodo.21463564)
 
 ## Table of Contents
 
