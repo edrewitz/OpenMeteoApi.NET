@@ -30,7 +30,10 @@ public static async Task<gfsParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
@@ -271,7 +274,10 @@ public static async Task<aigfsParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 
 ```
 
@@ -472,7 +478,10 @@ public static async Task<hgefsParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns a NOAA/NCEP/HGEFS ensemble mean point forecast for a specified point of lat/lon.
@@ -668,7 +677,10 @@ public static async Task<nbmParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
