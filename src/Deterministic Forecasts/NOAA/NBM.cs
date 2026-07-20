@@ -5,6 +5,8 @@
  */
 
 using Microsoft.Data.Analysis;
+using OpenMeteoApiNet.DataFrames.HourlyData.NBM;
+using OpenMeteoApiNet.Variables.HourlyData.NBM;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
@@ -12,81 +14,9 @@ using System.Text.Json;
 
 namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
 {
-    public class nbmParams
-    {
-        public string?[]? time { get; set; }
-        public double?[]? temperature_2m { get; set; }
-        public double?[]? cape { get; set; }
-        public double?[]? precipitation { get; set; }
-        public double?[]? snowfall { get; set; }
-        public double?[]? surface_pressure { get; set; }
-        public double?[]? visibility { get; set; }
-        public double?[]? wind_speed_10m { get; set; }
-        public double?[]? wind_speed_80m { get; set; }
-        public double?[]? wind_direction_10m { get; set; }
-        public double?[]? wind_direction_80m { get; set; }
-        public List<DateTime>? parsedDateTimes { get; set; }
-        public List<DateTime>? parsedLocalTimes { get; set; }
-    }
+
     public static class nbmHourlyForecastApi
     {
-
-        private static DataFrame ToDataFrame(nbmParams data)
-        {
-            /*
-             * Converts the data object of type nbmParams to a DataFrame object.
-             * 
-             * Returns
-             * -------
-             * 
-             * Microsoft.Data.Analysis.DataFrame object containing the data from the nbmParams object.
-             * 
-             */
-
-            var df = new DataFrame();
-
-            // 1. Add the time column (Strings)
-            if (data.time != null)
-            {
-                df.Columns.Add(new StringDataFrameColumn("time", data.time));
-            }
-
-            // 2. Add the nullable double columns (maps cleanly to PrimitiveDataFrameColumn)
-            if (data.temperature_2m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("temperature_2m", data.temperature_2m));
-
-            if (data.cape != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("cape", data.cape));
-
-            if (data.precipitation != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("precipitation", data.precipitation));
-
-            if (data.snowfall != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("snowfall", data.snowfall));
-
-            if (data.surface_pressure != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("surface_pressure", data.surface_pressure));
-
-            if (data.visibility != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("visibility", data.visibility));
-
-            if (data.wind_speed_10m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_10m", data.wind_speed_10m));
-
-            if (data.wind_speed_80m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_speed_80m", data.wind_speed_80m));
-
-            if (data.wind_direction_10m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_10m", data.wind_direction_10m));
-
-            if (data.wind_direction_80m != null)
-                df.Columns.Add(new PrimitiveDataFrameColumn<double>("wind_direction_80m", data.wind_direction_80m));
-
-
-            return df;
-
-        }
-
         private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
 
         public static async Task<DataFrame?> GetPointForecast(string latitude,
@@ -101,7 +31,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
@@ -240,7 +170,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
                                                 .Select(dt => dt.ToLocalTime())
                                                 .ToList();
 
-                    var df = ToDataFrame(data);
+                    var df = nbmDataFrame.ToDataFrame(data);
 
                     if (toCsv == true)
                     {

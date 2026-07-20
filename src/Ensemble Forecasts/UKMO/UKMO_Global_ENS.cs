@@ -5,16 +5,16 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.DataFrames.HourlyData.ICON_EPS;
-using OpenMeteoApiNet.Variables.HourlyData.ICON_EPS;
+using OpenMeteoApiNet.DataFrames.HourlyData.UKMO_Global_ENS;
+using OpenMeteoApiNet.Variables.HourlyData.UKMO_Global_ENS;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
+namespace OpenMeteoApiNet.EnsembleForecasts.UKMO.UKMO_Global_ENS
 {
-    public static class iconEPSHourlyForecastApi
+    public static class ukmoGlobalENSHourlyForecastApi
     {
         private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
 
@@ -30,7 +30,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns the hourly DWD ICON EPS Forecast from the Open-Meteo API.
+         * This function is the client that retrieves and returns the hourly UKMO Global Ensemble forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 
@@ -70,25 +70,24 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
          * 
          *      Variables
          *      ---------
-         *      "temperature_2m"
+                "temperature_2m"
                 "relative_humidity_2m"
                 "dew_point_2m"
                 "apparent_temperature"
-                "precipitation"
-                "rain"
                 "snowfall"
+                "rain"
+                "precipitation"
                 "weather_code"
                 "pressure_msl"
                 "surface_pressure"
                 "cloud_cover"
+                "visibility"
                 "et0_fao_evapotranspiration"
                 "vapour_pressure_deficit"
                 "wind_speed_10m"
-                "wind_speed_80m"
                 "wind_direction_10m"
-                "wind_direction_80m"
                 "wind_gusts_10m"
-                "temperature_80m"
+                "surface_temperature"
 
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
@@ -103,13 +102,13 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
          * Returns
          * -------
          * 
-         * The ICON EPS point forecast for a given latitude and longitude. 
+         * The UKMO Global ENS point forecast for a given latitude and longitude. 
          * 
          *          variable naming convention
          *          ---------------------------
          *          
          *          Control Run (Example 2-Meter Temperature): data.temperature_2m
-         *          Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member39 (40 total members [39 members + 1 control])
+         *          Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member17 (18 total members [17 members + 1 control])
          */
 
         {
@@ -124,25 +123,24 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
             if (variables == null || variables.Length == 0)
             {
-                variables = new[] { "temperature_2m", 
-                                    "relative_humidity_2m",
-                                    "dew_point_2m",
-                                    "apparent_temperature",
-                                    "precipitation" ,
-                                    "rain" ,
+                variables = new[] { "temperature_2m" ,
+                                    "relative_humidity_2m" ,
+                                    "dew_point_2m" ,
+                                    "apparent_temperature" ,
                                     "snowfall" ,
+                                    "rain" ,
+                                    "precipitation" ,
                                     "weather_code" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
                                     "cloud_cover" ,
+                                    "visibility" ,
                                     "et0_fao_evapotranspiration" ,
                                     "vapour_pressure_deficit" ,
                                     "wind_speed_10m" ,
-                                    "wind_speed_80m" ,
                                     "wind_direction_10m" ,
-                                    "wind_direction_80m" ,
                                     "wind_gusts_10m" ,
-                                    "temperature_80m" };
+                                    "surface_temperature" };
             }
             else
             {
@@ -155,11 +153,11 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
             // Open-Meto API Call URL
             string url = $"https://ensemble-api.open-meteo.com/v1/ensemble?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=icon_seamless_eps&forecast_days={days}" +
+                $"&models=ukmo_global_ensemble_20km&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
-            
+
             var response = await RetrieveData.GetDataAsync(url,
-                                              proxy);  
+                                              proxy);
 
             // Read our response as a string, then parse it as JSON.
             var jsonString = await response.Content.ReadAsStringAsync();
@@ -174,8 +172,8 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
 
             }
 
-            // Deserialize the "hourly" property into our iconEPSParams class. If deserialization fails, print an error message and return.
-            var data = JsonSerializer.Deserialize<iconEPSParams>(hourlyWeatherElement.GetRawText());
+            // Deserialize the "hourly" property into our ukmoGlobalENSParams class. If deserialization fails, print an error message and return.
+            var data = JsonSerializer.Deserialize<ukmoGlobalENSParams>(hourlyWeatherElement.GetRawText());
 
             if (data == null)
             {
@@ -200,7 +198,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
                                             .ToList();
 
 
-                var df = iconEPSDataFrame.ToDataFrame(data);
+                var df = ukmoGlobalENSDataFrame.ToDataFrame(data);
 
                 if (toCsv == true)
                 {
@@ -218,7 +216,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
                     {
                         string latString = (string)latitude.Replace('.', '_');
                         string lonString = (string)longitude.Replace('.', '_');
-                        fileName = $"ICON_EPS_PointForecast_{latString}_{lonString}.csv";
+                        fileName = $"UKMO_Global_ENS_PointForecast_{latString}_{lonString}.csv";
                     }
                     else
                     {
@@ -232,7 +230,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
             }
             else
             {
-                Console.WriteLine($"ICON EPS Data Not Available At This Time");
+                Console.WriteLine($"UKMO Global ENS Data Not Available At This Time");
                 return null;
 
             }

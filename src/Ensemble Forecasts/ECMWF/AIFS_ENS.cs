@@ -5,18 +5,17 @@
  */
 
 using Microsoft.Data.Analysis;
-using OpenMeteoApiNet.DataFrames.HourlyData.GEM;
-using OpenMeteoApiNet.Variables.HourlyData.GEM;
+using OpenMeteoApiNet.DataFrames.HourlyData.AIFS_ENS;
+using OpenMeteoApiNet.Variables.HourlyData.AIFS_ENS;
 using OpenMeteoApiNet.Utils.BuildDirectory;
 using OpenMeteoApiNet.Utils.DataAccess;
 using OpenMeteoApiNet.Utils.DataArchive;
 using System.Text.Json;
 
-namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
+namespace OpenMeteoApiNet.EnsembleForecasts.ECMWF.AIFS_ENS
 {
-    public static class gemHourlyForecastApi
+    public static class aifsENSHourlyForecastApi
     {
-
         private static string currentDirectory = DirectoryHelper.GetCurrentDirectory();
 
         public static async Task<DataFrame?> GetPointForecast(string latitude,
@@ -31,7 +30,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns the hourly CMC/GEM point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns the hourly ECMWF AIFS Ensemble forecast from the Open-Meteo API.
          * 
          * Required Arguments:
          * 
@@ -41,8 +40,8 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
          * 
          * Optional Arguments:
          * 
-         * 1) days (int) - Default=7. The number of days to retrieve in the forecast, up to a maximum of 16 days.
-         * 
+         * 1) days (int) - Default=7. The number of forecast days to retrieve, starting from the current day. Maximum is 36 days.
+         *          * 
          * 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
          * 
          *      Valid Units
@@ -78,6 +77,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                 "precipitation"
                 "rain"
                 "snowfall"
+                "weather_code"
                 "pressure_msl"
                 "surface_pressure"
                 "cloud_cover"
@@ -86,22 +86,13 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                 "cloud_cover_high"
                 "et0_fao_evapotranspiration"
                 "vapour_pressure_deficit"
-                "weather_code"
-                "showers"
                 "wind_speed_10m"
-                "wind_speed_40m"
-                "wind_speed_80m"
-                "wind_speed_120m"
+                "wind_speed_100m"
                 "wind_direction_10m"
-                "wind_direction_40m"
-                "wind_direction_80m"
-                "wind_direction_120m"
-                "temperature_40m"
-                "temperature_80m"
-                "temperature_120m"
-                "wind_gusts_10m"
-                "soil_temperature_0_to_10cm"
-                "soil_moisture_0_to_10cm"
+                "wind_direction_100m"
+                "surface_temperature"
+                "soil_temperature_0_to_7cm"
+                "soil_temperature_7_to_28cm"
                 "temperature_1000hPa"
                 "temperature_925hPa"
                 "temperature_850hPa"
@@ -115,25 +106,6 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                 "temperature_150hPa"
                 "temperature_100hPa"
                 "temperature_50hPa"
-                "temperature_30hPa"
-                "temperature_20hPa"
-                "temperature_10hPa"
-                "dew_point_1000hPa"
-                "dew_point_925hPa"
-                "dew_point_850hPa"
-                "dew_point_700hPa"
-                "dew_point_600hPa"
-                "dew_point_500hPa"
-                "dew_point_400hPa"
-                "dew_point_300hPa"
-                "dew_point_250hPa"
-                "dew_point_200hPa"
-                "dew_point_150hPa"
-                "dew_point_100hPa"
-                "dew_point_50hPa"
-                "dew_point_30hPa"
-                "dew_point_20hPa"
-                "dew_point_10hPa"
                 "relative_humidity_1000hPa"
                 "relative_humidity_925hPa"
                 "relative_humidity_850hPa"
@@ -147,57 +119,19 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                 "relative_humidity_150hPa"
                 "relative_humidity_100hPa"
                 "relative_humidity_50hPa"
-                "relative_humidity_30hPa"
-                "relative_humidity_20hPa"
-                "relative_humidity_10hPa"
-                "wind_speed_1000hPa"
-                "wind_speed_925hPa"
-                "wind_speed_850hPa"
-                "wind_speed_700hPa"
-                "wind_speed_600hPa"
-                "wind_speed_500hPa"
-                "wind_speed_400hPa"
-                "wind_speed_300hPa"
-                "wind_speed_250hPa"
-                "wind_speed_200hPa"
-                "wind_speed_150hPa"
-                "wind_speed_100hPa"
-                "wind_speed_50hPa"
-                "wind_speed_30hPa"
-                "wind_speed_20hPa"
-                "wind_speed_10hPa"
-                "wind_direction_1000hPa"
-                "wind_direction_925hPa"
-                "wind_direction_850hPa"
-                "wind_direction_700hPa"
-                "wind_direction_600hPa"
-                "wind_direction_500hPa"
-                "wind_direction_400hPa"
-                "wind_direction_300hPa"
-                "wind_direction_250hPa"
-                "wind_direction_200hPa"
-                "wind_direction_150hPa"
-                "wind_direction_100hPa"
-                "wind_direction_50hPa"
-                "wind_direction_30hPa"
-                "wind_direction_20hPa"
-                "wind_direction_10hPa"
-                "geopotential_height_1000hPa"
-                "geopotential_height_925hPa"
-                "geopotential_height_850hPa"
-                "geopotential_height_700hPa"
-                "geopotential_height_600hPa"
-                "geopotential_height_500hPa"
-                "geopotential_height_400hPa"
-                "geopotential_height_300hPa"
-                "geopotential_height_250hPa"
-                "geopotential_height_200hPa"
-                "geopotential_height_150hPa"
-                "geopotential_height_100hPa"
-                "geopotential_height_50hPa"
-                "geopotential_height_30hPa"
-                "geopotential_height_20hPa"
-                "geopotential_height_10hPa"
+                "dew_point_1000hPa"
+                "dew_point_925hPa"
+                "dew_point_850hPa"
+                "dew_point_700hPa"
+                "dew_point_600hPa"
+                "dew_point_500hPa"
+                "dew_point_400hPa"
+                "dew_point_300hPa"
+                "dew_point_250hPa"
+                "dew_point_200hPa"
+                "dew_point_150hPa"
+                "dew_point_100hPa"
+                "dew_point_50hPa"
                 "cloud_cover_1000hPa"
                 "cloud_cover_925hPa"
                 "cloud_cover_850hPa"
@@ -211,9 +145,59 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                 "cloud_cover_150hPa"
                 "cloud_cover_100hPa"
                 "cloud_cover_50hPa"
-                "cloud_cover_30hPa"
-                "cloud_cover_20hPa"
-                "cloud_cover_10hPa" 
+                "wind_speed_1000hPa"
+                "wind_speed_850hPa"
+                "wind_speed_925hPa"
+                "wind_speed_700hPa"
+                "wind_speed_600hPa"
+                "wind_speed_500hPa"
+                "wind_speed_400hPa"
+                "wind_speed_300hPa"
+                "wind_speed_250hPa"
+                "wind_speed_200hPa"
+                "wind_speed_150hPa"
+                "wind_speed_100hPa"
+                "wind_speed_50hPa"
+                "wind_direction_1000hPa"
+                "wind_direction_925hPa"
+                "wind_direction_850hPa"
+                "wind_direction_700hPa"
+                "wind_direction_600hPa"
+                "wind_direction_500hPa"
+                "wind_direction_400hPa"
+                "wind_direction_300hPa"
+                "wind_direction_250hPa"
+                "wind_direction_200hPa"
+                "wind_direction_150hPa"
+                "wind_direction_100hPa"
+                "wind_direction_50hPa"
+                "vertical_velocity_1000hPa"
+                "vertical_velocity_925hPa"
+                "vertical_velocity_850hPa"
+                "vertical_velocity_700hPa"
+                "vertical_velocity_600hPa"
+                "vertical_velocity_500hPa"
+                "vertical_velocity_400hPa"
+                "vertical_velocity_300hPa"
+                "vertical_velocity_250hPa"
+                "vertical_velocity_200hPa"
+                "vertical_velocity_150hPa"
+                "vertical_velocity_100hPa"
+                "vertical_velocity_50hPa"
+                "geopotential_height_1000hPa"
+                "geopotential_height_925hPa"
+                "geopotential_height_850hPa"
+                "geopotential_height_700hPa"
+                "geopotential_height_600hPa"
+                "geopotential_height_500hPa"
+                "geopotential_height_400hPa"
+                "geopotential_height_300hPa"
+                "geopotential_height_250hPa"
+                "geopotential_height_200hPa"
+                "geopotential_height_150hPa"
+                "geopotential_height_100hPa"
+                "geopotential_height_50hPa"
+
 
           6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
 
@@ -227,26 +211,35 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
          * Returns
          * -------
          * 
-         * The GEM Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The ECMWF AIFS ENS point forecast for a given latitude and longitude. 
+         * 
+         *          variable naming convention
+         *          ---------------------------
+         *          
+         *          Control Run (Example 2-Meter Temperature): data.temperature_2m
+         *          Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member39 (51 total members [50 members + 1 control])
          */
 
         {
-            if (days > 10)
+            // Fixes if the user enters more than 36 days since the data goes out to 36 days at most. 
+
+            if (days > 36)
             {
-                Console.WriteLine("The maximum number of days that can be retrieved is 10. Setting 'days' to 10.");
-                days = 10;
+                Console.WriteLine($"Requested forecast length of {days} days exceeds the maximum of 36 days. Defaulting to 36 days.");
+                days = 36;
             }
 
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
             if (variables == null || variables.Length == 0)
             {
-                variables = new[] {"temperature_2m" ,
+                variables = new[] { "temperature_2m" ,
                                     "relative_humidity_2m" ,
                                     "dew_point_2m" ,
                                     "apparent_temperature" ,
                                     "precipitation" ,
                                     "rain" ,
                                     "snowfall" ,
+                                    "weather_code" ,
                                     "pressure_msl" ,
                                     "surface_pressure" ,
                                     "cloud_cover" ,
@@ -255,22 +248,13 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                     "cloud_cover_high" ,
                                     "et0_fao_evapotranspiration" ,
                                     "vapour_pressure_deficit" ,
-                                    "weather_code" ,
-                                    "showers" ,
                                     "wind_speed_10m" ,
-                                    "wind_speed_40m" ,
-                                    "wind_speed_80m" ,
-                                    "wind_speed_120m" ,
+                                    "wind_speed_100m" ,
                                     "wind_direction_10m" ,
-                                    "wind_direction_40m" ,
-                                    "wind_direction_80m" ,
-                                    "wind_direction_120m" ,
-                                    "temperature_40m" ,
-                                    "temperature_80m" ,
-                                    "temperature_120m" ,
-                                    "wind_gusts_10m" ,
-                                    "soil_temperature_0_to_10cm" ,
-                                    "soil_moisture_0_to_10cm" ,
+                                    "wind_direction_100m" ,
+                                    "surface_temperature" ,
+                                    "soil_temperature_0_to_7cm" ,
+                                    "soil_temperature_7_to_28cm" ,
                                     "temperature_1000hPa" ,
                                     "temperature_925hPa" ,
                                     "temperature_850hPa" ,
@@ -284,25 +268,6 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                     "temperature_150hPa" ,
                                     "temperature_100hPa" ,
                                     "temperature_50hPa" ,
-                                    "temperature_30hPa" ,
-                                    "temperature_20hPa" ,
-                                    "temperature_10hPa" ,
-                                    "dew_point_1000hPa" ,
-                                    "dew_point_925hPa" ,
-                                    "dew_point_850hPa" ,
-                                    "dew_point_700hPa" ,
-                                    "dew_point_600hPa" ,
-                                    "dew_point_500hPa" ,
-                                    "dew_point_400hPa" ,
-                                    "dew_point_300hPa" ,
-                                    "dew_point_250hPa" ,
-                                    "dew_point_200hPa" ,
-                                    "dew_point_150hPa" ,
-                                    "dew_point_100hPa" ,
-                                    "dew_point_50hPa" ,
-                                    "dew_point_30hPa" ,
-                                    "dew_point_20hPa" ,
-                                    "dew_point_10hPa" ,
                                     "relative_humidity_1000hPa" ,
                                     "relative_humidity_925hPa" ,
                                     "relative_humidity_850hPa" ,
@@ -316,57 +281,19 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                     "relative_humidity_150hPa" ,
                                     "relative_humidity_100hPa" ,
                                     "relative_humidity_50hPa" ,
-                                    "relative_humidity_30hPa" ,
-                                    "relative_humidity_20hPa" ,
-                                    "relative_humidity_10hPa" ,
-                                    "wind_speed_1000hPa" ,
-                                    "wind_speed_925hPa" ,
-                                    "wind_speed_850hPa" ,
-                                    "wind_speed_700hPa" ,
-                                    "wind_speed_600hPa" ,
-                                    "wind_speed_500hPa" ,
-                                    "wind_speed_400hPa" ,
-                                    "wind_speed_300hPa" ,
-                                    "wind_speed_250hPa" ,
-                                    "wind_speed_200hPa" ,
-                                    "wind_speed_150hPa" ,
-                                    "wind_speed_100hPa" ,
-                                    "wind_speed_50hPa" ,
-                                    "wind_speed_30hPa" ,
-                                    "wind_speed_20hPa" ,
-                                    "wind_speed_10hPa" ,
-                                    "wind_direction_1000hPa" ,
-                                    "wind_direction_925hPa" ,
-                                    "wind_direction_850hPa" ,
-                                    "wind_direction_700hPa" ,
-                                    "wind_direction_600hPa" ,
-                                    "wind_direction_500hPa" ,
-                                    "wind_direction_400hPa" ,
-                                    "wind_direction_300hPa" ,
-                                    "wind_direction_250hPa" ,
-                                    "wind_direction_200hPa" ,
-                                    "wind_direction_150hPa" ,
-                                    "wind_direction_100hPa" ,
-                                    "wind_direction_50hPa" ,
-                                    "wind_direction_30hPa" ,
-                                    "wind_direction_20hPa" ,
-                                    "wind_direction_10hPa" ,
-                                    "geopotential_height_1000hPa" ,
-                                    "geopotential_height_925hPa" ,
-                                    "geopotential_height_850hPa" ,
-                                    "geopotential_height_700hPa" ,
-                                    "geopotential_height_600hPa" ,
-                                    "geopotential_height_500hPa" ,
-                                    "geopotential_height_400hPa" ,
-                                    "geopotential_height_300hPa" ,
-                                    "geopotential_height_250hPa" ,
-                                    "geopotential_height_200hPa" ,
-                                    "geopotential_height_150hPa" ,
-                                    "geopotential_height_100hPa" ,
-                                    "geopotential_height_50hPa" ,
-                                    "geopotential_height_30hPa" ,
-                                    "geopotential_height_20hPa" ,
-                                    "geopotential_height_10hPa" ,
+                                    "dew_point_1000hPa" ,
+                                    "dew_point_925hPa" ,
+                                    "dew_point_850hPa" ,
+                                    "dew_point_700hPa" ,
+                                    "dew_point_600hPa" ,
+                                    "dew_point_500hPa" ,
+                                    "dew_point_400hPa" ,
+                                    "dew_point_300hPa" ,
+                                    "dew_point_250hPa" ,
+                                    "dew_point_200hPa" ,
+                                    "dew_point_150hPa" ,
+                                    "dew_point_100hPa" ,
+                                    "dew_point_50hPa" ,
                                     "cloud_cover_1000hPa" ,
                                     "cloud_cover_925hPa" ,
                                     "cloud_cover_850hPa" ,
@@ -380,9 +307,58 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                     "cloud_cover_150hPa" ,
                                     "cloud_cover_100hPa" ,
                                     "cloud_cover_50hPa" ,
-                                    "cloud_cover_30hPa" ,
-                                    "cloud_cover_20hPa" ,
-                                    "cloud_cover_10hPa"  };
+                                    "wind_speed_1000hPa" ,
+                                    "wind_speed_850hPa" ,
+                                    "wind_speed_925hPa" ,
+                                    "wind_speed_700hPa" ,
+                                    "wind_speed_600hPa" ,
+                                    "wind_speed_500hPa" ,
+                                    "wind_speed_400hPa" ,
+                                    "wind_speed_300hPa" ,
+                                    "wind_speed_250hPa" ,
+                                    "wind_speed_200hPa" ,
+                                    "wind_speed_150hPa" ,
+                                    "wind_speed_100hPa" ,
+                                    "wind_speed_50hPa" ,
+                                    "wind_direction_1000hPa" ,
+                                    "wind_direction_925hPa" ,
+                                    "wind_direction_850hPa" ,
+                                    "wind_direction_700hPa" ,
+                                    "wind_direction_600hPa" ,
+                                    "wind_direction_500hPa" ,
+                                    "wind_direction_400hPa" ,
+                                    "wind_direction_300hPa" ,
+                                    "wind_direction_250hPa" ,
+                                    "wind_direction_200hPa" ,
+                                    "wind_direction_150hPa" ,
+                                    "wind_direction_100hPa" ,
+                                    "wind_direction_50hPa" ,
+                                    "vertical_velocity_1000hPa" ,
+                                    "vertical_velocity_925hPa" ,
+                                    "vertical_velocity_850hPa" ,
+                                    "vertical_velocity_700hPa" ,
+                                    "vertical_velocity_600hPa" ,
+                                    "vertical_velocity_500hPa" ,
+                                    "vertical_velocity_400hPa" ,
+                                    "vertical_velocity_300hPa" ,
+                                    "vertical_velocity_250hPa" ,
+                                    "vertical_velocity_200hPa" ,
+                                    "vertical_velocity_150hPa" ,
+                                    "vertical_velocity_100hPa" ,
+                                    "vertical_velocity_50hPa" ,
+                                    "geopotential_height_1000hPa" ,
+                                    "geopotential_height_925hPa" ,
+                                    "geopotential_height_850hPa" ,
+                                    "geopotential_height_700hPa" ,
+                                    "geopotential_height_600hPa" ,
+                                    "geopotential_height_500hPa" ,
+                                    "geopotential_height_400hPa" ,
+                                    "geopotential_height_300hPa" ,
+                                    "geopotential_height_250hPa" ,
+                                    "geopotential_height_200hPa" ,
+                                    "geopotential_height_150hPa" ,
+                                    "geopotential_height_100hPa" ,
+                                    "geopotential_height_50hPa" };
             }
             else
             {
@@ -393,9 +369,9 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
             var modelParams = string.Join(",", variables);
 
             // Open-Meto API Call URL
-            string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}" +
+            string url = $"https://ensemble-api.open-meteo.com/v1/ensemble?latitude={latitude}&longitude={longitude}" +
                 $"&hourly={modelParams}" +
-                $"&models=gem_seamless&forecast_days={days}" +
+                $"&models=ecmwf_aifs025_ensemble&forecast_days={days}" +
                 $"&wind_speed_unit={windSpeedUnit}&temperature_unit={temperatureUnit}&precipitation_unit={precipitationUnit}";
 
             var response = await RetrieveData.GetDataAsync(url,
@@ -411,16 +387,22 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
             if (!root.TryGetProperty("hourly", out var hourlyWeatherElement))
             {
                 Console.WriteLine("Response JSON does not contain a 'hourly property.");
-                return null;
+
             }
 
-            // Deserialize the "hourly" property into our gemParams class. If deserialization fails, print an error message and return.
-            var data = JsonSerializer.Deserialize<gemParams>(hourlyWeatherElement.GetRawText());
+            // Deserialize the "hourly" property into our aifsENSParams class. If deserialization fails, print an error message and return.
+            var data = JsonSerializer.Deserialize<aifsENSParams>(hourlyWeatherElement.GetRawText());
+
             if (data == null)
             {
                 Console.WriteLine("Unable to parse hourly weather data.");
-                return null;
             }
+
+            // Extract the time attribute which is in the form of a string.
+            var time = data.time;
+
+            // Convert the time string to a DateTime object.
+            var dateTimeList = new List<DateTime>();
 
             // Convert the DateTime object to local time.
             if (data != null)
@@ -434,7 +416,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                                             .ToList();
 
 
-                var df = gemDataFrame.ToDataFrame(data);
+                var df = aifsENSDataFrame.ToDataFrame(data);
 
                 if (toCsv == true)
                 {
@@ -452,7 +434,7 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
                     {
                         string latString = (string)latitude.Replace('.', '_');
                         string lonString = (string)longitude.Replace('.', '_');
-                        fileName = $"GEM_PointForecast_{latString}_{lonString}.csv";
+                        fileName = $"ECMWF_AIFS_ENS_PointForecast_{latString}_{lonString}.csv";
                     }
                     else
                     {
@@ -464,14 +446,13 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
 
                 return df;
             }
-
             else
             {
-                Console.WriteLine($"GEM Data Not Available At This Time");
+                Console.WriteLine($"ECMWF AIFS ENS Data Not Available At This Time");
                 return null;
+
             }
         }
     }
 }
-
 
