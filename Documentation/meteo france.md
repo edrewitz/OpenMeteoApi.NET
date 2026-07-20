@@ -2,14 +2,20 @@
 
 ## `class arpegeHourlyForecastApi`
 
-***public static async Task<arpegeParams?> GetPointForecast(string latitude,
+```Csharp
+namespace OpenMeteoApiNet.DeterministicForecasts.MeteoFrance.ARPEGE
+```
+
+```Csharp
+public static async Task<arpegeParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 4 ,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns a Meteo France/ARPEGE point forecast for a specified point of lat/lon.
  
