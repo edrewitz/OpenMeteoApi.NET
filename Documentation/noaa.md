@@ -1,5 +1,7 @@
 # National Oceanic and Atmospheric Administration (NOAA)
 
+
+
 [***`class gfsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-gfshourlyforecastapi)
 
 [***`class aigfsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-aigfshourlyforecastapi)
@@ -10,14 +12,20 @@
 
 ## `class gfsHourlyForecastApi`
 
-***public static async Task<gfsParams?> GetPointForecast(string latitude,
+```Csharp 
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.GFS
+```
+
+```Csharp
+public static async Task<gfsParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7 ,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns a NOAA/NCEP/GFS point forecast for a specified point of lat/lon.
  
@@ -245,6 +253,10 @@ This function is the client that retrieves and returns a NOAA/NCEP/GFS point for
 
  ## `class aigfsHourlyForecastApi`
 
+ ```Csharp 
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.AIGFS
+```
+
  ***public static async Task<aigfsParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
@@ -440,14 +452,19 @@ This function is the client that retrieves and returns a NOAA/NCEP/AIGFS point f
 
 ## `class hgefsHourlyForecastApi`
 
-***public static async Task<hgefsParams?> GetPointForecast(string latitude,
+ ```Csharp 
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.AIGFS
+```
+```Csharp
+public static async Task<hgefsParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns a NOAA/NCEP/HGEFS ensemble mean point forecast for a specified point of lat/lon.
  
@@ -630,14 +647,20 @@ This function is the client that retrieves and returns a NOAA/NCEP/HGEFS ensembl
 
 ## `class nbmHourlyForecastApi`
 
-***public static async Task<nbmParams?> GetPointForecast(string latitude,
+ ```Csharp 
+namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.NBM
+```
+
+```Csharp
+public static async Task<nbmParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns a NOAA/NCEP/NBM point forecast for a specified point of lat/lon.
  
