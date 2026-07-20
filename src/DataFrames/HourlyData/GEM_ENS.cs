@@ -14,12 +14,12 @@ namespace OpenMeteoApiNet.DataFrames.HourlyData.GEM_ENS
         public static DataFrame ToDataFrame(gemENSParams data)
         {
             /*
-             * Converts the data object of type gefsParams to a DataFrame object.
+             * Converts the data object of type gemENSParams to a DataFrame object.
              * 
              * Returns
              * -------
              * 
-             * Microsoft.Data.Analysis.DataFrame object containing the data from the gefsParams object.
+             * Microsoft.Data.Analysis.DataFrame object containing the data from the gemENSParams object.
              * 
              */
 
