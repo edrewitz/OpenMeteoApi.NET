@@ -19,7 +19,10 @@ public static async Task<iconParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns DWD ICON Forecast from the Open-Meteo API.
@@ -241,7 +244,10 @@ public static async Task<iconEPSParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns DWD ICON EPS 2-Meter Forecast from the Open-Meteo API.
