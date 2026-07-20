@@ -32,7 +32,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
                                                          string? filePath = null,
                                                          string? fileName = null)
         /*
-         * This function is the client that retrieves and returns a NOAA/NCEP/GEFS ensemble mean point forecast for a specified point of lat/lon.
+         * This function is the client that retrieves and returns a NOAA/NCEP/GEFS ensemble point forecast for a specified point of lat/lon.
          * 
          * Required Arguments:
          * 
