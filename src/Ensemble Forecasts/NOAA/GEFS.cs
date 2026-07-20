@@ -216,7 +216,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.NOAA.GEFS
          * Returns
          * -------
          * 
-         * The GEFS Ensemble Mean Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+         * The GEFS Ensemble Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
          */
 
         {
