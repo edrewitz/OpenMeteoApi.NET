@@ -1,6 +1,6 @@
 # Canadian Meteorological Centre (CMC)
 
-[***`class gemHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemhourlyforecastapi)
+[***`class gemHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemhourlyforecastapi)
 
 ## `class gemHourlyForecastApi`
 
