@@ -10,11 +10,11 @@
 
 [***`class nbmHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-nbmhourlyforecastapi)
 
-[***`class gefsHourlyForecastApi`***]
+[***`class gefsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-gefshourlyforecastapi)
 
-[***`class aigefsHourlyForecastApi`***]
+[***`class aigefsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-aigefshourlyforecastapi)
 
-[***`class hgefsHourlyForecastApi`***]
+[***`class hgefsHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/noaa.md#class-hgefshourlyforecastapi-1)
 
 ## `class gfsHourlyForecastApi`
 
