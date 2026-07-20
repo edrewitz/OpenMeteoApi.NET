@@ -1417,6 +1417,27 @@ namespace OpenMeteoApiNet.Variables.HourlyData.IFS_ENS
         public double?[]? soil_moisture_0_to_7cm_member27 { get; set; }
         public double?[]? soil_moisture_0_to_7cm_member28 { get; set; }
         public double?[]? soil_moisture_0_to_7cm_member29 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member30 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member31 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member32 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member33 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member34 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member35 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member36 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member37 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member38 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member39 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member40 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member41 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member42 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member43 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member44 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member45 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member46 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member47 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member48 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member49 { get; set; }
+        public double?[]? soil_moisture_0_to_7cm_member50 { get; set; }
         public double?[]? soil_moisture_7_to_28cm { get; set; }
         public double?[]? soil_moisture_7_to_28cm_member01 { get; set; }
         public double?[]? soil_moisture_7_to_28cm_member02 { get; set; }
