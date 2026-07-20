@@ -7,14 +7,20 @@
 
 ## `class iconHourlyForecastApi`
 
-***public static async Task<iconParams?> GetPointForecast(string latitude,
+```Csharp
+namespace OpenMeteoApiNet.DeterministicForecasts.DWD.ICON
+```
+
+```Csharp
+public static async Task<iconParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7 ,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns DWD ICON Forecast from the Open-Meteo API.
  
@@ -223,14 +229,20 @@ This function is the client that retrieves and returns DWD ICON Forecast from th
 
  ## `class iconEPSHourlyForecastApi`
 
- ***public static async Task<iconEPSParams?> GetPointForecast(string latitude,
+ ```Csharp
+namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
+```
+
+```Csharp
+public static async Task<iconEPSParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns DWD ICON EPS 2-Meter Forecast from the Open-Meteo API.
  
