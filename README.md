@@ -37,6 +37,8 @@ NuGet Downloads:
 
 [***Meteo France Model Data Access***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/meteo%20france.md#meteo-france)
 
+[***Japan Meteorological Agency (JMA)***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/jma.md#japan-meteorological-agency-jma)
+
 ### Current Analysis
 
 [***Current Weather***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/currentWeather.md#current-weather)
