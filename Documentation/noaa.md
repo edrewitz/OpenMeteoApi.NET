@@ -257,14 +257,17 @@ This function is the client that retrieves and returns a NOAA/NCEP/GFS point for
 namespace OpenMeteoApiNet.DeterministicForecasts.NOAA.AIGFS
 ```
 
- ***public static async Task<aigfsParams?> GetPointForecast(string latitude,
+```Csharp
+public static async Task<aigfsParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+
+```
 
 This function is the client that retrieves and returns a NOAA/NCEP/AIGFS point forecast for a specified point of lat/lon.
  
