@@ -40,7 +40,7 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
          * 
          * Optional Arguments:
          * 
-         * 1) days (int) - Default=7. The number of forecast days to retrieve, starting from the current day. Maximum is 7 days.
+         * 1) days (int) - Default=7. The number of forecast days to retrieve, starting from the current day. Maximum is 36 days.
          *          * 
          * 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
          * 
@@ -113,12 +113,12 @@ namespace OpenMeteoApiNet.EnsembleForecasts.DWD.ICON_EPS
          */
 
         {
-            // Fixes if the user enters more than 7 days since the data goes out to 7 days at most. 
+            // Fixes if the user enters more than 36 days since the data goes out to 36 days at most. 
 
-            if (days > 7)
+            if (days > 36)
             {
-                    Console.WriteLine($"Requested forecast length of {days} days exceeds the maximum of 7 days. Defaulting to 7 days.");
-                    days = 7;
+                Console.WriteLine($"Requested forecast length of {days} days exceeds the maximum of 36 days. Defaulting to 36 days.");
+                days = 36;
             }
 
             // Ensure 'variables' has a valid default at runtime (arrays cannot be default parameter compile-time constants).
