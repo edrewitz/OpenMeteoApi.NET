@@ -147,22 +147,27 @@ namespace WeatherForecastApplication
 
 <img src="https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/examples/OpenMeteoApiNet%20Console%20App.png?raw=true" width="1000" alt="Alt text" />
 
-### ***Example 2 OpenMeteoApi.NET ICON EPS Application Code***
+### ***Example 2 OpenMeteoApi.NET GFS + ECMWF Forecast***
 
-```C#
+```CSharp
 /*
  * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
  * 
- * - Retrieves the latest 2-meter relative humidity for the ICON Ensemble (control + first 5 members)
+ * - Retrieves the latest 2-Meter Temperature 1-day hourly time series point forecast from the GFS and ECMWF IFS.
+ * 
+ * - Print the GFS & ECMWF forecasts and the difference between models to the console. 
  *  
  */
-using OpenMeteoApiNet.ICON_EPS;
 
+// A using statement in C# is the equivalent of an import statement in Python
+using OpenMeteoApiNet.DeterministicForecasts.NOAA.GFS;
+using OpenMeteoApiNet.DeterministicForecasts.ECMWF.ECMWF_IFS;
+using Microsoft.Data.Analysis;
 
-// Our main program namespace
-namespace Program
+// The namespace for the Weather Forecast Application
+namespace WeatherForecastApplication
 {
-    class Program
+    class WeatherApp
     {
         // Our main task in our application
         public static async Task Main(string[] args)
@@ -172,45 +177,84 @@ namespace Program
             {
                 // Prompt the user for latitude and longitude
 
+                /* For Python Developers like myself, it is good practice to define variables in C# in the following way:
+                 * 
+                 * var latitude
+                 * var longitude
+                 * 
+                 * Rather than:
+                 * 
+                 * double latitude
+                 * double longitude
+                 * 
+                 * This is because using the prefix var allows the compiler to determine the data type (makes it feel dynamically typed like Python)
+                 * 
+                 */
+                // Title
+                Console.WriteLine("\nGFS & ECMWF IFS 2-Meter Temperature Forecasts\n");
                 Console.WriteLine($"Enter a latitude");
                 var latitude = Console.ReadLine();
                 Console.WriteLine($"Enter a longitude");
                 var longitude = Console.ReadLine();
 
-                // Selects the variable temperature_2m
-                string[] variables = new string[] { "relative_humidity_2m" };
+                // Selects the variables to query: temperature_2m
+                string[] variables = new string[] { "temperature_2m" };
 
 
-                // Retrieve the ICON forecast for 1 day
-                var iconEPSData = await iconEPSHourlyForecastApi.GetPointForecast(latitude,
+                // Retrieve the GFS forecast for 1 day as a Microsoft.Data.Analysis DataFrame df
+                var gfs = await gfsHourlyForecastApi.GetPointForecast(latitude,
                     longitude,
                     variables: variables,
                     days: 1);
 
-                // Prints a no data message if the API returns null.
-                if (iconEPSData == null)
+                // Retrieve the ECMWF IFS forecast for 1 day as a Microsoft.Data.Analysis DataFrame df
+                var ecmwf = await ifsHourlyForecastApi.GetPointForecast(latitude,
+                    longitude,
+                    variables: variables,
+                    days: 1);
+
+                // Merges our gfs and ecmwf dataframes
+                DataFrame df = gfs.Merge(
+                                    other: ecmwf,
+                                    leftJoinColumns: new string[] { "time" },
+                                    rightJoinColumns: new string[] { "time" },
+                                    leftSuffix: "_gfs",
+                                    rightSuffix: "_ecmwf",
+                                    joinAlgorithm: JoinAlgorithm.Left
+                                );
+
+                // Drop the column named "time_ecmwf" as this is a redundant field
+                df.Columns.Remove("time_ecmwf");
+
+                // Create a new column
+                PrimitiveDataFrameColumn<double> temperature_2m_difference = (PrimitiveDataFrameColumn<double>)(df["temperature_2m_gfs"] - df["temperature_2m_ecmwf"]);
+
+                // 4. Name the new column
+                temperature_2m_difference.SetName("temperature_2m_difference");
+
+                // 5. Append the new column to the DataFrame
+                df.Columns.Add(temperature_2m_difference);
+
+                // If the Microsoft.Data.Analysis DataFrame is not null proceed to write the output to the console.
+                if (df != null)
                 {
-                    Console.WriteLine("No ICON EPS data returned from the API.");
-                    continue;
+                    Console.WriteLine("\n      Time             GFS      ECMWF     (GFS-ECMWF)");
+                    Console.WriteLine("-------------------------------------------------------");
+                    // Prints the Forecast data
+                    for (long i = 0; i < df.Rows.Count; i++)
+                    {
+                        // Print the row data cleanly on a single line
+                        Console.WriteLine($"{df["time_gfs"][i], -3} UTC | {df["temperature_2m_gfs"][i], -3}°F | {df["temperature_2m_ecmwf"][i],-3}°F | {Math.Round((double)df["temperature_2m_difference"][i], 1),-3}°F");                        
+
+                    }
+
+                    // Signature and credit
+                    Console.WriteLine("\nData Retrieved with OpenMeteoApi.NET (C) Eric J. Drewitz 2026");
                 }
-
-                Console.WriteLine($"ICON EPS Forecast\n");
-
-                // Prints the various forecasts to the console
-                for (int i = 0; i < (iconEPSData.time?.Length ?? 0); i++)
+                else
                 {
-                    var forecastTime = iconEPSData.time?[i] ?? "N/A";
-
-                    // Rounds to the nearest whole number and converts from double to integer.
-                    int RHIntControl = (int)Math.Round(iconEPSData.relative_humidity_2m?[i] ?? 0);
-                    int RHIntMember01 = (int)Math.Round(iconEPSData.relative_humidity_2m_member01?[i] ?? 0);
-                    int RHIntMember02 = (int)Math.Round(iconEPSData.relative_humidity_2m_member02?[i] ?? 0);
-                    int RHIntMember03 = (int)Math.Round(iconEPSData.relative_humidity_2m_member03?[i] ?? 0);
-                    int RHIntMember04 = (int)Math.Round(iconEPSData.relative_humidity_2m_member04?[i] ?? 0);
-                    int RHIntMember05 = (int)Math.Round(iconEPSData.relative_humidity_2m_member05?[i] ?? 0);
-
-                    // Rounds to the nearest whole number and converts from double to integer
-                    Console.WriteLine($"Time: {forecastTime} | Control: {RHIntControl}% | M1: {RHIntMember01}% | M2: {RHIntMember02}% | M3: {RHIntMember03}% | M4: {RHIntMember04}% | M5: {RHIntMember05}%");
+                    // Returns this error message to the user if df == null. 
+                    Console.WriteLine($"Data not available for (Latitude: {latitude}, Longitude: {longitude}");
                 }
             }
         }
