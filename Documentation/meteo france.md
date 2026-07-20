@@ -14,7 +14,10 @@ public static async Task<arpegeParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns a Meteo France/ARPEGE point forecast for a specified point of lat/lon.
