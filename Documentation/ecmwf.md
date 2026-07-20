@@ -6,9 +6,9 @@
 
 [***`class ifsHRESHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-ifshreshourlyforecastapi)
 
-[***`class ifsENSHourlyForecastApi`***]()
+[***`class ifsENSHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-ifsenshourlyforecastapi)
 
-[***`class aifsENSHourlyForecastApi`***]()
+[***`class aifsENSHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/ecmwf.md#class-aifsenshourlyforecastapi)
 
 ## `class ifsHourlyForecastApi`
 
