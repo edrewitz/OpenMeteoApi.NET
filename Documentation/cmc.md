@@ -1,15 +1,23 @@
 # Canadian Meteorological Centre (CMC)
 
+[***`class gemHourlyForecastApi`](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemhourlyforecastapi)
+
 ## `class gemHourlyForecastApi`
 
-***public static async Task<gemParams?> GetPointForecast(string latitude,
+```Csharp
+namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
+```
+
+```Csharp
+public static async Task<gemParams?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)***
+                                                 string? proxy = null)
+```
 
 This function is the client that retrieves and returns a CMC/GEM point forecast for a specified point of lat/lon.
  
