@@ -2,6 +2,8 @@
 
 [***`class gemHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemhourlyforecastapi)
 
+[***`class gemENSHourlyForecastApi`***]()
+
 ## `class gemHourlyForecastApi`
 
 ```Csharp
@@ -9,14 +11,17 @@ namespace OpenMeteoApiNet.DeterministicForecasts.CMC.GEM
 ```
 
 ```Csharp
-public static async Task<gemParams?> GetPointForecast(string latitude,
+public static async Task<DataFrame?> GetPointForecast(string latitude,
                                                  string longitude,
                                                  int days = 7,
                                                  string temperatureUnit = "fahrenheit",
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns a CMC/GEM point forecast for a specified point of lat/lon.
@@ -214,3 +219,104 @@ This function is the client that retrieves and returns a CMC/GEM point forecast 
  **Returns**
  
  The GEM Forecast for the specified latitude and longitude as a data object, or null if an error occurs.
+
+ 
+## `class gemENSHourlyForecastApi`
+
+```Csharp
+namespace OpenMeteoApiNet.EnsembleForecasts.CMC.GEM_ENS
+```
+
+```Csharp
+public static async Task<DataFrame?> GetPointForecast(string latitude,
+                                                 string longitude,
+                                                 int days = 7,
+                                                 string temperatureUnit = "fahrenheit",
+                                                 string windSpeedUnit = "mph",
+                                                 string precipitationUnit = "inch",
+                                                 string[]? variables = null,
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
+```
+ This function is the client that retrieves and returns the hourly CMC GEM Ensemble forecast from the Open-Meteo API.
+ 
+ Required Arguments:
+ 
+ 1) latitude (string) - The latitude [decimal degrees] in the form of a string. Use negative values for the southern hemisphere.
+ 
+ 2) longitude (string) - The longitude [decimal degrees] in the form of a string. Use negative values for the western hemisphere.
+ 
+ Optional Arguments:
+ 
+ 1) days (int) - Default=7. The number of forecast days to retrieve, starting from the current day. Maximum is 36 days.
+  
+ 2) temperatureUnit (string) - Default="fahrenheit". The units for the temperature data.
+ 
+          Valid Units
+          -----------
+          
+          1) fahrenheit [Fahrenheit]
+          2) celsius [Celsius]
+      
+ 3) windSpeedUnit (string) - Default="mph". The units for the wind speed data. 
+ 
+          Valid Units
+          -----------
+          1) mph (Miles Per Hour)
+          2) ms (Meters Per Second)
+          3) kmh (Kilometers Per Hour)
+          4) kn (Knots)
+      
+ 4) precipitationUnit (string) - Default="inch". The units for the precipitation data.
+ 
+          Valid Units
+          -----------
+          1) inch [Inches]
+          2) mm [Millimeters]
+      
+ 5) variables (string[]) - Optional list of current variables to request. Default is all variables.
+ 
+                Variables
+                ---------
+                "temperature_2m"
+                "relative_humidity_2m"
+                "dew_point_2m"
+                "apparent_temperature"
+                "precipitation"
+                "rain"
+                "snowfall"
+                "snow_depth"
+                "weather_code"
+                "pressure_msl"
+                "cloud_cover"
+                "surface_pressure"
+                "et0_fao_evapotranspiration"
+                "vapour_pressure_deficit"
+                "wind_speed_10m"
+                "wind_direction_10m"
+                "temperature_850hPa"
+                "temperature_500hPa"
+                "geopotential_height_850hPa"
+                "geopotential_height_500hPa"
+
+
+6) proxy (string) - Optional proxy server URL in the form of "https://proxy-address:port" or "http://proxy-address:port". Default is null (no proxy).
+
+7) toCsv (bool) - Optional boolean flag to indicate whether to save the forecast data to a CSV file. Default is false.
+
+8) filePath (string) - Optional file path to save the CSV file. Default is null (current directory).
+
+9) fileName (string) - Optional file name for the CSV file. Default is null (auto-generated name based on latitude, longitude, and timestamp).
+      
+ 
+ **Returns**
+ 
+ The CMC GEM ENS point forecast for a given latitude and longitude. 
+ 
+          variable naming convention
+          ---------------------------
+          
+          Control Run (Example 2-Meter Temperature): data.temperature_2m
+          Ensemble Member 1 (Example 2-Meter Temperature): data.temperature_2m_member01 -> data.temperature_2m_member20 (21 total members [20 members + 1 control])
