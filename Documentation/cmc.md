@@ -2,7 +2,7 @@
 
 [***`class gemHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemhourlyforecastapi)
 
-[***`class gemENSHourlyForecastApi`***]()
+[***`class gemENSHourlyForecastApi`***](https://github.com/edrewitz/OpenMeteoApi.NET/blob/master/Documentation/cmc.md#class-gemenshourlyforecastapi)
 
 ## `class gemHourlyForecastApi`
 
