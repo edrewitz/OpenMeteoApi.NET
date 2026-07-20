@@ -45,23 +45,26 @@ NuGet Downloads:
 
 ### ***Example 1 OpenMeteoApi.NET Console Application Code***
 
-```C#
+```CSharp
 /*
  * In this code example, I will use OpenMeteoAPI.NET to build a basic console application that does the following:
  * 
- * - Retrieves the latest 2-meter temperature ECMWF IFS, GFS, GEM & ICON forecast for a given latitude and longitude.
+ * - Retrieves the latest 2-Meter Temperature & 2-Meter Relative Humidity 1-day hourly time series point forecast from the UKMO Global Ensemble.
+ * 
+ * - Save the forecast data as a CSV file to C:\Users\drewi\Open Meteo Data
+ * 
+ * - Print the forecast data to the console
  *  
  */
-using OpenMeteoApiNet.ECMWF_IFS;
-using OpenMeteoApiNet.GFS;
-using OpenMeteoApiNet.ICON;
-using OpenMeteoApiNet.GEM;
+
+// A using statement in C# is the equivalent of an import statement in Python
+using OpenMeteoApiNet.EnsembleForecasts.UKMO.UKMO_Global_ENS;
 
 
-// Our main program namespace
-namespace Program
+// The namespace for the Weather Forecast Application
+namespace WeatherForecastApplication
 {
-    class Program
+    class WeatherApp
     {
         // Our main task in our application
         public static async Task Main(string[] args)
@@ -71,77 +74,67 @@ namespace Program
             {
                 // Prompt the user for latitude and longitude
 
+                /* For Python Developers like myself, it is good practice to define variables in C# in the following way:
+                 * 
+                 * var latitude
+                 * var longitude
+                 * 
+                 * Rather than:
+                 * 
+                 * double latitude
+                 * double longitude
+                 * 
+                 * This is because using the prefix var allows the compiler to determine the data type (makes it feel dynamically typed like Python)
+                 * 
+                 */
+                // Title
+                Console.WriteLine("\nUKMO Global Ensemble Forecast\n");
                 Console.WriteLine($"Enter a latitude");
                 var latitude = Console.ReadLine();
                 Console.WriteLine($"Enter a longitude");
                 var longitude = Console.ReadLine();
 
-                // Selects the variable temperature_2m
-                string[] variables = new string[] { "temperature_2m" };
+                // Selects the variables to query: temperature_2m, relative_humidity_2m
+                string[] variables = new string[] { "temperature_2m", "relative_humidity_2m" };
 
 
-                // Retrieve the ECMWF IFS forecast for 1 day
-                var ecmwfData = await ifsHourlyForecastApi.GetPointForecast(latitude,
+                // Retrieve the UKMO Global Ensemble forecast for 1 day
+                // Save the data as a CSV file to C:\Users\drewi\Open Meteo Data
+                // Retrieves our Microsoft.Data.Analysis DataFrame df
+                var df = await ukmoGlobalENSHourlyForecastApi.GetPointForecast(latitude,
                     longitude,
                     variables: variables,
-                    days: 1);
+                    days: 1,
+                    toCsv: true,
+                    filePath: @"C:\Users\drewi\Open Meteo Data");
 
-                // Retrieve the GFS forecast for 1 day
-                var gfsData = await gfsHourlyForecastApi.GetPointForecast(latitude,
-                    longitude,
-                    variables: variables,
-                    days: 1);
-
-                // Retrieve the GEM forecast for 1 day
-                var gemData = await gemHourlyForecastApi.GetPointForecast(latitude,
-                    longitude,
-                    variables: variables,
-                    days: 1);
-
-                // Retrieve the ICON forecast for 1 day
-                var iconData = await iconHourlyForecastApi.GetPointForecast(latitude,
-                    longitude,
-                    variables: variables,
-                    days: 1);
-
-                // Prints a no data message if the API returns null.
-                if (ecmwfData == null)
+                // If the Microsoft.Data.Analysis DataFrame is not null proceed to write the output to the console.
+                if (df != null)
                 {
-                    Console.WriteLine("No ECMWF IFS data returned from the API.");
-                    continue;
+                    Console.WriteLine("2-Meter Temperature & Relative Humidity Forecast\n");
+                    // Prints the Temperature data
+                    for (long i = 0; i < df.Rows.Count; i++)
+                    {
+
+                        // Print the row data cleanly on a single line
+                        Console.WriteLine($"Time: {df["time"][i], -20} | Control: {df["temperature_2m"][i], -6} °F | Member 1: {df["temperature_2m_member01"][i]} °F | Member 10: {df["temperature_2m_member10"][i]} °F |");                        
+
+                    }
+
+                    Console.WriteLine("\n2-Meter Relative Humidity Forecast\n");
+                    for (long i = 0; i < df.Rows.Count; i++)
+                    {
+
+                        // Print the row data cleanly on a single line                        
+                        Console.WriteLine($"Time: {df["time"][i],-20} | Control: {df["relative_humidity_2m"][i],-6} % | Member 1: {df["relative_humidity_2m_member01"][i]} % | Member 10: {df["relative_humidity_2m_member10"][i]} % |");
+                    }
+                    // Signature and credit
+                    Console.WriteLine("\nData Retrieved with OpenMeteoApi.NET (C) Eric J. Drewitz 2026");
                 }
-
-                if (gfsData == null)
+                else
                 {
-                    Console.WriteLine("No GFS data returned from the API.");
-                    continue;
-                }
-
-                if (gemData == null)
-                {
-                    Console.WriteLine("No GEM data returned from the API.");
-                    continue;
-                }
-
-                if (iconData == null)
-                {
-                    Console.WriteLine("No ICON data returned from the API.");
-                    continue;
-                }
-
-                // Prints the various forecasts to the console
-                for (int i = 0; i < (ecmwfData.time?.Length ?? 0); i++)
-                {
-                    var forecastTime = ecmwfData.time?[i] ?? "N/A";
-
-                    // Rounds to the nearest whole number and converts from double to integer.
-                    int ecmwfTemp2mInt = (int)Math.Round(ecmwfData.temperature_2m?[i] ?? 0);
-                    int gfsTemp2mInt = (int)Math.Round(gfsData.temperature_2m?[i] ?? 0);
-                    int gemTemp2mInt = (int)Math.Round(gemData.temperature_2m?[i] ?? 0);
-                    int iconTemp2mInt = (int)Math.Round(iconData.temperature_2m?[i] ?? 0);
-
-                    // Rounds to the nearest whole number and converts from double to integer
-                    Console.WriteLine($"Time: {forecastTime} | ECMWF IFS: {ecmwfTemp2mInt}°F | GFS: {gfsTemp2mInt}°F | GEM: {gemTemp2mInt}°F | ICON: {iconTemp2mInt}°F");
+                    // Returns this error message to the user if df == null. 
+                    Console.WriteLine($"Data not available for (Latitude: {latitude}, Longitude: {longitude}");
                 }
             }
         }
