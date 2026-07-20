@@ -429,5 +429,7 @@ namespace OpenMeteoApiNet.Variables.HourlyData.GEM_ENS
         public double?[]? geopotential_height_500hPa_member18 { get; set; }
         public double?[]? geopotential_height_500hPa_member19 { get; set; }
         public double?[]? geopotential_height_500hPa_member20 { get; set; }
+        public List<DateTime>? parsedDateTimes { get; set; }
+        public List<DateTime>? parsedLocalTimes { get; set; }
     }
 }
