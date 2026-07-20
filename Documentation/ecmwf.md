@@ -24,7 +24,10 @@ public static async Task<ifsParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 
 ```
 
@@ -228,7 +231,10 @@ public static async Task<aifsParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
 This function is the client that retrieves and returns ECMWF AIFS Forecast from the Open-Meteo API.
@@ -431,7 +437,10 @@ public static async Task<ifsHRESParams?> GetPointForecast(string latitude,
                                                  string windSpeedUnit = "mph",
                                                  string precipitationUnit = "inch",
                                                  string[]? variables = null,
-                                                 string? proxy = null)
+                                                 string? proxy = null,
+                                                 bool toCsv = false,
+                                                 string? filePath = null,
+                                                 string? fileName = null)
 ```
 
  This function is the client that retrieves and returns ECMWF IFS Medium-range Control forecast from the Open-Meteo API.
